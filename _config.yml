@@ -50,7 +50,7 @@ tag_map:
 ## 0: Fully Disable
 archive: 1
 category: 2
-tag: 2
+tag: 1
 
 # Server
 ## Hexo uses Connect as a server
@@ -70,7 +70,7 @@ time_format: H:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 3
+per_page: 5
 pagination_dir: page
 
 # Disqus
@@ -91,3 +91,7 @@ deploy:
   type: github
   repository: git@github.com:zq210wl/zq210wl.github.io.git
   branch: master
+
+# refresh browser automatically
+livereload:
+  port: 35729

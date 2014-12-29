@@ -5,6 +5,8 @@
   "dependencies": {
     "hexo-renderer-ejs": "*",
     "hexo-renderer-stylus": "*",
-    "hexo-renderer-marked": "*"
+    "hexo-renderer-marked": "*",
+    "hexo-generator-sitemap": "*",
+    "hexo-livereload": "^0.1.0"
   }
 }
