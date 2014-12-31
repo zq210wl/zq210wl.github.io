@@ -7,6 +7,7 @@
     "hexo-renderer-stylus": "*",
     "hexo-renderer-marked": "*",
     "hexo-generator-sitemap": "*",
-    "hexo-livereload": "^0.1.0"
+    "hexo-livereload": "^0.1.0",
+    "hexo-render-without-template": "0.0.1"
   }
 }
