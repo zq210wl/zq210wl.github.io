@@ -8,6 +8,6 @@
     "hexo-renderer-marked": "*",
     "hexo-generator-sitemap": "*",
     "hexo-livereload": "^0.1.0",
-    "hexo-render-without-template": "0.0.7"
+    "hexo-render-without-template": "*"
   }
 }

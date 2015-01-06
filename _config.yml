@@ -5,7 +5,7 @@
 # Site
 title: 张齐的博客
 subtitle: Focus on front-end development
-description: FRONT-END
+description: FRONT-END | Web前端开发
 author: 张齐
 email: zq_210_wl@163.com
 language: zh-CN
@@ -70,7 +70,7 @@ time_format: H:mm:ss
 
 # Pagination
 ## Set per_page to 0 to disable pagination
-per_page: 5
+per_page: 4
 pagination_dir: page
 
 # Disqus
@@ -92,6 +92,6 @@ deploy:
   repository: git@github.com:zq210wl/zq210wl.github.io.git
   branch: master
 
-# refresh browser automatically
+# refresh browser automatically, need to install browser plugin
 livereload:
   port: 35729
