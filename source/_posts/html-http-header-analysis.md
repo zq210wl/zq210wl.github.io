@@ -1,6 +1,6 @@
 title: 理解HTTP Header
 date: 2014-12-30 15:48:06
-categories: html
+categories: HTML
 ---
 * HTTP协议是怎样传输的？
   * HTTP采用请求/响应模型，浏览器端发送请求，服务器给与响应。就整个网络资源传输而言，包括message-header和message-body两部分。

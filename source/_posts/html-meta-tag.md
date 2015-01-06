@@ -1,6 +1,6 @@
 title: html中meta标签的详解
 date: 2015-01-05 16:49:22
-categories: html
+categories: HTML
 ---
 * __meta标签是什么？__
   - META标签是HTML语言HEAD区的一个辅助性标签

@@ -1,6 +1,6 @@
 title: javascript之正则表达式的使用
 date: 2014-11-20 15:11:22
-categories: javascript
+categories: Javascript
 ---
 * __正则表达式的两种声明方法：__
   * 直接变量法(建议使用)
