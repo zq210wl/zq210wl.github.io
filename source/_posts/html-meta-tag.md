@@ -2,7 +2,7 @@ title: html中meta标签的详解
 date: 2015-01-05 16:49:22
 categories: HTML
 ---
-* __meta标签是什么？__
+* __meta标签是什么1__
   - META标签是HTML语言HEAD区的一个辅助性标签
 
 * __meta标签是干什么用的？__
