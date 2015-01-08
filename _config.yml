@@ -95,3 +95,6 @@ deploy:
 # refresh browser automatically, need to install browser plugin
 livereload:
   port: 35729
+
+baidusitemap:
+  path: baidusitemap.xml

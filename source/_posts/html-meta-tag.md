@@ -2,6 +2,13 @@ title: html中meta标签的详解
 date: 2015-01-05 16:49:22
 categories: HTML
 ---
+{% blockquote %}
+META标签用来描述一个HTML网页文档的属性，例如作者、日期和时间、网页描述、关键词、页面刷新等。它提供的信息虽然用户不可见，但却是文档的最基本的元数据1
+{% endblockquote %}
+
+
+
+
 * __meta标签是什么1__
   - META标签是HTML语言HEAD区的一个辅助性标签
 
