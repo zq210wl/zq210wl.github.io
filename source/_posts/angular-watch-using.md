@@ -2,7 +2,7 @@ title: Angular之watch的特殊使用
 date: 2014-12-31 15:44:19
 categories: Angular
 ---
-* 使用AngularJs开发项目的同学应该对watch很熟悉了，在项目中难免会用到watch来监听scope中值的变化来执行相应的操作.
+> 使用AngularJs开发项目的同学应该对watch很熟悉了，在项目中难免会用到watch来监听scope中值的变化来执行相应的操作.
 
 * $watch的常规使用：
       scope.name = 'aa';

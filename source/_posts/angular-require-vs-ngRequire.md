@@ -3,6 +3,7 @@ date: 2014-12-31 16:16:21
 categories: Angular
 ---
 * required和ng-required的作用
+
   当提交的表单时，通常都会做一些表单验证，当然也避免不了空值的检测。在angular里可以给input，select等设置required属性来对表单进行验证，不用自己再花时间去写验证。
 
 * 例如我们需要验证name名为myFrom下的userName文本框是否为空，我们可以给文本框设置required属性，然后通过myForm.userName.$error.required来获取验证结果。
