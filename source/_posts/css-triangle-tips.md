@@ -88,6 +88,8 @@ categories: CSS
 * 实现原理
   - 设置对角和相邻一边的border都为0,然后通过改变其余两边border的宽度来实现不规则效果
 
+<!-- more -->
+
 ## 在线效果预览
 <p data-height="750" data-theme-id="0" data-slug-hash="ogZpqP" data-default-tab="result" data-user="zq210wl" class='codepen'>See the Pen <a href='http://codepen.io/zq210wl/pen/ogZpqP/'>ogZpqP</a> by zhangqi (<a href='http://codepen.io/zq210wl'>@zq210wl</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
