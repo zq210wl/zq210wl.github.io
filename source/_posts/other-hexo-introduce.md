@@ -1,6 +1,6 @@
 title: Hexo - blog framework - 程序员写博客利器
 date: 2014-12-30 16:58:48
-categories: 杂谈
+categories: other
 ---
 * __问题__
   * 你曾经为写博客而烦恼吗？
