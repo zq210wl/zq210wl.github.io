@@ -1,7 +1,6 @@
 title: HTML5学习总结
 date: 2015-01-23 16:44:25
-categories:
-tags:
+categories: HTML
 ---
 
 ## Element(元素)
