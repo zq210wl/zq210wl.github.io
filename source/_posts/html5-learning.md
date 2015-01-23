@@ -1,6 +1,9 @@
 title: HTML5学习总结
+date: 2015-01-23 16:44:25
+categories:
 tags:
 ---
+
 ## Element(元素)
 * html5的空标签，如`<br>`,`<hr>`, 建议都带结束符，如：`<br/>`,`<hr/>`
 * html5的标签是大小写不敏感的，不过建议都小写
@@ -68,12 +71,12 @@ tags:
   - a:active - 点击的瞬间动作
 
 ## Table(表格)
-* 却掉table双边框效果
+* 去掉table双边框效果
       table {
         border-collapse: collapse;
       }
 
-## HTML Layouts(布局)
+## Layouts(布局)
 * html5中跟布局相关的几个元素：
   - `header` - 定义一个document或一个section的头部区域
   - `nav` - 定义一个导航的容器
@@ -85,26 +88,114 @@ tags:
   - `summary` - 为details元素定义一个标题
   ![](/imgs/html5_layout.png)
 
+## Color value
+* 颜色值有三种写法：
+  - 1)直接写颜色单词;2)"#"加一个十六进制的数字;3)rgb颜色。最终都为被转化为十六进制来显示
 
+## Responsive(响应式)
+* `viewport` - 响应式的meta标签的参数
+* 参数的属性值：
 
+|     属性    |   描述  |
+|    :-----   | :------ |
+| width | 虚拟视窗的宽度 |
+| device-width | 设备屏幕的宽度 |
+| height | 虚拟视窗的高度 |
+| device-height | 设备屏幕的高度 |
+| initial-scale | 页面初始化的缩放倍数。1.0为不缩放 |
+| minimum-scale | 可以缩放的最小倍数 |
+| maximum-scale | 可以缩放的最大倍数 |
+| user-scalable | 是否允许缩放,值为Boolean |
+```
+<meta name="viewport" content="width=device-width, initial-scale=1">
+```
 
+## Charset Encoding(字符集编码)
+```
+<meta charset="UTF-8">
+```
 
+## Form Elements(表单元素)
+* html5新增加的元素：
+  - `<datalist>` - 指定一个有默认选项值的input
+        <datalist id="browsers">
+          <option value="Internet Explorer">
+          <option value="Firefox">
+          <option value="Chrome">
+          <option value="Opera">
+          <option value="Safari">
+        </datalist>
+  ![](/imgs/html5-datalist.png)
 
+* html 新增加的input type:
+  - color
+  - date
+  - datetime
+  - datetime-local
+  - email
+  - month
+  - number
+  - range
+  - search
+  - tel
+  - time
+  - url
+  - week
 
+* Input Attributes(input常用属性)
+  - readonly - 只读
+  - disabled - 不能用
+  - maxlength - 最大长度
+  - autofocus
+  - min - 最小值
+  - max - 最大值
+  - multiple - 多选，针对file和image类型
+  - pattern - 正则验证，如：pattern="[A-Za-z]{3}"
+  - placeholder - 默认值
+  - required - 必须填写
+  - step - 数字间隔，针对number类型
 
+## New HTML5 Elements(html5 新增的几个常用元素)
+* 语义化
+  - `<header>`
+  - `<footer>`
+  - `<article>`
+  - `<section>`
+* 图像处理
+  - `<svg>`
+  - `<canvas>`
+* 多媒体
+  - `<audio>`
+  - `<video>`
+```
+<video width="320" height="240" controls>
+  <source src="forrest_gump.mp4" type="video/mp4">
+  <source src="forrest_gump.ogg" type="video/ogg">
+  <track src="subtitles_en.vtt" kind="subtitles" srclang="en" label="English">
+  <track src="subtitles_no.vtt" kind="subtitles" srclang="no" label="Norwegian">
+</video>
+```
+## SVG 和 Canvas 最大的不同
+* SVG是基于XML的，每一个元素都是一个DOM元素，可以添加事件
+* Canvas是通过javascript一像素一像素的画出来的
 
+## HTML plug-ins(插件)
 
+```
+<object width="400" height="50" data="bookmark.swf"></object>
+```
 
+```
+<embed width="400" height="50" src="bookmark.swf">
+```
 
+## HTML5 APIs
+* Geolocation - 定位
+* Drag/Drop - 拖拽
+* Local Storage - 本地存储
+* Web Workers - 可以在后台运行脚本而不影响页面的性能
 
-
-
-学到：http://www.w3schools.com/htmL/html_computercode_elements.asp
-
-
-## 在显示的时候，前后会自动增加空白(margin)的元素
-  - `<hn>`
-  - `<p>`
-
+## 详细使用请参考：
+http://www.w3schools.com/html/
 
 
