@@ -35,3 +35,34 @@ ul { list-style-type: none; }
 * relative - 针对元素本身的位置
 * absolute - 针对父元素设置了relative或absolute
 
+## Combinators(关系选择器)
+* 选定__所有子孙__
+      div p { }
+* 选定__直接子孙__
+      div > p { }
+* 选定元素`后面`__所有同辈元素__
+      div ~ p { }
+* 选定元素`后面`__紧邻的第一个同辈元素__
+      div + p { }
+
+## Pseudo(伪)
+* pseudo-class(伪类)
+  - :link
+* pseudo-element(伪元素)
+  - ::after
+
+## Opacity(不透明度)
+* 取值范围为：0-1.0, 1.0为不透明
+```
+img {
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+```
+
+
+
+
+
+
+http://localhost:4000/2015/01/22/css3-learning/

@@ -15,5 +15,6 @@ tags:
 * enumerable - 可列举的
 * horizontal - 水平的
 * vertical - 垂直的
+* opacity - 不透明度
 
 
