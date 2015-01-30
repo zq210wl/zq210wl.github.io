@@ -1,6 +1,6 @@
 title: 理解vertical-align属性
 date: 2015-01-28 15:42:42
-categories: CSS3
+categories: CSS
 ---
 * vertical-align
   - 设置元素在垂直方向上的对齐方式

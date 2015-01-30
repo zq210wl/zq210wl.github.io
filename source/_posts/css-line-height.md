@@ -1,6 +1,6 @@
 title: 理解line-height
 date: 2015-01-28 14:10:02
-categories: CSS3
+categories: CSS
 ---
 ## 基本概念
 * 基线、中线、顶线、底线
