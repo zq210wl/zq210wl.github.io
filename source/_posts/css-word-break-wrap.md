@@ -21,7 +21,7 @@ categories: CSS
 - text-overflow
   - `text-overflow:clip;` - 显示省略标记（...），而是简单的裁切
   - `text-overflow:ellipsis;` - 当对象内文本溢出时（超过width部分）显示省略标记（...）
-    - 要想让`text-overflow:ellipsis;`生效，必须要先设置`overflow:hidden;`
+    - 要想让`text-overflow:ellipsis;`生效，必须要先设置`overflow:hidden;white-space:nowrap;`
 
 - white-space
   - 设置如何处理元素内的空白
