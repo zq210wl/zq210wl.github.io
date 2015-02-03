@@ -60,7 +60,22 @@ img {
 }
 ```
 
+## CSS sprites
+* `background:url(test.png) no-repeat 0 0;`
+* 主要应用`background-position`属性
+  - <percentage>： 用百分比指定背景图像填充的位置。可以为负值。
+  - <length>： 用长度值指定背景图像填充的位置。可以为负值。
+  - center： 背景图像横向和纵向居中。
+  - left： 背景图像在横向上填充从左边开始。
+  - right： 背景图像在横向上填充从右边开始。
+  - top： 背景图像在纵向上填充从顶部开始。
+  - bottom： 背景图像在纵向上填充从底部开始。
 
+## Media queries
+
+## Gradients
+
+## Text Shadow
 
 
 
