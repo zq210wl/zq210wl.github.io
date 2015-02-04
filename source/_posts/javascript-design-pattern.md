@@ -32,16 +32,16 @@ categories: Javascript
 
 ## MVP
 ![](/imgs/javascript_mvp.png);
-* MVP 模式将 Controller 改名为 Presenter(表示器),
+* MVP 模式将 Controller 改名为 Presenter(推送器),
 * 这三部分是如果协调工作的？
   1. 各部分之间的通信，都是__双向的__。
   2. __View 与 Model 不发生联系__，都通过 Presenter 传递。
-  3. View 非常薄，__不部署任何业务逻辑__；而 __Presenter非常厚，所有逻辑(view逻辑和model逻辑)都部署在这层__。
+  3. View 非常薄，__不部署任何业务逻辑__；而 Presenter非常厚，所有的应用程序逻辑和__一些不知道应该算是业务逻辑还是应用程序逻辑的代码都部署在这层__。
 
 ## MVVM (Model-View-ViewModel)
 ![](/imgs/javascript_mvvm.png);
 * MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。
-* 唯一区别：ViewModel将密切关联的Model和View的逻辑单独提取出来，用双向绑定将他们关联到一起。
+* 唯一区别：ViewModel将密切关联的Model和View的逻辑单独提取出来，用双向绑定将他们关联到一起。Model的改变会通过ViewModel来映射到View上，反之亦然。
   * Angular就是采用这种模式，实现了双向绑定
 * 好处：
   * 省去了model变化之后手动修改view和view变化之后手动修改model的繁琐工作
