@@ -1,6 +1,6 @@
 title: 移动开发相关文章收集
-categories: Link
 date: 2015-02-06 16:04:09
+categories: Link
 ---
 
 * [Mobile Website vs. Mobile App (Application):Which is Best for Your Organization? - 移动网站 vs 移动应用](http://www.hswsolutions.com/services/mobile-web-development/mobile-website-vs-apps/)
