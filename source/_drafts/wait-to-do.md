@@ -30,3 +30,10 @@ tags:
   - http://javascriptissexy.com/javascript-prototype-in-plain-detailed-language/
 * JavaScript Objects in Detail
   - http://javascriptissexy.com/javascript-objects-in-detail/
+
+## 待写博客
+* ElementFragment
+* webworker 和 websocket的区别和适用场景
+  - http://my.oschina.net/u/2274721/blog/419772
+
+
