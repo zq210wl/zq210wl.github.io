@@ -1,9 +1,7 @@
-title: 详说清除浮动
+title: 细说清除浮动
 date: 2014-06-25 15:21:41
 categories: CSS
 ---
-> 浮动，从诞生那天起，它就是个特别的属性——既为网页布局带来新的方法，却又随之产生一系列的问题。当然，随着时间的推移，这些问题终究有了一些出色的解决方案，下面会详细介绍的，除了是这些解决方案，还有其中的原理。（温謦提示：文章信息量大且篇幅长，请各位自备瓜子，饮料，音乐）。
-
 ## 一、什么是清除浮动？
   * __浮动的缺陷__
 
@@ -93,9 +91,6 @@ categories: CSS
   - 二是触发浮动元素父元素的 BFC (Block Formatting Contexts, 块级格式化上下文)，使到该父元素可以包含浮动元素，关于这一点，下面会为大家进行详细的介绍。
 
 * BFC 在 CSS 的可视化格式模型 (Visual Formatting Model) 中具有非常重要的地位，很多开发者因为不了解 BFC 的特性而在实际开发中产生很多让人感到莫名其妙的问题。尽管如此，因为 BFC 涉及 CSS 中很少接触的部分，因此国内的相关介绍很少，这里展开说明一下。
-
-* 请参考另一篇文章来理解BFC
-  - 详说 [Block Formatting Contexts (块级格式化上下文)](/2014/06/27/css-block-formating-contexts/)
 
 * 相关文章
   - [Understanding the Humble Clearfix](http://fuseinteractive.ca/blog/understanding-humble-clearfix#.VYuT6dyqqko)
