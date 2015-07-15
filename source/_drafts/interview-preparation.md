@@ -3,13 +3,27 @@ date: 2015-07-06 14:44:57
 categories: other
 ---
 * 熟悉 Array 常用方法
-  -
+  - sort(fn) 排序
+  - splice(index,deleteNum,insert1,insert2) 删除，插入
+  - join(",") 有特殊字符连接返回字符串
+  - reverse() 将数组从后到前排列
+  - shift() 删除第一个元素
+  - concat(array1,array2) 连接多个数组
+  - map(function(val,index){  return newVal; }) 返回一个新的数组
+  - toString()
 
 * 熟悉 String 常用方法
-  - str.split(",");
-  -
+  - split(","); 以特定字符分割得到一个Array
+  - chartAt(index) 查找第几个字符
+  - indexOf(chart1) 查找某个字符的下标
+  - concat(str1,str2) 连接多个字符串
+  - trim() 去掉左右空格
+  - substring(index1,index2) 截取字符串
+  - replace(str1,str2) 将str1替换为str2，默认只会替换第一个
 
 * 熟悉 Data 常用方法
+
+* 正则使用
 
 * 熟悉CSS3新增的一些属性
 
