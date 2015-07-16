@@ -37,7 +37,7 @@ categories: Javascript
       var regExp2 = /\d+/gm;
       var regStr2 = 'fdf78767ds6f6gf87dsf67ds8f5ds7f7dsf';
       var newStr = regStr2.replace(regExp2, '');
-      console.log(newStr);//["jkj", "12", "dsfs", "fddsfFDF", "FDfsdfdsFdsfDSf", "32", "324", "f"]
+      console.log(newStr);//fdfdsfgfdsfdsfdsfdsf
 
 * split() 方法用于把一个字符串分割成字符串数组。
   返回值：一个字符串数组

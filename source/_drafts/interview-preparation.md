@@ -11,6 +11,7 @@ categories: other
   - concat(array1,array2) 连接多个数组
   - map(function(val,index){  return newVal; }) 返回一个新的数组
   - toString()
+  - Array.isArray(arr) 判断是否为array类型
 
 * 熟悉 String 常用方法
   - split(","); 以特定字符分割得到一个Array
@@ -22,8 +23,21 @@ categories: other
   - replace(str1,str2) 将str1替换为str2，默认只会替换第一个
 
 * 熟悉 Data 常用方法
+  - getFullYear()
+  - getMonth() + 1
+  - getDate()
 
-* 正则使用
+* Math 常用方法
+  - Math.floor
+  - Math.ceil
+  - Math.round
+  - Math.random
+
+* 正则使用,常用正则符号的意思
+
+* 正则常用方法
+  - reg.test(str)
+  - reg.exec(str)
 
 * 熟悉CSS3新增的一些属性
 
@@ -157,3 +171,21 @@ categories: other
 
 * promise vs callback
   * JavaScript的Promises可以促进关注点分离代替紧密耦合接口
+
+* 图片压缩工具
+  - grunt-contrib-imagemin
+
+* Javascript中arguments.callee和arguments.caller的作用？
+  - caller是返回一个对函数的引用，该函数调用了当前函数；
+  - callee是返回正在被执行的function函数，也就是所指定的function对象的正文。
+
+* 网页制作会用到的图片格式有哪些？
+  - webp, png-8，png-24，jpeg，gif，svg
+
+* RGBA
+  - RGBA是代表Red（红色） Green（绿色） Blue（蓝色）和 Alpha
+
+* rgba()和opacity的透明效果有什么不同？
+  - rgba()和opacity都能实现透明效果，但最大的不同是opacity作用于元素，以及元素内的所有内容的透明度，
+
+  - 而rgba()只作用于元素的颜色或其背景色。（设置rgba透明的元素的子元素不会继承透明效果！）
