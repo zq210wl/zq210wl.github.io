@@ -52,6 +52,17 @@ categories: other
   - ...
 
 * Ajax 原声写法
+    onreadystatechange  每次状态改变所触发事件的事件处理程序。
+　　responseText     从服务器进程返回数据的字符串形式。
+　　responseXML    从服务器进程返回的DOM兼容的文档数据对象。
+　　status           从服务器返回的数字代码，比如常见的404（未找到）和200（已就绪）
+　　status Text       伴随状态码的字符串信息
+　　readyState       对象状态值
+　　　　0 (未初始化) 对象已建立，但是尚未初始化（尚未调用open方法）
+　　　　1 (初始化) 对象已建立，尚未调用send方法
+　　　　2 (发送数据) send方法已调用，但是当前的状态及http头未知
+　　　　3 (数据传送中) 已接收部分数据，因为响应及http头不全，这时通过responseBody和responseText获取部分数据会出现错误，
+　　　　4 (完成) 数据接收完毕,此时可以通过通过responseXml和responseText获取完整的回应数据
 
 * 自动化测试
   - jasmine
@@ -189,3 +200,5 @@ categories: other
   - rgba()和opacity都能实现透明效果，但最大的不同是opacity作用于元素，以及元素内的所有内容的透明度，
 
   - 而rgba()只作用于元素的颜色或其背景色。（设置rgba透明的元素的子元素不会继承透明效果！）
+
+* CSS样式布局
