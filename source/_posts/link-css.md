@@ -8,6 +8,6 @@ categories: Link
 
 * [Block Formatting Contexts - 块级格式化上下文](http://kayosite.com/block-formatting-contexts-in-detail.html)
 
-* [A Complete Guide to Flexbox - 一个完整的弹性盒子使用指南](http://kayosite.com/block-formatting-contexts-in-detail.html)
+* [A Complete Guide to Flexbox - 一个完整的弹性盒子使用指南](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 * [Flex 布局语法教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
