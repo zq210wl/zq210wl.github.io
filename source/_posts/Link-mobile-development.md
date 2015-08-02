@@ -13,3 +13,5 @@ categories: Link
 
 * [入门级 - 一步一步教你如何用html5开发一个兼容各个设备端的页面](http://www.lingulo.com/tutorials/css/how-to-build-a-html5-website-from-scratch)
 
+* [远程调试之 Weinre 的使用- Weinre As Remote Debugger](https://developer.mozilla.org/en-US/Firefox_OS/Platform/Gaia/Weinre_As_Remote_Debugger)
+

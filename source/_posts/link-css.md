@@ -11,3 +11,5 @@ categories: Link
 * [A Complete Guide to Flexbox - 一个完整的弹性盒子使用指南](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 * [Flex 布局语法教程](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
+
+* [使用Flexbox：新旧语法混用实现最佳浏览器兼容 - Using Flexbox: Mixing Old and New for the Best Browser Support](https://css-tricks.com/using-flexbox/)

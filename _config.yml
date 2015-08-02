@@ -93,8 +93,10 @@ deploy:
   branch: master
 
 # refresh browser automatically, need to install browser plugin
-livereload:
-  port: 35729
+browser_sync:
+  port: 3000
+  browser: "google chrome"
+  open: true
 
 baidusitemap:
   path: baidusitemap.xml
