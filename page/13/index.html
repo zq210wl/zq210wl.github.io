@@ -53,148 +53,27 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-05T08:49:22.000Z"><a href="/2015/01/05/html-meta-tag/">Jan 5 2015</a></time>
+        <time datetime="2014-04-14T10:29:23.000Z"><a href="/2014/04/14/css-position-overflow/">Apr 14 2014</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/01/05/html-meta-tag/">html中meta标签的详解</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><p><strong>meta标签是什么1</strong></p>
-<ul>
-<li>META标签是HTML语言HEAD区的一个辅助性标签</li>
-</ul>
-</li>
-<li><p><strong>meta标签是干什么用的？</strong></p>
-<ul>
-<li>META标签用来描述一个HTML网页文档的属性，例如作者、日期和时间、网页描述、关键词、页面刷新等。它提供的信息虽然用户不可见，但却是文档的最基本的<code>元数据</code>.</li>
-</ul>
-</li>
-<li><p><strong><code>元数据</code>又是什么东西？</strong></p>
-<ul>
-<li>元数据(Metadata)是用来概括描述数据的一些基本数据。也就是描述数据的数据。<code>还不清楚？</code>那在形象的来解释一下：</li>
-</ul>
-<blockquote>
-<p>你今天在下班途中邂逅了一个美女，然后回到家之后你就迫不及待的想跟你的朋友炫耀一下。但是你不能只说你邂逅了一个美女，你得描述具体点啊，不然谁信啊？所以你得通过年龄（三十岁上下）、身高（个子高挑）、相貌（身材匀称，黑黑的眉毛，红红的脸蛋）、性格（活跃）来描述。这样你的朋友就可以通过这些信息来意淫一下啦。OK. 废话不多说，到底什么是metadata呢？</p>
-</blockquote>
-<p>这个例子中的”年龄”、”身高”、”相貌”、”性格”，就是元数据，因为它们是用来描述具体数据/信息的数据/信息。<br>当然，这几个元数据用来刻画个人状况还不够精确。我们每个人从小到大，都填过《个人情况登记表》之类的东西吧，其中包括姓名、性别、民族、政治面貌、一寸照片、学历、职称等等……这一套元数据才算比较完备。</p>
-<p><strong>那么对于网页也来说，metadata就是通过一些字段信息来描述一下当前网页，以便浏览器和搜索引擎在访问到此网页的时候，可以通过这些描述信息来知道如何去解析此网页数据。</strong></p>
-</li>
-<li><p><strong>meta标签的使用</strong></p>
-<ul>
-<li><p>meta标签共有两个属性：<code>http-equiv</code>和<code>name</code>;不同的属性又有不同的<em>参数值</em>，这些不同的<em>参数值</em>就实现了不同的网页功能。</p>
-<ol>
-<li><strong>name属性</strong></li>
-</ol>
-<p>name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。<br>meta标签的name属性语法格式是：＜meta name=”参数” content=”具体的参数值”＞ 。其中name属性主要有以下几种参数:</p>
-<ul>
-<li>Keywords(关键字)<ul>
-<li>说明：keywords用来告诉搜索引擎你网页的关键字是什么。</li>
-<li>举例：<code>＜meta name =&quot;keywords&quot; content=&quot;science, education,culture,politics,ecnomics，relationships, entertaiment, human&quot;＞</code></li>
-</ul>
-</li>
-<li>description(网站内容描述)<ul>
-<li>说明：description用来告诉搜索引擎你的网站主要内容。</li>
-<li>举例：<code>＜meta name=&quot;description&quot; content=&quot;This page is about the meaning of science, education,culture.&quot;＞</code></li>
-</ul>
-</li>
-<li>author(作者)<ul>
-<li>说明：标注网页的作者</li>
-<li>举例：<code>＜meta name=&quot;author&quot; content&quot;root,root@21cn.com&quot;＞</code></li>
-</ul>
-<ol>
-<li><strong>http-equiv属性</strong></li>
-</ol>
-</li>
-</ul>
-<p>http-equiv顾名思义，相当于http协议中文件头的作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。<br>meat标签的http-equiv属性语法格式是：＜meta http-equiv=”参数” content=”参数变量值”＞ ；其中http-equiv属性主要有以下几种参数：</p>
-<ul>
-<li>content-Type(显示字符集的设定)<ul>
-<li>说明：设定页面使用的字符集。</li>
-<li>用法：<code>＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞</code></li>
-</ul>
-</li>
-<li>Expires(期限)<ul>
-<li>说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。</li>
-<li>用法：<code>＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞</code><br>注意：必须使用GMT的时间格式。</li>
-</ul>
-</li>
-<li>Pragma(cache模式)<ul>
-<li>说明：禁止浏览器从本地计算机的缓存中访问页面内容。</li>
-<li>用法：<code>＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞</code><br>注意：这样设定，访问者将无法脱机浏览。</li>
-</ul>
-</li>
-<li>Refresh(刷新)<ul>
-<li>说明：自动刷新并指向新页面。</li>
-<li>用法：<code>＜meta http-equiv=&quot;Refresh&quot; content=&quot;2; URL=http://www.root.net&quot;＞</code><br>注意：其中的2是指停留2秒钟后自动刷新到URL网址。</li>
-</ul>
-</li>
-<li>Set-Cookie(cookie设定)<ul>
-<li>说明：设置cookie, 如果网页过期，那么存盘的cookie将被删除。</li>
-<li>用法：<code>＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞</code><br>注意：必须使用GMT的时间格式。</li>
-</ul>
-</li>
-<li>Window-target(显示窗口的设定)<ul>
-<li>说明：强制页面在当前窗口以独立页面显示。</li>
-<li>用法：<code>＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞</code><br>注意：用来防止别人在框架里调用自己的页面。<br>*</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><strong>meta标签对搜索引擎的作用</strong></p>
-<p>meta标签的一个很重要的功能就是设置关键字，来帮助你的主页被各大搜索引擎登录，提高网站的访问量。在这个功能中，最重要的就是对Keywords和description的设置。因为按照搜索引擎的工作原理,搜索引擎首先派出机器人自动检索页面中的keywords和decription，并将其加入到自己的数据库，然后再根据关键词的密度将网站排序。因此，我们必须设置好关键字，来提高页面的搜索点击率。下面我们来举一个例子供大家参考：</p>
-</li>
-</ul>
-<p>　<code>＜meta name=&quot;keywords&quot; content=&quot;政治,经济, 科技,文化, 卫生, 情感，心灵，娱乐，生活，社会，企业，交通&quot;＞</code><br>　<code>＜meta name=&quot;description&quot; content=&quot;政治,经济, 科技,文化, 卫生, 情感，心灵，娱乐，生活，社会，企业，交通&quot;＞</code></p>
-<p>　设置好这些关键字后，搜索引擎将会自动把这些关键字添加到数据库中，并根据这些关键字的密度来进行合适的排序。</p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-01-05T05:40:55.000Z"><a href="/2015/01/05/javascript-excel-table/">Jan 5 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/01/05/javascript-excel-table/">当移动滚动条时固定table的第一行和第一列，类似excel的滚动效果，jquery实现</a></h1>
+    <h1 class="title"><a href="/2014/04/14/css-position-overflow/">position属性对overflow的影响, 深入理解position和overflow的关系</a></h1>
   
 
     </header>
     <div class="entry">
       
         <blockquote>
-<p>项目中遇到个需求，就是要把table的第一行和第一列固定，这样当出现滚动条的时候就方便在滚动数据的时候可以对照title来看，而且为了美观还必须要跟excel的滚动效果一样，也就是滚动条不能只出现在table内容区域，还必须包括title区域，这样的话就不能简单的只在内容区域的div上设置overflow:auto，刚开始本想在网上搜一些现成的代码，但是很不幸没有搜到有这样的需求，大部分都是只有固定头一行或头一列，这样还好实现，但是要两个都实现就有以下复杂了。最后我还是自己来实现了。</p>
+<p>项目中遇到了一个问题，就是明明父节点设置overflow:scroll,但是不管滚动条如果滚动，但是子节点一直都不动，因此就小研究了一下position对overflow的影响，跟大家分享一下。</p>
 </blockquote>
-<p>看效果图：</p>
-<p><strong>页面刚初始化的table样式：</strong></p>
-<p><img src="/imgs/javascript_excel_table_init.jpg" alt=""></p>
-<p><strong>拖动滚动条后的table样式：</strong></p>
-<p><img src="/imgs/javascript_excel_table_move.jpg" alt=""></p>
-<p><strong><a href="http://plnkr.co/edit/MUxu6a87lzR2Xptishjq?p=preview" target="_blank" rel="external">在线看效果</a></strong></p>
-<p><strong><a href="https://github.com/zq210wl/Fixed-the-first-line-and-first-column-of-table" target="_blank" rel="external">访问github上的源码</a></strong></p>
+<h2 id="当父节点不设置position情况下，子节点position的四种值的分析：">当父节点不设置position情况下，子节点position的四种值的分析：</h2><p>示例1.1:<br>body{<br>A {overflow: scroll;}<br>A-1 {}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：A-1的默认position设置为static，当position为static时，A-1元素还是遵循正常的文档流，因此A-1会受它父节点属性的影响</p>
+<p>示例1.2:<br>body{<br>A {overflow: scroll;}<br>A-1 {position: relative;}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：当A-1的position设置为relative时，A-1元素还是遵循正常的文档流，因此A-1会受它父节点属性的影响</p>
+<p>示例1.3:(重点)<br>body{<br>A {overflow: scroll;}<br>A-1 {position: absolute;}<br>}<br>效果：A-1不会根据A滚动条的滚动而滚动<br>分析：当A-1的position设置为absolute时，A-1元素脱离了文档流，所以A-1不再受父节点属性的影响<br>注意：这时在父节点没有设置position的时，只会受到body节点的影响</p>
+<p>示例1.4:<br>body{<br>A {overflow: scroll;}<br>A-1 {position: fixed;}<br>}<br>效果：A-1不会根据A滚动条的滚动而滚动<br>分析：当A-1的position设置为fixed时，A-1元素脱离了文档流，这时A-1只受body元素的影响</p>
+<h2 id="当父节点设置position值为非static情况下，子节点position的四种值的分析：">当父节点设置position值为非static情况下，子节点position的四种值的分析：</h2><p>示例2.1:<br>body{<br>A {position：relative; overflow: scroll;}<br>A-1 {}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：跟示例1.1一样，当父节点A设置了position之后，子节点A-1还是遵循正常的文档流，因此A-1会受它父节点属性的影响</p>
+<p>示例2.2:<br>body{<br>A {position：relative; overflow: scroll;}<br>A-1 {position: relative;}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：跟示例1.2一样，当父节点A设置了position之后，子节点A-1还是遵循正常的文档流，因此A-1会受它父节点属性的影响</p>
+<p>示例2.3:(重点, 注意跟1.3示例对比)<br>body{<br>A {position：relative; overflow: scroll;}<br>A-1 {position: absolute;}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：当父节点A设置了position之后，效果就跟示例1.3不一样了，这时A-1会受到离它自己最近的一个设置了position属性的父节点的影响，再看下面一个示例：<br>body{<br>A {position：relative; overflow: hidden;}<br>A-1 {overflow: scroll;}<br>A-1-1 {position: absolute;}<br>}<br>注意：这时A-1-1不会收A-1的影响，但是会受到A的影响</p>
+<p>示例2.4:<br>body{<br>A {position:relative; overflow: scroll;}<br>A-1 {position: fixed;}<br>}<br>效果：A-1不会根据A滚动条的滚动而滚动<br>分析：跟1.4示例一样，当子节点的position属性设置为fixed之后，不管的父节点是否设置了position值，都只会受到body节点的影响，其他任何节点都不会影响它</p>
 
       
     </div>
@@ -217,66 +96,80 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-04T10:48:58.000Z"><a href="/2015/01/04/node-publish-npm-package/">Jan 4 2015</a></time>
+        <time datetime="2014-04-01T08:51:06.000Z"><a href="/2014/04/01/angular-issue-ngclick-fired-twice/">Apr 1 2014</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/01/04/node-publish-npm-package/">如何发布一个package到npm</a></h1>
+    <h1 class="title"><a href="/2014/04/01/angular-issue-ngclick-fired-twice/">Angular issue 之 ng-click事件被执行两次</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <p>以下面的一个简单需求为例来发布一个package到npm：<a href="https://github.com/zq210wl/publishPackageToNPM" target="_blank" rel="external">访问github地址查看源码</a></p>
-<p><strong>发布一个<code>say-hello-world</code>的package到npm; 这个package的功能是提供一个sayHelloWorld的方法。</strong></p>
-<p><code>注意：因为say-hello-world package已经发布到npm了，所以大家在跟随文档操作的时候需要换个名字。</code></p>
+        <blockquote>
+<p>用 angular 做公司的一个内部系统时，自己写了一个公用的 Dialog directive, 但是遇到一个问题：注册到一个button上的ng-click事件上的方法莫名其妙的总是点击一次执行两次，都快把我郁闷死了，不过问题到最后总是能找到原因并且解决的。下面我就说下为什么会出现这种问题。</p>
+</blockquote>
 <ul>
-<li><p>第一步:<br>在项目的根目录下创建一个名字为node_modules的目录，此目录用来放置所有的node模块</p>
-</li>
-<li><p>第二步:<br>在node_modules目录下名字say-hello-world目录;</p>
-</li>
-<li><p>第三步:<br>say-hello-world目录下新建两个文件：</p>
+<li><p>问题所在</p>
 <ul>
-<li><p>index.js</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">sayHelloWorld</span><span class="params">()</span> {</span>
-  console.<span class="built_in">log</span>(<span class="string">"Hello world !"</span>);
-}
-<span class="function"><span class="keyword">module</span>.<span class="title">exports</span> =</span> sayHelloWorld;
-</code></pre></li>
-<li><p>package.json</p>
-<pre><code><span class="collection">{
-  <span class="string">"name"</span>: <span class="string">"say-hello-world"</span>, // package的名称
-  <span class="string">"author"</span>: <span class="string">"yourname &lt;me@hello.com&gt; (http://hello.com)"</span>, // 作者的相关信息
-  <span class="string">"version"</span>: <span class="string">"0.0.1"</span>, // 版本号<span class="list">(<span class="keyword">semantic</span> version)</span>
-  <span class="string">"main"</span>: <span class="string">"index"</span> // 入口文件，当在其他文件中require<span class="list">(<span class="keyword">'say-hello-world'</span>)</span>时，将会加载index.js
-}</span>
-</code></pre></li>
-<li>发布say-hello-world包到npm<ul>
-<li>首先要<a href="https://www.npmjs.com/signup" target="_blank" rel="external">注册一个npm账号</a>(如果没有的话)</li>
-<li>注册完后，在命令窗口运行<code>npm adduser</code>(登陆npm),会提示你输入用户名和密码；</li>
-<li>登陆成功后，在say-hello-world目录下执行命令<code>npm publish</code>(发布package)</li>
-<li>发布成功后就可以<a href="https://www.npmjs.com/login" target="_blank" rel="external">登陆到npm官网</a>去看自己发布的package。</li>
+<li>问题出现在我使用了$compile去编译了一些后加入到template中的element。但是我为了偷懒把真个template都compile了一次，这时候template中的一些元素等于被compile了两次，只要是被compile了两次的元素，在其上面注册事件都会被执行两次。</li>
+</ul>
+</li>
+<li><p>如何解决</p>
+<ul>
+<li>方法一：只compile后加入模板的元素(也就是没有编译过的元素)</li>
+<li>方法二：在preLink中完成对新元素的加入，因为这时候文章template都还么执行compile, 相加什么就加什么，加完之后，angular会自动把真个template compile 一次。</li>
+</ul>
+</li>
+<li><p>总结</p>
+<ul>
+<li>$compile虽强大，但还需谨慎。</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<p><code>到这里，我们已经成功发布了say-hello-world包到npm，接下来我们来尝试使用一下say-hello-world包</code></p>
-<ol>
-<li>先新建一个空的目录<code>test</code>;然后在命令行中切换到<code>test</code>目录;</li>
-<li>然后执行<code>npm install say-hello-world</code>命令;</li>
-<li>执行成功后在<code>test</code>目录下看到多了一个<code>node_modules</code>的目录，在<code>node_modules</code>目录中就可以看到我们刚才发布的<code>say-hello-world</code>package;</li>
-<li>然后再<code>test</code>目录下新建一个<code>hello-world.js</code>来测试一下<code>sayHelloWorld()</code>方法，<code>hello-world.js</code>中的内容如下：<pre><code><span class="keyword">var</span> sayHelloWorld = <span class="built_in">require</span>(<span class="string">'say-hello-world'</span>);
-sayHelloWorld();
-</code></pre></li>
-<li>在命令行中进入<code>test</code>目录，然后执行<code>node hello-world.js</code>,就会在看到输出：<code>Hello world !</code>.</li>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-03-29T08:21:26.000Z"><a href="/2014/03/29/mobile-base-knowledge-learn-node/">Mar 29 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/03/29/mobile-base-knowledge-learn-node/">自己刚开始学习移动web开发时的一些基础知识的学习笔记</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ol>
+<li>设备/物理/屏幕像素（px）:  点（dot）；一个 px 代表一个点。</li>
+<li>css像素（px）: 相对与物理像素的像素；一个css px 等于 一个或多个物理px。</li>
+<li>分辨率像素：指整个设备屏幕里所能容纳的像素（dot）数。1024px * 768px ；当分辨率调整到最大值时，一个px代表一个物理px。分辨率调小时，一个px代表多个物理px。</li>
+<li>像素（px）密度：不同分辨率下的像素密度不用。这里的px也是相对的。</li>
+<li>图片在设备中的显示情况：一个图片设计为 80px<em>90px，这里的px指的是真正物理像素点，如果缩放比为2，则图片将被放大到两倍的物理像素 160px</em>180px 。</li>
+<li>devicePixelRatio = 手机的物理像素与实际使用像素的缩放比。</li>
+<li>width=device-width：<br> width指的是layout（页面布局）宽度；<br> device指的是屏幕分辨率宽度，即设备独立像素（dip）。</li>
+<li>DPI：Dots Per Inch</li>
+<li>PPI: Pixels Per Inch</li>
 </ol>
-<h2 id="如何更新发布到npm的package？(以刚才发布的say-hello-world为例)"><strong>如何更新发布到npm的package？(以刚才发布的say-hello-world为例)</strong></h2><p><code>当我们对say-hello-world做了改动就需要更新到npm.</code></p>
-<ul>
-<li>进入到<code>say-hello-world</code>目录, 对<code>index.js</code>做一些修改(做为要更新的内容)</li>
-<li>然后再命令行执行<code>npm version patch</code>, 此命令会把<code>package.json</code>的<code>version</code>更新到<code>0.02</code></li>
-<li>然后执行<code>npm publish</code>就可以更新到npm了</li>
-</ul>
 
       
     </div>
@@ -299,42 +192,24 @@ sayHelloWorld();
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-03T02:38:21.000Z"><a href="/2015/01/03/computer-process-and-threads/">Jan 3 2015</a></time>
+        <time datetime="2014-02-13T01:35:34.000Z"><a href="/2014/02/13/css-negative-margin/">Feb 13 2014</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/01/03/computer-process-and-threads/">理解进程和线程</a></h1>
+    <h1 class="title"><a href="/2014/02/13/css-negative-margin/">负margin用法权威指南</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <ul>
-<li><p><strong>进程</strong></p>
+        <blockquote>
+<p>从事前端如果连负margin都不懂那就赶紧来学习一下吧！</p>
+</blockquote>
+<p>下面是 w3cplus 的一篇对负margin的译文，讲的很清楚，如果觉得看中文不爽可以直接看英文。</p>
 <ul>
-<li>进程是一个“执行中的程序”；比如我们在系统中安装QQ和浏览器，也就是说我们安装了两个程序；当我们打开了QQ程序，这时CPU就会开启一个进程来运行QQ程序；当然如果我们又打开了浏览器，CPU又会再开启一个进程来运行浏览器；</li>
-<li>一个应用程序就是一个进程</li>
-<li>CPU没开启一个进程就会给这个进程分配一块内存。</li>
-<li>进程之间是相互独立的，内存是不共享的。</li>
-</ul>
+<li><p>中文译文<br><a href="http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html" target="_blank" rel="external">http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html</a></p>
 </li>
-<li><p><strong>线程</strong></p>
-<ul>
-<li>通常在一个进程中可以包含若干个线程。比如在QQ应用程序中，我们可以边视频边语音，也就有两个线程，一个是视频的线程，一个是语音的线程。</li>
-<li>进程是一个容器，线程是此容器中的工作单位。</li>
-<li>线程是CPU的基本调度单位。多线程是CPU对线程的频繁切换调用现实的伪多线程。</li>
-<li>同一个进程中的多个线程是内存共享的。</li>
-</ul>
-</li>
-<li><p><strong>线程与进程的区别</strong></p>
-<ul>
-<li><strong>地址空间和其它资源</strong>：进程间相互独立，同一进程的各线程间共享。某进程内的线程在其它进程不可见。</li>
-<li><strong>通信</strong>：进程间通信IPC，线程间可以直接读写进程数据段（如全局变量）来进行通信——需要进程同步和互斥手段的辅助，以保证数据的一致性。</li>
-<li><strong>调度和切换</strong>：线程上下文切换比进程上下文切换要快得多。</li>
-</ul>
-</li>
-<li><p><strong>系统、进程、线程的关系图</strong></p>
-<p>  <img src="/imgs/computer_process_and_threads.png" alt=""></p>
+<li><p>英文原文<br><a href="http://www.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/" target="_blank" rel="external">http://www.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/</a></p>
 </li>
 </ul>
 
@@ -358,8 +233,6 @@ sayHelloWorld();
   
     <a href="/page/12/" class="alignleft prev">上一页</a>
   
-  
-    <a href="/page/14/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
 </nav></div></div>
@@ -395,7 +268,7 @@ sayHelloWorld();
   
     <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
   
-    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+    <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
     <li><a href="/categories/Link/">Link</a><small>6</small></li>
   
@@ -407,7 +280,7 @@ sayHelloWorld();
   
     <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
   
-    <li><a href="/categories/other/">other</a><small>3</small></li>
+    <li><a href="/categories/other/">other</a><small>1</small></li>
   
   </ul>
 </div>

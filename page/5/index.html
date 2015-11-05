@@ -53,129 +53,35 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-06-26T02:08:39.000Z"><a href="/2015/06/26/mobile-dev-experiences/">Jun 26 2015</a></time>
+        <time datetime="2015-02-03T08:58:22.000Z"><a href="/2015/02/03/tool-markdown-introduce/">Feb 3 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/06/26/mobile-dev-experiences/">移动web开发技巧收集</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="meta相关"><strong>meta相关</strong></h2><ul>
-<li><p>设置viewport</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</span>&gt;
-</code></pre></li>
-<li><p>设置格式检测format-detection</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"format-detection"</span> content=<span class="string">"telephone=no,email=no,adress=no"</span>&gt;
-</code></pre></li>
-<li><p>添加到主屏幕后，全屏显示</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"apple-touch-fullscreen"</span> content=<span class="string">"yes"</span>&gt;
-&lt;meta <span class="property">name</span>=<span class="string">"full-screen"</span> content=<span class="string">"yes"</span>&gt;
-</code></pre></li>
-<li><p>开启webapp功能，全屏显示，删除默认的工具栏和菜单栏</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> content=<span class="string">"yes"</span>&gt;
-</code></pre></li>
-<li><p>设置苹果状态栏显示样式为black</p>
-<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> content=<span class="string">"black"</span>&gt;
-</code></pre></li>
-</ul>
-<h2 id="link相关(web_app)"><strong>link相关(web app)</strong></h2><ul>
-<li><p>设置web应用程序的启动画面(对应不同设置使用不同size的图片)</p>
-<pre><code><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span> <span class="attribute">size</span>=<span class="value">"640x1096"</span> <span class="attribute">href</span>=<span class="value">"/startup5.png"</span> <span class="attribute">media</span>=<span class="value">"(device-height:568px)"</span>&gt;</span>
-
-<span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span> <span class="attribute">size</span>=<span class="value">"640x920"</span> <span class="attribute">href</span>=<span class="value">"/startup.png"</span> <span class="attribute">media</span>=<span class="value">"(device-height:480px)"</span>&gt;</span>
-</code></pre></li>
-<li><p>添加至主屏幕(桌面)时的图标</p>
-<pre><code>&lt;link rel=<span class="string">"apple-touch-icon-precomposed"</span> sizes=<span class="string">"57x57"</span> href=<span class="string">"/touch-icon-57-precomposed.png"</span>&gt;
-
-&lt;link rel=<span class="string">"apple-touch-icon-precomposed"</span> sizes=<span class="string">"72x72"</span> href=<span class="string">"/touch-icon-72-precomposed.png"</span>&gt;
-
-各尺寸自适应代码：默认：<span class="number">57</span>x57; iPad：<span class="number">72</span>x72; iPhone <span class="number">4</span>和Retina屏：<span class="number">114</span>x114（原尺寸的<span class="number">2</span>倍）;
-</code></pre></li>
-</ul>
-<h2 id="CSS相关"><strong>CSS相关</strong></h2><ul>
-<li><p>字体大小设置</p>
-<pre><code>html, body { font-size: <span class="number">10</span>px; }
-otherElement { font-size: <span class="number">1</span>.<span class="number">4</span><span class="comment">rem; }</span>
-</code></pre></li>
-<li><p>实现网页在Safari快速滚动和回弹</p>
-<pre><code><span class="tag">body</span> <span class="rules">{
-  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
-  <span class="rule"><span class="attribute">-webkit-overflow-scrolling</span>:<span class="value"> touch</span></span>;
-}</span>
-</code></pre></li>
-<li><p>屏蔽ios和android下点击元素时出现的阴影</p>
-<pre><code><span class="tag">body</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"> <span class="function">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>)</span></span>; }</span>
-</code></pre></li>
-<li><p>阻止旋转屏幕时自动调整字体大小</p>
-<pre><code><span class="tag">body</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-text-size-adjust</span>:<span class="value"> <span class="number">100%</span></span></span>; }</span>
-</code></pre></li>
-<li><p>禁止用户选中文字</p>
-<pre><code><span class="tag">body</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-user-select</span>:<span class="value">none</span></span>; }</span>
-</code></pre></li>
-<li><p>禁止长按屏幕出现系统菜单(可以：禁止用户保存图片,复制图片,在新窗口打开)</p>
-<pre><code><span class="tag">img</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-touch-callout</span>:<span class="value">none</span></span>; }</span>
-</code></pre></li>
-<li><p>屏蔽输入框怪异的内阴影</p>
-<pre><code><span class="tag">input</span>,<span class="tag">textarea</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-appearance</span>:<span class="value">none </span></span></span>}
-</code></pre></li>
-<li><p>做高清图标(宽高各缩放到一半: 100 <em> 100 -&gt; 50 </em> 50)</p>
-<pre><code><span class="built_in">background</span>-<span class="built_in">size</span>
-</code></pre></li>
-<li><p>设置元素的宽高</p>
-<pre><code><span class="attribute">-webkit-box-sizing</span>: border-box;
-</code></pre></li>
-</ul>
-<h2 id="DOM相关"><strong>DOM相关</strong></h2><ul>
-<li>自动大写与自动修正<pre><code>&lt;input <span class="class"><span class="keyword">type</span></span>=<span class="string">"text"</span> autocapitalize=<span class="string">"off"</span> autocorrect=<span class="string">"off"</span> /&gt;
-</code></pre></li>
-</ul>
-<h2 id="图片设置相关"><strong>图片设置相关</strong></h2><ul>
-<li>通常情况下设计师在设计移动网页psd图片时要按照 320 <em> 320 的两倍来设计图片大小，即 640 </em> 640。然后从图片到页面的时候统一又缩放到一半，图片用 background-size 来设置或img标签，这样做可以放图片在不同尺寸的设备上显示差异不会太大。</li>
-</ul>
-<h2 id="一些实用技巧"><strong>一些实用技巧</strong></h2><ul>
-<li>让元素border包含在的指定的宽高范围内<pre><code><span class="attribute">border-size</span>: <span class="string">border-box;</span>
-</code></pre></li>
-</ul>
-<p><em>此文章未完，将会不断更新总结</em></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-04-15T01:54:50.000Z"><a href="/2015/04/15/javascript-this/">Apr 15 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/04/15/javascript-this/">彻底弄清楚javascript中的”this”并掌握它</a></h1>
+    <h1 class="title"><a href="/2015/02/03/tool-markdown-introduce/">Markdown - 程序员写博客必备利器</a></h1>
   
 
     </header>
     <div class="entry">
       
         <blockquote>
-<p>介绍一篇值得你去细细品味的关于 javascript 中 <strong>this</strong> 的详解，这是我看过的关于 this 介绍的最好的文章，没有之一。我相信只要你认真去阅读这篇文章肯定会受益匪浅。</p>
+<p>一百年前人类发明了味精，一百年后 John Gruber 发明了Markdown.</p>
 </blockquote>
-<p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/" target="_blank" rel="external">Understand JavaScript’s “this” With Clarity, and Master It</a></p>
+<ul>
+<li>Markdown 让人类不用再去写繁琐的html, 让笔者真正的 focus on 文章本身.</li>
+<li>Markdown 提供了非常简洁的语法，让你的文章也可以很优雅的呈现到页面.</li>
+</ul>
+<h2 id="值得一提的Markdown在线工具有以下这些：">值得一提的Markdown在线工具有以下这些：</h2><ul>
+<li><p><a href="https://draftin.com/" target="_blank" rel="external">Draftin</a>：功能强大，可发布到各种博客平台。</p>
+</li>
+<li><p><a href="http://dillinger.io/" target="_blank" rel="external">Dillinger</a>：实时预览，支持直接保存到Dropbox或是Github。</p>
+</li>
+<li><p><a href="http://markable.in/" target="_blank" rel="external">Markable</a>：实时预览，支持发布到Tumblr。</p>
+</li>
+<li><p><a href="http://oakoutliner.com/" target="_blank" rel="external">Oak</a>：不支持发布到任何地方，供在线随手记录东西使用。</p>
+</li>
+<li><p><a href="http://jianshu.io/" target="_blank" rel="external">简书</a>：国产软件，看上去不错。</p>
+</li>
+</ul>
 
       
     </div>
@@ -198,27 +104,51 @@ otherElement { font-size: <span class="number">1</span>.<span class="number">4</
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-14T09:13:56.000Z"><a href="/2015/04/14/css-block-formatting-context/">Apr 14 2015</a></time>
+        <time datetime="2015-02-03T08:43:41.000Z"><a href="/2015/02/03/css-word-break-wrap/">Feb 3 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/14/css-block-formatting-context/">BFC相关文章推荐，让你彻底明白BFC</a></h1>
+    <h1 class="title"><a href="/2015/02/03/css-word-break-wrap/">文本换行相关的CSS属性说明</a></h1>
   
 
     </header>
     <div class="entry">
       
         <blockquote>
-<p>为了彻底弄明白 BFC，我看过很多 BFC 相关的文章，但是我个人觉得都不是太好，下面我推荐三篇文章来让你循序渐进的彻底弄明白BFC。</p>
+<p>在div中，文本布局经常出现，换行混乱的情况。问题表现：<br>1.如果是全英文字符串,中间不包含任何符号(包括空格)，不自动换行.<br>2.中英文混写，则在英文字符串的开始处换行（英文长度&gt;div长度），结尾处不换行。<br>3.英文整个单词换行。等等，可能还有一些问题，这里只列出了常见的几个；</p>
 </blockquote>
-<p><strong>1. 先看一片中文博客来初步理解BFC</strong></p>
-<p><a href="http://kayosite.com/block-formatting-contexts-in-detail.html" target="_blank" rel="external">http://kayosite.com/block-formatting-contexts-in-detail.html</a></p>
-<p><strong>2. 通过上面对BFC的理解之后来看一起W3C的官方定义</strong></p>
-<p><a href="http://www.w3.org/TR/CSS21/visuren.html#block-formatting" target="_blank" rel="external">http://www.w3.org/TR/CSS21/visuren.html#block-formatting</a></p>
-<p><strong>3. 什么？还是没弄明白 BFC? 好吧，再来看这片文章</strong></p>
-<p><a href="http://www.sitepoint.com/understanding-block-formatting-contexts-in-css/" target="_blank" rel="external">http://www.sitepoint.com/understanding-block-formatting-contexts-in-css/</a></p>
-<p><strong>4. 是不是觉得自己已经对BFC有了一定的理解和掌握，但还是知其然而不知其所以然？似懂非懂？不要着急，下面这片文章会解决你所有的疑惑</strong></p>
-<p><a href="http://michael4css.info/fundamentals/context/formatting.htm" target="_blank" rel="external">http://michael4css.info/fundamentals/context/formatting.htm</a></p>
+<ul>
+<li><p>word-wrap</p>
+<ul>
+<li>设置文字的能被中断和包裹</li>
+<li>是针对元素内的<strong>每一个单词</strong>而言，比如文字超长超出边界，将如何处理。</li>
+<li><code>word-wrap: break-word;</code> - 当长单词超出container的限制时，单词会折断到下一行显示</li>
+</ul>
+</li>
+<li><p>word-break</p>
+<ul>
+<li>规定<strong>非中日韩</strong>文本的换行规则。(对中文正常换行，对英文按照如下说明处理)</li>
+<li><code>word-break: break-all;</code> - 允许在单词被截断换行。(即在容器末端有长单词不能完全显示，会截断单词)</li>
+<li><code>word-break: keep-all;</code> - 只能在半角空格或连字符处换行。</li>
+</ul>
+</li>
+<li><p>text-overflow</p>
+<ul>
+<li><code>text-overflow:clip;</code> - 显示省略标记（…），而是简单的裁切</li>
+<li><code>text-overflow:ellipsis;</code> - 当对象内文本溢出时（超过width部分）显示省略标记（…）<ul>
+<li>要想让<code>text-overflow:ellipsis;</code>生效，必须要先设置<code>overflow:hidden;white-space:nowrap;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>white-space</p>
+<ul>
+<li>设置如何处理元素内的空白</li>
+<li>是针对元素内的<strong>整段文本</strong>而言，比如整段文本是强制显示在一行还是分行显示</li>
+<li><code>white-space: nowrap</code> - 强制在同一行内显示所有文本，直到文本结束或者遭遇br对象。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -241,20 +171,108 @@ otherElement { font-size: <span class="number">1</span>.<span class="number">4</
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-04-06T05:08:36.000Z"><a href="/2015/04/06/link-collection/">Apr 6 2015</a></time>
+        <time datetime="2015-02-03T08:23:35.000Z"><a href="/2015/02/03/javascript-design-pattern/">Feb 3 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/04/06/link-collection/">一些值得阅读的文章</a></h1>
+    <h1 class="title"><a href="/2015/02/03/javascript-design-pattern/">设计模式之MVC，MVP 和 MVVM</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>看了许多关于设计模式的文章，结合这些文章和自己的理解，谈谈个人对 MVC，MVP 和 MVVM 这三种设计模式的理解。</p>
+</blockquote>
+<h2 id="MVC">MVC</h2><ul>
+<li><p>MVC分别代表什么？</p>
+<ul>
+<li>Model(模型)：数据层,用于写<strong>业务</strong>逻辑代码<ul>
+<li>封装与应用程序的业务逻辑相关的<strong>数据</strong>以及对<strong>数据的处理方法</strong>。 “模型”有对数据直接访问的权力。 “模型”不依赖“视图”和“控制器”，也就是说，模型不关心它会被如何显示或是如何被操作。</li>
+</ul>
+</li>
+<li>Controller(控制器)：控制层，用于写<strong>应用程序</strong>逻辑<ul>
+<li>处理和响应事件，通常是用户操作，并监控模型上的变化，然后去修改视图。</li>
+</ul>
+</li>
+<li>View(视图)：用户界面，用于<strong>数据展示</strong>，view中包含跟显示相关的<strong>view逻辑</strong><ul>
+<li>能够实现数据有目的的显示，通常是一个用户界面元素。在视图中一般没有程序上的逻辑。在 Web 应用程序中的 MVC，通常把显示动态数据的 html 页面称为视图。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>到底怎么分清楚Model和Controller?</p>
+<p><em>举个简单例子吧：用户往购物车添加一个商品</em><br>用户点击商品的“添加到购物车”按钮，引起一次请求。服务器开始处理该请求，过程：<br>1、检查当前用户是否有权限（比如是否已经登录、用户帐户状态、是否可以购物等）<br>2、检查要添加的商品ID是否有效、<br>3、检查要添加的商品库存是否足够<br>4、将商品加入购物车，并保存购物车状态<br>5、反馈信息<br><em>在上述流程中：</em><br>1： 是应用程序逻辑（一般由框架实现）：因为和“添加商品到购物车”这个业务没有直接关系<br>2： 业务逻辑：不能购买不存在的商品，这是业务进行的基本条件<br>3： 业务逻辑：商品库存决定了是否可以购买此商品，这是业务进行的基本条件<br>4： 业务逻辑<br>5： 应用程序逻辑</p>
+</li>
+</ul>
+<h2 id="MVP">MVP</h2><p><img src="/imgs/javascript_mvp.png" alt="">;</p>
+<ul>
+<li>MVP 模式将 Controller 改名为 Presenter(推送器),</li>
+<li>这三部分是如果协调工作的？<ol>
+<li>各部分之间的通信，都是<strong>双向的</strong>。</li>
+<li><strong>View 与 Model 不发生联系</strong>，都通过 Presenter 传递。</li>
+<li>View 非常薄，<strong>不部署任何业务逻辑</strong>；而 Presenter非常厚，所有的应用程序逻辑和<strong>一些不知道应该算是业务逻辑还是应用程序逻辑的代码都部署在这层</strong>。</li>
+</ol>
+</li>
+</ul>
+<h2 id="MVVM_(Model-View-ViewModel)">MVVM (Model-View-ViewModel)</h2><p><img src="/imgs/javascript_mvvm.png" alt="">;</p>
+<ul>
+<li>MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。</li>
+<li>唯一区别：ViewModel将密切关联的Model和View的逻辑单独提取出来，用双向绑定将他们关联到一起。Model的改变会通过ViewModel来映射到View上，反之亦然。<ul>
+<li>Angular就是采用这种模式，实现了双向绑定</li>
+</ul>
+</li>
+<li>好处：<ul>
+<li>省去了model变化之后手动修改view和view变化之后手动修改model的繁琐工作</li>
+<li>UI和功能更加松耦合了，功能的可测试性就越来越强。</li>
+</ul>
+</li>
+<li>有关MVVM的更详细解释：<ul>
+<li><a href="http://objccn.io/issue-13-1/" target="_blank" rel="external">http://objccn.io/issue-13-1/</a></li>
+</ul>
+</li>
+</ul>
+<p>其他关于这三种设计模式的相关文章：<br><a href="http://blog.nodejitsu.com/scaling-isomorphic-javascript-code/" target="_blank" rel="external">Scaling Isomorphic Javascript Code</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-02-02T02:25:34.000Z"><a href="/2015/02/02/link-javascript/">Feb 2 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/02/02/link-javascript/">javascript相关文章收集</a></h1>
   
 
     </header>
     <div class="entry">
       
         <ul>
-<li><p><a href="http://blog.jobbole.com/48746/" target="_blank" rel="external">毫秒必争，前端网页性能最佳实践</a></p>
+<li><p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/" target="_blank" rel="external">Understand JavaScript’s “this” With Clarity, and Master It - 彻底弄清楚javascript中的”this”并掌握它</a></p>
 </li>
-<li><p><a href="http://www.uisdc.com/html5-front-end-optimization" target="_blank" rel="external">全是干货！移动HTML 5前端性能优化指南</a></p>
+<li><p><a href="http://javascriptissexy.com/javascript-objects-in-detail/" target="_blank" rel="external">JavaScript Objects in Detail - 详细讲解javascript的Object</a></p>
+</li>
+<li><p><a href="http://segmentfault.com/a/1190000002962215" target="_blank" rel="external">javascript中对变量类型的判断</a></p>
+</li>
+<li><p><a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="external">RESTful API 设计指南</a></p>
 </li>
 </ul>
 
@@ -315,7 +333,7 @@ otherElement { font-size: <span class="number">1</span>.<span class="number">4</
   
     <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
   
-    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+    <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
     <li><a href="/categories/Link/">Link</a><small>6</small></li>
   
@@ -327,7 +345,7 @@ otherElement { font-size: <span class="number">1</span>.<span class="number">4</
   
     <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
   
-    <li><a href="/categories/other/">other</a><small>3</small></li>
+    <li><a href="/categories/other/">other</a><small>1</small></li>
   
   </ul>
 </div>

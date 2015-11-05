@@ -53,228 +53,312 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-02-03T08:58:22.000Z"><a href="/2015/02/03/tool-markdown-introduce/">Feb 3 2015</a></time>
+        <time datetime="2015-01-15T03:09:05.000Z"><a href="/2015/01/15/css-triangle-tips/">Jan 15 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/02/03/tool-markdown-introduce/">Markdown - 程序员写博客必备利器</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <blockquote>
-<p>一百年前人类发明了味精，一百年后 John Gruber 发明了Markdown.</p>
-</blockquote>
-<ul>
-<li>Markdown 让人类不用再去写繁琐的html, 让笔者真正的 focus on 文章本身.</li>
-<li>Markdown 提供了非常简洁的语法，让你的文章也可以很优雅的呈现到页面.</li>
-</ul>
-<h2 id="值得一提的Markdown在线工具有以下这些：">值得一提的Markdown在线工具有以下这些：</h2><ul>
-<li><p><a href="https://draftin.com/" target="_blank" rel="external">Draftin</a>：功能强大，可发布到各种博客平台。</p>
-</li>
-<li><p><a href="http://dillinger.io/" target="_blank" rel="external">Dillinger</a>：实时预览，支持直接保存到Dropbox或是Github。</p>
-</li>
-<li><p><a href="http://markable.in/" target="_blank" rel="external">Markable</a>：实时预览，支持发布到Tumblr。</p>
-</li>
-<li><p><a href="http://oakoutliner.com/" target="_blank" rel="external">Oak</a>：不支持发布到任何地方，供在线随手记录东西使用。</p>
-</li>
-<li><p><a href="http://jianshu.io/" target="_blank" rel="external">简书</a>：国产软件，看上去不错。</p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-02-03T08:43:41.000Z"><a href="/2015/02/03/css-word-break-wrap/">Feb 3 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/02/03/css-word-break-wrap/">文本换行相关的CSS属性说明</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <blockquote>
-<p>在div中，文本布局经常出现，换行混乱的情况。问题表现：<br>1.如果是全英文字符串,中间不包含任何符号(包括空格)，不自动换行.<br>2.中英文混写，则在英文字符串的开始处换行（英文长度&gt;div长度），结尾处不换行。<br>3.英文整个单词换行。等等，可能还有一些问题，这里只列出了常见的几个；</p>
-</blockquote>
-<ul>
-<li><p>word-wrap</p>
-<ul>
-<li>设置文字的能被中断和包裹</li>
-<li>是针对元素内的<strong>每一个单词</strong>而言，比如文字超长超出边界，将如何处理。</li>
-<li><code>word-wrap: break-word;</code> - 当长单词超出container的限制时，单词会折断到下一行显示</li>
-</ul>
-</li>
-<li><p>word-break</p>
-<ul>
-<li>规定<strong>非中日韩</strong>文本的换行规则。(对中文正常换行，对英文按照如下说明处理)</li>
-<li><code>word-break: break-all;</code> - 允许在单词被截断换行。(即在容器末端有长单词不能完全显示，会截断单词)</li>
-<li><code>word-break: keep-all;</code> - 只能在半角空格或连字符处换行。</li>
-</ul>
-</li>
-<li><p>text-overflow</p>
-<ul>
-<li><code>text-overflow:clip;</code> - 显示省略标记（…），而是简单的裁切</li>
-<li><code>text-overflow:ellipsis;</code> - 当对象内文本溢出时（超过width部分）显示省略标记（…）<ul>
-<li>要想让<code>text-overflow:ellipsis;</code>生效，必须要先设置<code>overflow:hidden;white-space:nowrap;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>white-space</p>
-<ul>
-<li>设置如何处理元素内的空白</li>
-<li>是针对元素内的<strong>整段文本</strong>而言，比如整段文本是强制显示在一行还是分行显示</li>
-<li><code>white-space: nowrap</code> - 强制在同一行内显示所有文本，直到文本结束或者遭遇br对象。</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-02-03T08:23:35.000Z"><a href="/2015/02/03/javascript-design-pattern/">Feb 3 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/02/03/javascript-design-pattern/">设计模式之MVC，MVP 和 MVVM</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <blockquote>
-<p>看了许多关于设计模式的文章，结合这些文章和自己的理解，谈谈个人对 MVC，MVP 和 MVVM 这三种设计模式的理解。</p>
-</blockquote>
-<h2 id="MVC">MVC</h2><ul>
-<li><p>MVC分别代表什么？</p>
-<ul>
-<li>Model(模型)：数据层,用于写<strong>业务</strong>逻辑代码<ul>
-<li>封装与应用程序的业务逻辑相关的<strong>数据</strong>以及对<strong>数据的处理方法</strong>。 “模型”有对数据直接访问的权力。 “模型”不依赖“视图”和“控制器”，也就是说，模型不关心它会被如何显示或是如何被操作。</li>
-</ul>
-</li>
-<li>Controller(控制器)：控制层，用于写<strong>应用程序</strong>逻辑<ul>
-<li>处理和响应事件，通常是用户操作，并监控模型上的变化，然后去修改视图。</li>
-</ul>
-</li>
-<li>View(视图)：用户界面，用于<strong>数据展示</strong>，view中包含跟显示相关的<strong>view逻辑</strong><ul>
-<li>能够实现数据有目的的显示，通常是一个用户界面元素。在视图中一般没有程序上的逻辑。在 Web 应用程序中的 MVC，通常把显示动态数据的 html 页面称为视图。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>到底怎么分清楚Model和Controller?</p>
-<p><em>举个简单例子吧：用户往购物车添加一个商品</em><br>用户点击商品的“添加到购物车”按钮，引起一次请求。服务器开始处理该请求，过程：<br>1、检查当前用户是否有权限（比如是否已经登录、用户帐户状态、是否可以购物等）<br>2、检查要添加的商品ID是否有效、<br>3、检查要添加的商品库存是否足够<br>4、将商品加入购物车，并保存购物车状态<br>5、反馈信息<br><em>在上述流程中：</em><br>1： 是应用程序逻辑（一般由框架实现）：因为和“添加商品到购物车”这个业务没有直接关系<br>2： 业务逻辑：不能购买不存在的商品，这是业务进行的基本条件<br>3： 业务逻辑：商品库存决定了是否可以购买此商品，这是业务进行的基本条件<br>4： 业务逻辑<br>5： 应用程序逻辑</p>
-</li>
-</ul>
-<h2 id="MVP">MVP</h2><p><img src="/imgs/javascript_mvp.png" alt="">;</p>
-<ul>
-<li>MVP 模式将 Controller 改名为 Presenter(推送器),</li>
-<li>这三部分是如果协调工作的？<ol>
-<li>各部分之间的通信，都是<strong>双向的</strong>。</li>
-<li><strong>View 与 Model 不发生联系</strong>，都通过 Presenter 传递。</li>
-<li>View 非常薄，<strong>不部署任何业务逻辑</strong>；而 Presenter非常厚，所有的应用程序逻辑和<strong>一些不知道应该算是业务逻辑还是应用程序逻辑的代码都部署在这层</strong>。</li>
-</ol>
-</li>
-</ul>
-<h2 id="MVVM_(Model-View-ViewModel)">MVVM (Model-View-ViewModel)</h2><p><img src="/imgs/javascript_mvvm.png" alt="">;</p>
-<ul>
-<li>MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。</li>
-<li>唯一区别：ViewModel将密切关联的Model和View的逻辑单独提取出来，用双向绑定将他们关联到一起。Model的改变会通过ViewModel来映射到View上，反之亦然。<ul>
-<li>Angular就是采用这种模式，实现了双向绑定</li>
-</ul>
-</li>
-<li>好处：<ul>
-<li>省去了model变化之后手动修改view和view变化之后手动修改model的繁琐工作</li>
-<li>UI和功能更加松耦合了，功能的可测试性就越来越强。</li>
-</ul>
-</li>
-<li>有关MVVM的更详细解释：<ul>
-<li><a href="http://objccn.io/issue-13-1/" target="_blank" rel="external">http://objccn.io/issue-13-1/</a></li>
-</ul>
-</li>
-</ul>
-<p>其他关于这三种设计模式的相关文章：<br><a href="http://blog.nodejitsu.com/scaling-isomorphic-javascript-code/" target="_blank" rel="external">Scaling Isomorphic Javascript Code</a></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-02-02T02:25:34.000Z"><a href="/2015/02/02/link-javascript/">Feb 2 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/02/02/link-javascript/">javascript相关文章收集</a></h1>
+    <h1 class="title"><a href="/2015/01/15/css-triangle-tips/">纯CSS代码实现小三角效果</a></h1>
   
 
     </header>
     <div class="entry">
       
         <ul>
-<li><p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/" target="_blank" rel="external">Understand JavaScript’s “this” With Clarity, and Master It - 彻底弄清楚javascript中的”this”并掌握它</a></p>
+<li><p>实现方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-all&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 30px;&#10;  border-style: solid;&#10;  border-color: #c03 #fc0 #69c #6c6;/* &#32418; &#40644; &#34013; &#32511; */&#10;&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a href="http://javascriptissexy.com/javascript-objects-in-detail/" target="_blank" rel="external">JavaScript Objects in Detail - 详细讲解javascript的Object</a></p>
+<li><p>效 果 图<br><img src="/imgs/css_triangle.png" alt=""></p>
 </li>
-<li><p><a href="http://segmentfault.com/a/1190000002962215" target="_blank" rel="external">javascript中对变量类型的判断</a></p>
-</li>
-<li><p><a href="http://www.ruanyifeng.com/blog/2014/05/restful_api.html" target="_blank" rel="external">RESTful API 设计指南</a></p>
+<li>实现原理<ul>
+<li>利用元素的四个border会彼此叠加的性质来制作三角形，只要让其他三条边隐藏起来就可达到效果。</li>
+</ul>
 </li>
 </ul>
+<h2 id="通过上面的原理，我们来制作一个指向下的三角形：">通过上面的原理，我们来制作一个指向下的三角形：</h2><ul>
+<li><p>实现方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-all&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle_down&#123;&#10;  width:0;&#10;  height:0;&#10;  border-width:30px 30px 0;&#10;  border-style:solid;&#10;  border-color:#c03 transparent transparent ;/* &#32418; &#36879;&#26126; &#36879;&#26126; */&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效 果 图<br><img src="/imgs/css_triangle_down.png" alt=""></p>
+</li>
+<li>原理分析<ul>
+<li>border-color:#c03 transparent transparent ;是将需要隐藏的边的颜色设置成透明；</li>
+<li>border-width:30px 30px 0; 是将三角形对边的宽度设置为0(这里对边是border-bottom)这么做的原因是减小三角形有效作用区域。</li>
+</ul>
+</li>
+</ul>
+<h2 id="通过上面的原理，我们来制作类似下面的tip效果：">通过上面的原理，我们来制作类似下面的tip效果：</h2><p><img src="/imgs/css_triangle_tip.png" alt=""></p>
+<ul>
+<li><p>实现方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-tip-up&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-tip-up&#123;&#10;  width: 200px;&#10;  height: 30px;&#10;  background:#3FB58E;&#10;  border-radius: 4px;&#10;  position: relative;&#10;&#125;&#10;.triangle-tip-up:before&#123;&#10;  content:&#39;&#39;;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 10px 10px;&#10;  border-style: solid;&#10;  border-color: transparent transparent #3FB58E;&#10;  position: absolute;&#10;  left: 80px;&#10;  top: -10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现原理</p>
+<ul>
+<li>利用一个div来做tip的主体框，设置其position为relative(为了控制三角形的位置)</li>
+<li>利用css的:before属性来做三角形的主体元素，设置其position为absolute(这样可以通过设置left和top的值来随意控制小三角的位置)</li>
+</ul>
+</li>
+</ul>
+<h2 id="实现类似下面的不规则三角形">实现类似下面的不规则三角形</h2><p><img src="/imgs/css_triangle_scalene.png" alt=""></p>
+<ul>
+<li><p>实现方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-scalene&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-scalene&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 0 60px 20px;/* &#35774;&#32622;&#23545;&#35282;&#21644;&#30456;&#37051;&#30340;border&#37117;&#20026;0&#26469;&#23454;&#29616;&#19981;&#35268;&#21017;&#25928;&#26524; */&#10;  border-style: solid;&#10;  border-color: transparent transparent #69c;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现原理</p>
+<ul>
+<li>设置对角和相邻一边的border都为0,然后通过改变其余两边border的宽度来实现不规则效果</li>
+</ul>
+</li>
+</ul>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/01/15/css-triangle-tips/#more" class="more-link">阅读全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-13T05:15:57.000Z"><a href="/2015/01/13/tool-online-editors/">Jan 13 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/13/tool-online-editors/">推荐三个在线前端代码编辑器</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>前端开发者的利器：<ul>
+<li><a href="http://jsfiddle.net/" target="_blank" rel="external">jsfiddle</a></li>
+<li><a href="http://plnkr.co/" target="_blank" rel="external">plnkr</a></li>
+<li><a href="http://codepen.io/" target="_blank" rel="external">codepen</a></li>
+</ul>
+</li>
+<li>主要功能<ul>
+<li>提供四个窗口：HTML、CSS、JS、Result</li>
+<li>代码可以实时编译，立即看到运行效果</li>
+<li>可以很方便的引入一些很流行的第三方库，比如：jQuery、Angular等等。</li>
+<li>写完代码之后可以很方便地生成可以嵌套在网页中的代码，直接复制生成的代码放进网页中就可以看到效果。<ul>
+<li>此功能在写博文的时候非常实用，再也不用担心没法看到运行效果了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>使用前需要先注册，不过这三个网站都支持用github账号直接登录，省去了繁琐的注册流程。</p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-07T06:54:05.000Z"><a href="/2015/01/07/node-grunt/">Jan 7 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/07/node-grunt/">Grunt介绍</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>Grunt是什么？</p>
+<ul>
+<li>官方解释：JavaScript 任务运行器</li>
+<li>Grunt是nodeJS的一个插件。</li>
+</ul>
+</li>
+<li><p>Grunt能干什么?</p>
+<ul>
+<li>Grunt可以让你解放双手，做一些自动化的任务处理来简化你的工作。</li>
+</ul>
+</li>
+<li><p>那Grunt到底能干什么？</p>
+<ul>
+<li>前端你能想到的基本上grunt都能帮你解决，因为它有非常多的plugin供你选择，总有一个是你想要的。</li>
+<li>以下是我在项目中常用的一些plugin：<ul>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-cssmin" target="_blank" rel="external">grunt-contrib-cssmin</a><ul>
+<li>合并压缩CSS文件</li>
+</ul>
+</li>
+<li><a href="https://github.com/gruntjs/grunt-contrib-uglify" target="_blank" rel="external">grunt-contrib-uglify</a><ul>
+<li>混淆、合并、压缩JS文件</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-clean" target="_blank" rel="external">grunt-contrib-clean</a><ul>
+<li>删除文件用的</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-connect" target="_blank" rel="external">grunt-contrib-connect</a><ul>
+<li>提供一个Webserver来方便浏览</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-watch" target="_blank" rel="external">grunt-contrib-watch</a><ul>
+<li>用来监听文件的变化来实时做出响应执行响应的任务，</li>
+<li>可以和<code>grunt-contrib-connect</code>结合来实现文件改变后自动刷新页面</li>
+</ul>
+</li>
+<li><a href="https://npmjs.org/package/grunt-este-watch" target="_blank" rel="external">grunt-este-watch</a><ul>
+<li>同样是用来监听文件变化的，性能比<code>grunt-contrib-watch</code>好，但功能相对弱点</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-sass" target="_blank" rel="external">grunt-contrib-sass</a><ul>
+<li>将SASS文件编译成CSS文件</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-less" target="_blank" rel="external">grunt-contrib-less</a><ul>
+<li>将LESS文件编译成CSS文件</li>
+</ul>
+</li>
+<li><a href="https://npmjs.org/package/grunt-contrib-concat" target="_blank" rel="external">grunt-contrib-concat</a><ul>
+<li>将多个文件合并成一个文件</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-copy" target="_blank" rel="external">grunt-contrib-copy</a><ul>
+<li>复制文件到对应的目录</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-processhtml" target="_blank" rel="external">grunt-processhtml</a><ul>
+<li>处理html模板</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-html2js" target="_blank" rel="external">grunt-html2js</a><ul>
+<li>编译Angular的template到JS文件</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-notify" target="_blank" rel="external">grunt-notify</a><ul>
+<li>用来做桌面任务通知用的</li>
+<li>比如：在任务处理成功/失败后再桌面右下角弹出信息提示框来提示任务的处理情况</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>具体使用：</p>
+<ul>
+<li><a href="http://gruntjs.cn/getting-started/" target="_blank" rel="external">中文版官方文档</a></li>
+<li><a href="http://gruntjs.com/getting-started" target="_blank" rel="external">英文版官方文档</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-07T06:54:05.000Z"><a href="/2015/01/07/node-bower/">Jan 7 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/07/node-bower/">bower - 前端包管理器</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>许多程序语言都有自己标准的包管理器，开发者可以用其来安装所有的库文件。比如:Ruby有gem, Python有pip,Server端的javascript有npm来管理。但是客户端的javascript有没有相应的包管理器啊?有，那就是bower.</p>
+</blockquote>
+<ul>
+<li><p>什么是Bower？</p>
+<ul>
+<li>首先，Bower是node的一个插件。</li>
+<li>Bower是一个前端资源包管理器，用于搜索、安装和卸载如JavaScript、HTML、CSS之类的网络资源。</li>
+</ul>
+</li>
+<li><p>用Bower为给前端开发带来什么好处？</p>
+<ul>
+<li>节省时间; 解放繁琐的人力劳动<ul>
+<li>比如通常情况下如果你的项目要用到jQuery，你需要到jQuery的官网去找到你想要的版本下载下来，然后再拷贝到你项目中相应的目录中，这样很繁琐；但是如果用Bower,你只需要输入一个命令，jquery就会安装在本地计算机上指定的目录中，你不需要去记版本号之类的东西，你也可以通过Bower的info命令去查看任意库的信息。</li>
+</ul>
+</li>
+<li>不用担心各种库之间的依赖关系<ul>
+<li>比如你项目中会用到了<code>bootstrap</code>, <code>jquery</code>, <code>jquery.ui</code>. 这三个库都用到了<code>jquery</code>，所以你必须要去找到一个合适的jquery版本来让<code>bootstrap</code>和<code>jquery.ui</code>都可以正常工作。如果用Bower,你根本不用去管这些库的依赖关系，只需要执行一个命令来就可以了，Bower会自动帮你解决依赖关系，找到合适版本库。只需要执行下面三个命令即可：<ul>
+<li><code>bower install jquery</code></li>
+<li><code>bower install bootstrap</code></li>
+<li><code>bower install bootstrap</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>可以很容易的了解到项目中用到的所有第三方库以及它们的版本信息<ul>
+<li>你可以创建一个名为<code>bower.json</code>的文件，在这个文件里你可以指定所有库的依赖关系，任何时候你需要弄清楚你正在使用哪些库，你可以参考这个文件。如下可以在安装库的时候把库的信息添加到<code>bower.json</code>的文件中：<ul>
+<li><code>bower install jquery --save</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>节省版本控制服务器的空间<ul>
+<li>不去需要把第三库文件提交到版本库中，只需要提交<code>bower.json</code>文件即可。开发人员从版本库中下载下来项目之后只需要执行<code>bower install</code>就会自动安装第三库到本地。</li>
+</ul>
+</li>
+<li>让升级变得简单<ul>
+<li>假设某个库的新版本发布了一个重要的安全修补程序，为了安装新版本，你只需要运行一个命令，bower会自动更新所有有关新版本的依赖关系。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="bower具体使用">bower具体使用</h2><p>具体使用请参考下面这个链接，写的很详细：<br><a href="http://segmentfault.com/a/1190000000349555" target="_blank" rel="external">http://segmentfault.com/a/1190000000349555</a></p>
+<p>bower官网地址：<br><a href="http://bower.io/" target="_blank" rel="external">http://bower.io/</a></p>
 
       
     </div>
@@ -333,7 +417,7 @@
   
     <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
   
-    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+    <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
     <li><a href="/categories/Link/">Link</a><small>6</small></li>
   
@@ -345,7 +429,7 @@
   
     <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
   
-    <li><a href="/categories/other/">other</a><small>3</small></li>
+    <li><a href="/categories/other/">other</a><small>1</small></li>
   
   </ul>
 </div>

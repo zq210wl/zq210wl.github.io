@@ -53,122 +53,32 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-15T03:09:05.000Z"><a href="/2015/01/15/css-triangle-tips/">Jan 15 2015</a></time>
+        <time datetime="2014-12-31T07:44:19.000Z"><a href="/2014/12/31/angular-watch-using/">Dec 31 2014</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/01/15/css-triangle-tips/">纯CSS代码实现小三角效果</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><p>实现方法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-all&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 30px;&#10;  border-style: solid;&#10;  border-color: #c03 #fc0 #69c #6c6;/* &#32418; &#40644; &#34013; &#32511; */&#10;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>效 果 图<br><img src="/imgs/css_triangle.png" alt=""></p>
-</li>
-<li>实现原理<ul>
-<li>利用元素的四个border会彼此叠加的性质来制作三角形，只要让其他三条边隐藏起来就可达到效果。</li>
-</ul>
-</li>
-</ul>
-<h2 id="通过上面的原理，我们来制作一个指向下的三角形：">通过上面的原理，我们来制作一个指向下的三角形：</h2><ul>
-<li><p>实现方法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-all&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle_down&#123;&#10;  width:0;&#10;  height:0;&#10;  border-width:30px 30px 0;&#10;  border-style:solid;&#10;  border-color:#c03 transparent transparent ;/* &#32418; &#36879;&#26126; &#36879;&#26126; */&#10;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>效 果 图<br><img src="/imgs/css_triangle_down.png" alt=""></p>
-</li>
-<li>原理分析<ul>
-<li>border-color:#c03 transparent transparent ;是将需要隐藏的边的颜色设置成透明；</li>
-<li>border-width:30px 30px 0; 是将三角形对边的宽度设置为0(这里对边是border-bottom)这么做的原因是减小三角形有效作用区域。</li>
-</ul>
-</li>
-</ul>
-<h2 id="通过上面的原理，我们来制作类似下面的tip效果：">通过上面的原理，我们来制作类似下面的tip效果：</h2><p><img src="/imgs/css_triangle_tip.png" alt=""></p>
-<ul>
-<li><p>实现方法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-tip-up&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-tip-up&#123;&#10;  width: 200px;&#10;  height: 30px;&#10;  background:#3FB58E;&#10;  border-radius: 4px;&#10;  position: relative;&#10;&#125;&#10;.triangle-tip-up:before&#123;&#10;  content:&#39;&#39;;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 10px 10px;&#10;  border-style: solid;&#10;  border-color: transparent transparent #3FB58E;&#10;  position: absolute;&#10;  left: 80px;&#10;  top: -10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>实现原理</p>
-<ul>
-<li>利用一个div来做tip的主体框，设置其position为relative(为了控制三角形的位置)</li>
-<li>利用css的:before属性来做三角形的主体元素，设置其position为absolute(这样可以通过设置left和top的值来随意控制小三角的位置)</li>
-</ul>
-</li>
-</ul>
-<h2 id="实现类似下面的不规则三角形">实现类似下面的不规则三角形</h2><p><img src="/imgs/css_triangle_scalene.png" alt=""></p>
-<ul>
-<li><p>实现方法</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-scalene&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-scalene&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 0 60px 20px;/* &#35774;&#32622;&#23545;&#35282;&#21644;&#30456;&#37051;&#30340;border&#37117;&#20026;0&#26469;&#23454;&#29616;&#19981;&#35268;&#21017;&#25928;&#26524; */&#10;  border-style: solid;&#10;  border-color: transparent transparent #69c;&#10;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>实现原理</p>
-<ul>
-<li>设置对角和相邻一边的border都为0,然后通过改变其余两边border的宽度来实现不规则效果</li>
-</ul>
-</li>
-</ul>
-      
-    </div>
-    <footer>
-      
-        
-          <div class="alignleft">
-            <a href="/2015/01/15/css-triangle-tips/#more" class="more-link">阅读全文</a>
-          </div>
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-01-13T05:15:57.000Z"><a href="/2015/01/13/tool-online-editors/">Jan 13 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/01/13/tool-online-editors/">推荐三个在线前端代码编辑器</a></h1>
+    <h1 class="title"><a href="/2014/12/31/angular-watch-using/">Angular之watch的特殊使用</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <ul>
-<li>前端开发者的利器：<ul>
-<li><a href="http://jsfiddle.net/" target="_blank" rel="external">jsfiddle</a></li>
-<li><a href="http://plnkr.co/" target="_blank" rel="external">plnkr</a></li>
-<li><a href="http://codepen.io/" target="_blank" rel="external">codepen</a></li>
-</ul>
-</li>
-<li>主要功能<ul>
-<li>提供四个窗口：HTML、CSS、JS、Result</li>
-<li>代码可以实时编译，立即看到运行效果</li>
-<li>可以很方便的引入一些很流行的第三方库，比如：jQuery、Angular等等。</li>
-<li>写完代码之后可以很方便地生成可以嵌套在网页中的代码，直接复制生成的代码放进网页中就可以看到效果。<ul>
-<li>此功能在写博文的时候非常实用，再也不用担心没法看到运行效果了。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>使用前需要先注册，不过这三个网站都支持用github账号直接登录，省去了繁琐的注册流程。</p>
+        <blockquote>
+<p>使用AngularJs开发项目的同学应该对watch很熟悉了，在项目中难免会用到watch来监听scope中值的变化来执行相应的操作.</p>
 </blockquote>
+<ul>
+<li><p>$watch的常规使用：</p>
+<pre><code>scope.name = <span class="string">'aa'</span>;
+scope.<span class="variable">$watch</span>(<span class="string">'aa'</span>, <span class="keyword">function</span>(newVal, oldVal){
+   //执行相应操作
+});
+</code></pre></li>
+<li><p>特殊使用，因为watch可以用来监听一个函数，所以当我们需要每次执行$digest()都执行一个操作（即scope发生变化的时候），这是我们就可以把第一个参数设置成一个我们需要每次都执行的函数。</p>
+<pre><code>scope.<span class="variable">$watch</span>(<span class="keyword">function</span>(){
+   //每次都需要执行的操作
+});
+</code></pre></li>
+</ul>
 
       
     </div>
@@ -191,126 +101,468 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-07T06:54:05.000Z"><a href="/2015/01/07/node-gulp/">Jan 7 2015</a></time>
+        <time datetime="2014-12-30T08:58:48.000Z"><a href="/2014/12/30/other-hexo-introduce/">Dec 30 2014</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/01/07/node-gulp/">gulp介绍</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-01-07T06:54:05.000Z"><a href="/2015/01/07/node-grunt/">Jan 7 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/01/07/node-grunt/">Grunt介绍</a></h1>
+    <h1 class="title"><a href="/2014/12/30/other-hexo-introduce/">Hexo - blog framework - 程序员写博客利器</a></h1>
   
 
     </header>
     <div class="entry">
       
         <ul>
-<li><p>Grunt是什么？</p>
+<li><strong>问题</strong><ul>
+<li>你曾经为写博客而烦恼吗？</li>
+<li>你曾经为选择哪个博客提供商而犹豫不决吗？</li>
+<li>你曾经为搭建自运营博客网站的繁琐而郁闷吗？(Wordpress)</li>
+<li>你曾经为Github + Jekyll的繁琐的安装环境而精力憔悴吗？</li>
+</ul>
+</li>
+<li><strong>解决方案</strong><ul>
+<li>有了<code>Hexo</code>你的生活不再烦恼，妈妈再也不用担心我的学习！<ul>
+<li><code>Hexo</code> - A fast, simple &amp; powerful blog framework</li>
+<li>详情请咨询Hexo官网(文档很详细，就不累赘具体介绍了)：<ul>
+<li><a href="http://hexo.io/" target="_blank" rel="external">http://hexo.io/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hexo的优点：</strong><ul>
+<li>Hexo 访问速度快<ul>
+<li>Hexo是基于Nodejs的静态博客工具。所谓静态博客区别于Wordress之类的博客系统主要是并不是由动态语言在服务端生成，而是使用者在使用完博客后生成全站静态文件。</li>
+</ul>
+</li>
+<li>环境安装方便<ul>
+<li>Hexo 是nodejs的一个plugin，只需要装node环境</li>
+<li>npm install -g hexo (一键搞定)</li>
+</ul>
+</li>
+<li>书写方便<ul>
+<li>使用markdown书写。</li>
+</ul>
+</li>
+<li>编译速度快<ul>
+<li>Hexo的编译速度比Jekyll快好多，特别是文章多的情况下</li>
+</ul>
+</li>
+<li>插件多<ul>
+<li>可以安装很多功能强大的插件，比如多说评论等等</li>
+</ul>
+</li>
+<li>容易保存原始资料<ul>
+<li>Hexo的原始资料可以纳入版本管理之中，随时保存原始资料。不用想wordpress那个需要自己去备份数据库</li>
+</ul>
+</li>
+<li>一键部署到github<ul>
+<li>Hexo 提供 command: <code>hexo deploy</code> 来部署网站</li>
+</ul>
+</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-30T07:48:06.000Z"><a href="/2014/12/30/html-http-header-analysis/">Dec 30 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/30/html-http-header-analysis/">理解HTTP Header</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>HTTP协议是怎样传输的？<ul>
+<li>HTTP采用请求/响应模型，浏览器端发送请求，服务器给与响应。就整个网络资源传输而言，包括message-header和message-body两部分。</li>
+<li>http 请求的整个过程<br><img src="/imgs/http_request_process.gif" alt=""></li>
+</ul>
+</li>
+<li>http header<ul>
+<li>http header内容的组织形式，大体分为Request和Response两部分。</li>
+</ul>
+</li>
+<li>Request<ul>
+<li>当你在流览器位址栏里键入一个url，你的流览器会将类似如下的http请求<pre><code>GET <span class="regexp">/tutorials/</span>other<span class="regexp">/top-20-mysql-best-practices/</span> HTTP/<span class="number">1.1</span> (Request line)
+<span class="string">Host:</span> net.tutsplus.com
+User-<span class="string">Agent:</span> Mozilla<span class="regexp">/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.5) Gecko/</span><span class="number">20091102</span> Firefox/<span class="number">3.5</span><span class="number">.5</span> (.NET CLR <span class="number">3.5</span><span class="number">.30729</span>)
+<span class="string">Accept:</span> text<span class="regexp">/html,application/</span>xhtml+xml,application<span class="regexp">/xml;q=0.9,*/</span>*;q=<span class="number">0.8</span>
+Accept-<span class="string">Language:</span> en-us,en;q=<span class="number">0.5</span>
+Accept-<span class="string">Encoding:</span> gzip,deflate
+Accept-<span class="string">Charset:</span> ISO-<span class="number">8859</span>-<span class="number">1</span>,utf-<span class="number">8</span>;q=<span class="number">0.7</span>,*;q=<span class="number">0.7</span>
+Keep-<span class="string">Alive:</span> <span class="number">300</span>
+<span class="string">Connection:</span> keep-alive
+<span class="string">Cookie:</span> PHPSESSID=r2t5uvjq435r4q7ib3vtdjq120
+<span class="string">Pragma:</span> no-cache
+Cache-<span class="string">Control:</span> no-cache
+</code></pre><ul>
+<li>第一行被称为“Request Line” 它描述的是这个请求的基本资讯，剩下的就是HTTP headers了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Response<ul>
+<li>请求完成之后，你的流览器可能会收到如下的HTTP回应：<pre><code>HTTP/<span class="number">1.</span>x <span class="number">200</span> OK (state line)
+Transfer-Encoding: chunked
+Date: Sat, <span class="number">28</span> Nov <span class="number">2009</span> <span class="number">04</span>:<span class="number">36</span>:<span class="number">25</span> GMT
+Server: LiteSpeed
+Connection: close
+X-Powered-By: W3 Total Cache/<span class="number">0.8</span>
+Pragma: <span class="keyword">public</span>
+Expires: Sat, <span class="number">28</span> Nov <span class="number">2009</span> <span class="number">05</span>:<span class="number">36</span>:<span class="number">25</span> GMT
+Etag: <span class="string">"pub1259380237;gz"</span>
+Cache-Control: max-age=<span class="number">3600</span>, <span class="keyword">public</span>
+Content-Type: text/html; charset=UTF-<span class="number">8</span>
+Last-Modified: Sat, <span class="number">28</span> Nov <span class="number">2009</span> <span class="number">03</span>:<span class="number">50</span>:<span class="number">37</span> GMT
+X-Pingback: http:<span class="comment">//net.tutsplus.com/xmlrpc.php</span>
+Content-Encoding: gzip
+Vary: Accept-Encoding, Cookie, User-Agent
+&lt;!-- ... rest of the html ... --&gt;
+</code></pre><ul>
+<li>第一行被称为“Status Line”，它之后就是http headers，空行完了就开始输出内容了（在这个案例中是一些html输出）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTTP Request结构<br><img src="/imgs/http_request_composition.gif" alt=""><ul>
+<li>被称作“first line”的第一行包含三个部分：<ul>
+<li>“method” 表明这是何种类型的请求. 最常见的请求类型有GET,POST和HEAD.</li>
+<li>“path” 体现的是主机之后的路径. 例如，当你请求“<a href="http://net.tutsplus.com/tutorials/other”时" target="_blank" rel="external">http://net.tutsplus.com/tutorials/other”时</a>, path 就会是”/tutorials/other”.</li>
+<li>“protocol” 包含有“HTTP” 和版本号.</li>
+</ul>
+</li>
+<li>剩下的部分每行都是一个”Name:Value”对(即: MIME信息)。它们包含了各式各样关于请求和你流览器的资讯。<ul>
+<li>详细信息请参考：<ul>
+<li><a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank" rel="external">http://en.wikipedia.org/wiki/List_of_HTTP_header_fields</a></li>
+</ul>
+</li>
+<li>这些headers大部分都是可选的。HTTP 请求甚至可以被精简成这样子：<pre><code><span class="request">GET <span class="string">/tutorials/other/top-20-mysql-best-practices/</span> HTTP/1.1</span>
+<span class="attribute">Host</span>: <span class="string">net.tutsplus.com</span>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTTP Response结构<br><img src="/imgs/http_response_composition.gif" alt=""><ul>
+<li>第一个有价值的资讯就是协定。目前伺服器都会使用HTTP/1.x 或者HTTP/1.1。</li>
+<li>接下来一个简短的资讯代表状态。代码200意味着我们的请求已经发送成功了，伺服器将会返回给我们所请求的文档，在Header资讯之后。<ul>
+<li>HTTP 状态码<ul>
+<li>200 用来表示请求成功.</li>
+<li>300 来表示重定向.</li>
+<li>400 用来表示请求出现问题.</li>
+<li>500 用来表示伺服器出现问题.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>同样，这些Header资讯也是可选的。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-29T09:15:37.000Z"><a href="/2014/12/29/tool-git-collection/">Dec 29 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/29/tool-git-collection/">git学习总结</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="基本命令">基本命令</h2><ul>
+<li><p><strong>安装git</strong></p>
 <ul>
-<li>官方解释：JavaScript 任务运行器</li>
-<li>Grunt是nodeJS的一个插件。</li>
+<li>下载安装git</li>
+<li>配置username 和 emai<ul>
+<li>git config –global user.name “Your Name”</li>
+<li>git config –global user.email “email@example.com”</li>
+<li>注意git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</li>
 </ul>
 </li>
-<li><p>Grunt能干什么?</p>
+</ul>
+</li>
+<li><p><strong>创建和初始化版本库</strong></p>
 <ul>
-<li>Grunt可以让你解放双手，做一些自动化的任务处理来简化你的工作。</li>
+<li>mkdir learngit</li>
+<li>git init</li>
 </ul>
 </li>
-<li><p>那Grunt到底能干什么？</p>
+<li><p><strong>添加文件到仓库</strong></p>
 <ul>
-<li>前端你能想到的基本上grunt都能帮你解决，因为它有非常多的plugin供你选择，总有一个是你想要的。</li>
-<li>以下是我在项目中常用的一些plugin：<ul>
-<li><a href="https://www.npmjs.com/package/grunt-contrib-cssmin" target="_blank" rel="external">grunt-contrib-cssmin</a><ul>
-<li>合并压缩CSS文件</li>
+<li>git add readme.txt   [添加到暂存区]</li>
 </ul>
 </li>
-<li><a href="https://github.com/gruntjs/grunt-contrib-uglify" target="_blank" rel="external">grunt-contrib-uglify</a><ul>
-<li>混淆、合并、压缩JS文件</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/grunt-contrib-clean" target="_blank" rel="external">grunt-contrib-clean</a><ul>
-<li>删除文件用的</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/grunt-contrib-connect" target="_blank" rel="external">grunt-contrib-connect</a><ul>
-<li>提供一个Webserver来方便浏览</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/grunt-contrib-watch" target="_blank" rel="external">grunt-contrib-watch</a><ul>
-<li>用来监听文件的变化来实时做出响应执行响应的任务，</li>
-<li>可以和<code>grunt-contrib-connect</code>结合来实现文件改变后自动刷新页面</li>
-</ul>
-</li>
-<li><a href="https://npmjs.org/package/grunt-este-watch" target="_blank" rel="external">grunt-este-watch</a><ul>
-<li>同样是用来监听文件变化的，性能比<code>grunt-contrib-watch</code>好，但功能相对弱点</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/grunt-contrib-sass" target="_blank" rel="external">grunt-contrib-sass</a><ul>
-<li>将SASS文件编译成CSS文件</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/grunt-contrib-less" target="_blank" rel="external">grunt-contrib-less</a><ul>
-<li>将LESS文件编译成CSS文件</li>
-</ul>
-</li>
-<li><a href="https://npmjs.org/package/grunt-contrib-concat" target="_blank" rel="external">grunt-contrib-concat</a><ul>
-<li>将多个文件合并成一个文件</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/grunt-contrib-copy" target="_blank" rel="external">grunt-contrib-copy</a><ul>
-<li>复制文件到对应的目录</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/grunt-processhtml" target="_blank" rel="external">grunt-processhtml</a><ul>
-<li>处理html模板</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/grunt-html2js" target="_blank" rel="external">grunt-html2js</a><ul>
-<li>编译Angular的template到JS文件</li>
-</ul>
-</li>
-<li><a href="https://www.npmjs.com/package/grunt-notify" target="_blank" rel="external">grunt-notify</a><ul>
-<li>用来做桌面任务通知用的</li>
-<li>比如：在任务处理成功/失败后再桌面右下角弹出信息提示框来提示任务的处理情况</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>具体使用：</p>
+<li><p><strong>提交文件到仓库</strong></p>
 <ul>
-<li><a href="http://gruntjs.cn/getting-started/" target="_blank" rel="external">中文版官方文档</a></li>
-<li><a href="http://gruntjs.com/getting-started" target="_blank" rel="external">英文版官方文档</a></li>
+<li>git commit -m “wrote a readme file”</li>
+</ul>
+</li>
+<li><p><strong>查看仓库当前状态</strong></p>
+<ul>
+<li>git status</li>
+</ul>
+</li>
+<li><p><strong>查看本地文件修改内容</strong></p>
+<ul>
+<li>git diff readme.txt   [比对工作区和缓存去的不同]</li>
+<li>git diff HEAD – readme.txt   [查看工作区和版本库里面最新版本的区别]</li>
+</ul>
+</li>
+<li><p><strong>查看提交日志</strong></p>
+<ul>
+<li>git log</li>
+<li>git log –pretty=oneline  [精简日志信息]</li>
+</ul>
+</li>
+<li><p><strong>回退到版本</strong></p>
+<ul>
+<li>git reset –hard HEAD^   [回退到上一版本]</li>
+<li>git reset –hard HEAD^^   [回退到上二版本]</li>
+<li>git reset –hard HEAD~10   [回退到上10个版本]</li>
+</ul>
+</li>
+<li><p><strong>回到未来的某个版本</strong></p>
+<ul>
+<li>git reset –hard 3628164 [只要知道未来的commit id就行]</li>
+</ul>
+</li>
+<li><p><strong>查看历史命令</strong></p>
+<ul>
+<li>git reflog  [可以用来找回未来的某个commit id, 用来回退]、</li>
+</ul>
+</li>
+<li><p><strong>撤销工作去的修改[或恢复到最新版本]</strong></p>
+<ul>
+<li>git checkout – readme.txt</li>
+</ul>
+</li>
+<li><p><strong>删除文件</strong></p>
+<ul>
+<li>git rm test.txt  [从版本库中删除]</li>
+<li>git commit test.txt</li>
+</ul>
+</li>
+</ul>
+<h2 id="远程仓库(已githup为例)">远程仓库(已githup为例)</h2><ul>
+<li><p><strong>创建SSH Key</strong></p>
+<ul>
+<li><p>ssh-keygen -t rsa -C “youremail@example.com”</p>
+<ul>
+<li>在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥。</li>
+</ul>
+</li>
+<li><p>在Github上添加SSH Key</p>
+<ul>
+<li>登陆GitHub，打开“Account settings”，“SSH Keys”页面</li>
+<li>然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>添加远程仓库</strong></p>
+<ul>
+<li>git remote add origin git@github.com:zq210wl/learngit.git [添加远程仓库origin]</li>
+</ul>
+</li>
+<li><p><strong>把本地库的内容推送到远程库上</strong></p>
+<ul>
+<li>git push -u origin master  [第一次提交分支时]<ul>
+<li>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送到远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</li>
+</ul>
+</li>
+<li>git push origin master  [把当前本地库内容推动到远程origin库下的master分支]</li>
+<li>git push  [推送当前所在分支到远程库，如果当前是在dev分支，那么会提交到dev上]</li>
+</ul>
+</li>
+<li><p><strong>克隆远程分支到本地</strong></p>
+<ul>
+<li>git clone git@github.com:zq210wl/learngit.git destinationDir  [目标文件夹可选]<ul>
+<li>默认从远程clone的仓库，在本地只有主分支，如果要用其他分支就必须自己创建，然后建立对应联系</li>
+<li>当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>创建分支</strong></p>
+<ul>
+<li>git branch dev  [在当前分支上创建dev分支]</li>
+</ul>
+</li>
+<li><p><strong>切换分支</strong></p>
+<ul>
+<li>git checkout dev</li>
+</ul>
+</li>
+<li><p><strong>创建并切换到分支</strong></p>
+<ul>
+<li>git checkout -b dev  [加上-b参数表示创建并切换]</li>
+</ul>
+</li>
+<li><p><strong>查看分支</strong></p>
+<ul>
+<li>git branch</li>
+</ul>
+</li>
+<li><p><strong>查看远程仓库信息</strong></p>
+<ul>
+<li>git remote</li>
+<li>git remote -v  [显示更详细的信息]</li>
+</ul>
+</li>
+<li><p><strong>合并分支</strong></p>
+<ul>
+<li>git merge dev  [合并某分支到当前分支，如果要合并到master分支，就必须切换到master分支下]   [Fast forward模式]</li>
+<li>git merge –no-ff -m “merge with no-ff” dev  [–no-ff]<ul>
+<li>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>删除分支</strong></p>
+<ul>
+<li>git branch -d dev</li>
+<li>git branch -D dev  [强行删除还没有合并的分支]</li>
+<li>git push origin :dev  [删除远程dev分支]</li>
+</ul>
+</li>
+<li><p><strong>解决冲突</strong></p>
+<ul>
+<li>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容</li>
+<li>需要手动解决冲突</li>
+</ul>
+</li>
+<li><p><strong>查看分支合并图</strong></p>
+<ul>
+<li>git log –graph –pretty=oneline –abbrev-commit</li>
+<li>git log –graph</li>
+</ul>
+</li>
+<li><p><strong>设置本地分支和远程分支的联系</strong></p>
+<ul>
+<li>git branch –set-upstream dev origin/dev<ul>
+<li>如果远程已经有一个dev分支，而你又在本地创建了自己的dev分支，如果要从远程dev分支上更新文件就需要建立联系</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>从远程抓取分支</strong><ul>
+<li>git pull<ul>
+<li>如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>注意：</strong></p>
+<ul>
+<li>一个仓库只能关联一个远程库，所以get remote 只会有一个库</li>
+<li>一个库可以有多个分支</li>
+<li><p>本地分支和远程分支的区别？</p>
+<ul>
+<li>在本地创建的分支就是本地分支;   git branch</li>
+<li>如果把本地创建的分支push到远程仓库，那么在远程仓库上就存在了这个分支，也就叫做远程分支;  git remote</li>
+<li>开发两种有一些分支是不需要提交到远程仓库，只需要在本地合并到主分支，然后再push到远程主分支</li>
+</ul>
+</li>
+<li><p>什么时候用分支？</p>
+<ul>
+<li>一般是在开发一个新feature时，先创建一个分支, 在这个分支完成此feature然后再merge到master分支，合并完后，如果此feature已经完成，可以删除此分支，如果有另一个feature的话，可以再重新常见分支，以此类推</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>分支策略：</strong></p>
+<ul>
+<li><img src="/imgs/git_branch.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="高级使用">高级使用</h2><ul>
+<li><strong>创建标签</strong></li>
+<li><strong>忽略某些文件</strong><ul>
+<li>在库的根目录下创建 .gitignore 文件，并提交次文件</li>
+<li>格式<ul>
+<li># 注释符号</li>
+<li>每行写一个要忽略的文件或目录</li>
+<li>示例：<ul>
+<li>build.xml</li>
+<li>*.class</li>
+<li>*.log</li>
+<li>bin/</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>配置别名</strong></li>
+<li><strong>搭建Git服务器</strong></li>
+</ul>
+<h2 id="参考网址">参考网址</h2><ul>
+<li><p>Git cheat sheet</p>
+<ul>
+<li><a href="http://www.git-tower.com/blog/assets/2013-05-22-git-cheat-sheet/cheat-sheet-large01.png" target="_blank" rel="external">http://www.git-tower.com/blog/assets/2013-05-22-git-cheat-sheet/cheat-sheet-large01.png</a></li>
+</ul>
+</li>
+<li><p>Git official website</p>
+<ul>
+<li><a href="http://git-scm.com/" target="_blank" rel="external">http://git-scm.com/</a></li>
+</ul>
+</li>
+<li><p>Git 中文教程</p>
+<ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></li>
 </ul>
 </li>
 </ul>
@@ -372,7 +624,7 @@
   
     <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
   
-    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+    <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
     <li><a href="/categories/Link/">Link</a><small>6</small></li>
   
@@ -384,7 +636,7 @@
   
     <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
   
-    <li><a href="/categories/other/">other</a><small>3</small></li>
+    <li><a href="/categories/other/">other</a><small>1</small></li>
   
   </ul>
 </div>

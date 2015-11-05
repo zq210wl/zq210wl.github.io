@@ -53,20 +53,105 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-02-06T08:00:54.000Z"><a href="/2015/02/06/other-mobile-website-vs-app/">Feb 6 2015</a></time>
+        <time datetime="2015-01-28T06:10:02.000Z"><a href="/2015/01/28/css-line-height/">Jan 28 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/02/06/other-mobile-website-vs-app/">other_mobile_website_vs_app</a></h1>
+    <h1 class="title"><a href="/2015/01/28/css-line-height/">理解line-height</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="基本概念">基本概念</h2><ul>
+<li>基线、中线、顶线、底线<br><img src="/imgs/css_line_height.png" alt=""></li>
+<li><p>基线</p>
+<ul>
+<li>基线并不是汉字的下端沿，而是英文字母”x”的下端沿</li>
+</ul>
+</li>
+<li><p>行高</p>
+<ul>
+<li>文本间基线的距离</li>
+</ul>
+</li>
+<li><p>行距</p>
+<ul>
+<li>上行文本的底线到下行文本顶线之间的具体</li>
+</ul>
+</li>
+<li><p>内容区<br><img src="/imgs/css_line_height_content.gif" alt=""></p>
+</li>
+<li><p>行内框<br><img src="/imgs/css_line_height_inner.gif" alt=""></p>
+<ul>
+<li>行内框只是一个概念，它无法显示出来，但是它又确实存在</li>
+<li>它的高度就是行高</li>
+<li>在没有其他因素（padding）影响的时候，行内框等于内容区域</li>
+</ul>
+</li>
+<li><p>行框(line box)<br><img src="/imgs/css_line_box.gif" alt=""></p>
+</li>
+<li>同行内框类似，行框是指本行的一个虚拟的矩形框</li>
+<li>行框高度等于本行内所有元素中行高最大的值</li>
+</ul>
+<h2 id="line-height的设置">line-height的设置</h2><ul>
+<li><p>行高继承</p>
+<ul>
+<li>默认情况下，如果父元素设置了line-height，而子元素没有设置，那么子元素将会将会继承父元素的line-height</li>
+</ul>
+</li>
+<li><p>行高的计算</p>
+<ul>
+<li>行高常用的单位：<ul>
+<li>px - 固定值</li>
+<li>em - 一个em的大小等于当前行中font-size的大小</li>
+<li>number - 一个纯数字，数字大小表示的是font-size的倍数</li>
+<li>normal - 正常，默认值，默认一般为1.2</li>
+<li>inherit - 继承</li>
+</ul>
+</li>
+<li>一般情况下如果行内有多种大小字体，可以用一个纯数字设置行高，这样可以避免行高小于字体大小而导致文字重叠</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-24T06:51:46.000Z"><a href="/2015/01/24/link-angular/">Jan 24 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/24/link-angular/">AngularJS文章收集</a></h1>
   
 
     </header>
     <div class="entry">
       
         <ul>
-<li>Mobile Website vs. Mobile App (Application):Which is Best for Your Organization?<ul>
-<li><a href="http://www.hswsolutions.com/services/mobile-web-development/mobile-website-vs-apps/" target="_blank" rel="external">http://www.hswsolutions.com/services/mobile-web-development/mobile-website-vs-apps/</a></li>
-</ul>
+<li><p><a href="http://www.smashingmagazine.com/2015/01/22/angularjs-internals-in-depth/?utm_source=javascriptweekly&amp;utm_medium=email" target="_blank" rel="external">AngularJS’ Internals In Depth - 内部原理深入学习</a></p>
+</li>
+<li><p><a href="http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/" target="_blank" rel="external">Using NgModelController with Custom Directives - 自定义具有NgModel功能的directive</a></p>
+</li>
+<li><p><a href="http://odetocode.com/blogs/scott/archive/2014/05/28/compile-pre-and-post-linking-in-angularjs.aspx" target="_blank" rel="external">深入理解Directive里的每个方法</a></p>
 </li>
 </ul>
 
@@ -91,43 +176,247 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-02-06T03:05:41.000Z"><a href="/2015/02/06/javascript-instanceof-typeof/">Feb 6 2015</a></time>
+        <time datetime="2015-01-23T08:44:25.000Z"><a href="/2015/01/23/html5-learning/">Jan 23 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/02/06/javascript-instanceof-typeof/">instanceof 和 typeof 的介绍</a></h1>
+    <h1 class="title"><a href="/2015/01/23/html5-learning/">HTML5学习总结</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <h2 id="typeof">typeof</h2><ul>
-<li>返回对应数据的类型</li>
-<li>语法：typeof xxx</li>
-<li>javascript常用类型及其typeof返回值：<ul>
-<li>Undefined : “undefined”</li>
-<li>Null : <strong>“object”</strong></li>
-<li>Boolean : “boolean”</li>
-<li>Number : “number”</li>
-<li>String : “string”</li>
-<li>Object<ul>
-<li>Function object : <strong>“function”</strong></li>
-<li>Any other object : “object”</li>
+        <h2 id="Element(元素)">Element(元素)</h2><ul>
+<li>html5的空标签，如<code>&lt;br&gt;</code>,<code>&lt;hr&gt;</code>, 建议都带结束符，如：<code>&lt;br/&gt;</code>,<code>&lt;hr/&gt;</code></li>
+<li>html5的标签是大小写不敏感的，不过建议都小写</li>
+</ul>
+<h2 id="Attributes(属性)">Attributes(属性)</h2><ul>
+<li><code>alt</code><ul>
+<li>指定<code>alt</code>属性，可以在元素不能正常显示的时候，显示一段执行的文本</li>
+<li>如：<code>&lt;img src=&quot;hello.jpg&quot; alt=&quot;This is the description of img&quot;&gt;</code></li>
+</ul>
+</li>
+<li>建议所有的属性名称都<strong>小写</strong></li>
+<li>建议所有的属性值都用<strong>引号</strong>括起来,通常都用<code>双引号</code>，特殊情况下用<code>单引号</code><ul>
+<li><code>&lt;p title=&#39;John &quot;ShotGun&quot; Nelson&#39;&gt;</code></li>
+<li><code>&lt;p title=&quot;John &#39;ShotGun&#39; Nelson&quot;&gt;</code></li>
 </ul>
 </li>
 </ul>
+<h2 id="Meta_Elements(源元素)">Meta Elements(源元素)</h2><ul>
+<li>meta element 也叫做meta data, 即：元数据，用来描述数据的数据</li>
+<li>主要有：<code>&lt;title&gt;</code>,<code>&lt;meta&gt;</code>,<code>&lt;style&gt;</code>,<code>&lt;link&gt;</code>,,<code>&lt;script&gt;</code></li>
+</ul>
+<h2 id="paragraphs(段落)">paragraphs(段落)</h2><ul>
+<li><code>&lt;p&gt;</code> - 用来显示一个段文字，不过格式不好控制</li>
+<li><code>&lt;pre</code> - 用来显示已经格式化好的文本，此元素间的内容会把内容的格式如实显示</li>
+</ul>
+<h2 id="Formatting_Elements(格式化元素)">Formatting Elements(格式化元素)</h2><ul>
+<li><code>&lt;strong&gt;</code> - 加重(字体会加粗)</li>
+<li><code>&lt;em&gt;</code> - 强调(字体会倾斜)</li>
+<li><code>&lt;small&gt;</code> - 字体变小(在一段正常的字体中加一些小字体的文本)</li>
+<li><code>&lt;mark&gt;</code> - 标记或高亮文本(默认会给文本添加黄色背景)</li>
+<li><code>&lt;del&gt;</code> - 标记文本为删除(在文本中线上会添加一条线)</li>
+<li><code>&lt;ins&gt;</code> - 插入文本(在文本下面会有一条下划线)</li>
+<li><code>&lt;sub&gt;</code> - 下标文字</li>
+<li><code>&lt;sup&gt;</code> - 上标文字</li>
+</ul>
+<h2 id="Quotation_and_Citation_Elements(表引用或举证的元素)">Quotation and Citation Elements(表引用或举证的元素)</h2><ul>
+<li><p><code>&lt;q&gt;</code> - 行内引用，文本会被双引号括起来</p>
 </li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank" rel="external">MDN官方说明</a></li>
+<li><p><code>&lt;blockquote&gt;</code> - 块级引用</p>
+<ul>
+<li>cite属性可以用于搜索引擎来搜索相关信息<pre><code>&lt;<span class="keyword">blockquote </span>cite=<span class="string">"http://www.worldwildlife.org/who/index.html"</span>&gt;
+  For <span class="number">50</span> years, WWF has <span class="keyword">been </span>protecting the future of nature.
+&lt;/<span class="keyword">blockquote&gt;</span>
+</code></pre></li>
+</ul>
+</li>
 </ul>
 <ul>
-<li>instanceof</li>
-<li>判断一个对象的<strong>prototype属性对象</strong>是否在某个构造函数的<strong>prototype链</strong>中</li>
-<li>语法：object instanceof constructor</li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof" target="_blank" rel="external">MDN官方说明</a></li>
-</ul>
+<li><p><code>&lt;cite&gt;</code> - 定义一个work的标题，比如一本书、一首歌、一幅画、一个雕塑、一部电视剧</p>
+<pre><code><span class="variable">&lt;p&gt;</span><span class="variable">&lt;cite&gt;</span>The Scream<span class="variable">&lt;/cite&gt;</span> by Edward Munch. Painted <span class="keyword">in</span> <span class="number">1893</span>.<span class="variable">&lt;/p&gt;</span>
+</code></pre></li>
+<li><p><code>&lt;abbr&gt;</code> - 缩写(全称可以写在title属性中)，字体样式没有变化</p>
+<pre><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>The <span class="tag">&lt;<span class="title">abbr</span> <span class="attribute">title</span>=<span class="value">"World Health Organization"</span>&gt;</span>WHO<span class="tag">&lt;/<span class="title">abbr</span>&gt;</span> was founded in 1948.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</code></pre></li>
+<li><p><code>&lt;dfn&gt;</code> - 定义一个术语或缩写，跟<code>&lt;abbr&gt;</code>类似，但字体会倾斜</p>
+<pre><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>The <span class="tag">&lt;<span class="title">dfn</span> <span class="attribute">title</span>=<span class="value">"World Health Organization"</span>&gt;</span>WHO<span class="tag">&lt;/<span class="title">dfn</span>&gt;</span> was founded in 1948.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</code></pre></li>
+<li><p><code>&lt;address&gt;</code> - 定义一个文档或文章的联系方式或信息，字体会倾斜</p>
+</li>
+<li><p><code>&lt;bdo&gt;</code> - 重写文本的显示方向位置</p>
 <ul>
-<li>火狐 javascript 文档<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></li>
+<li><code>&lt;bdo dir=&quot;rtl&quot;&gt;This text will be written from right to left&lt;/bdo&gt;</code></li>
+<li>通过控制dir属性来决定是从左到右显示，还是从右到左显示</li>
+<li><code>&lt;bdo dir=&quot;ltr|rtl&quot;&gt;</code></li>
 </ul>
+</li>
+</ul>
+<h2 id="Computer_Code_Elements(代码元素)">Computer Code Elements(代码元素)</h2><ul>
+<li><code>&lt;code&gt;</code> - 用来显示一段代码，为了保持代码的显示格式，内容可以用<code>&lt;pre&gt;</code>包起来</li>
+</ul>
+<h2 id="Links(超链接)">Links(超链接)</h2><ul>
+<li>超链接(a)的四种状态的顺序从高到低如下：<ul>
+<li>a:link - 正常的，没被访问过</li>
+<li>a:visited - 已访问过</li>
+<li>a:hover - 鼠标移动之上</li>
+<li>a:active - 点击的瞬间动作</li>
+</ul>
+</li>
+</ul>
+<h2 id="Table(表格)">Table(表格)</h2><ul>
+<li>去掉table双边框效果<pre><code><span class="tag">table</span> <span class="rules">{
+  <span class="rule"><span class="attribute">border-collapse</span>:<span class="value"> collapse</span></span>;
+}</span>
+</code></pre></li>
+</ul>
+<h2 id="Layouts(布局)">Layouts(布局)</h2><ul>
+<li>html5中跟布局相关的几个元素：<ul>
+<li><code>header</code> - 定义一个document或一个section的头部区域</li>
+<li><code>nav</code> - 定义一个导航的容器</li>
+<li><code>section</code> - 在document中定义一个模块</li>
+<li><code>article</code> - 定义一个独立的文章区域块</li>
+<li><code>aside</code> - 定义除了具体内容一个外的其他内容(如：侧边栏)</li>
+<li><code>footer</code> - 定义一个document或一个section的底部区域</li>
+<li><code>details</code> - 定义额外的细节</li>
+<li><code>summary</code> - 为details元素定义一个标题<br><img src="/imgs/html5_layout.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="Color_value">Color value</h2><ul>
+<li>颜色值有三种写法：<ul>
+<li>1)直接写颜色单词;2)”#”加一个十六进制的数字;3)rgb颜色。最终都为被转化为十六进制来显示</li>
+</ul>
+</li>
+</ul>
+<h2 id="Responsive(响应式)">Responsive(响应式)</h2><ul>
+<li><code>viewport</code> - 响应式的meta标签的参数</li>
+<li>参数的属性值：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">虚拟视窗的宽度</td>
+</tr>
+<tr>
+<td style="text-align:left">device-width</td>
+<td style="text-align:left">设备屏幕的宽度</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">虚拟视窗的高度</td>
+</tr>
+<tr>
+<td style="text-align:left">device-height</td>
+<td style="text-align:left">设备屏幕的高度</td>
+</tr>
+<tr>
+<td style="text-align:left">initial-scale</td>
+<td style="text-align:left">页面初始化的缩放倍数。1.0为不缩放</td>
+</tr>
+<tr>
+<td style="text-align:left">minimum-scale</td>
+<td style="text-align:left">可以缩放的最小倍数</td>
+</tr>
+<tr>
+<td style="text-align:left">maximum-scale</td>
+<td style="text-align:left">可以缩放的最大倍数</td>
+</tr>
+<tr>
+<td style="text-align:left">user-scalable</td>
+<td style="text-align:left">是否允许缩放,值为Boolean</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&#62;</span><br></pre></td></tr></table></figure>
+<h2 id="Charset_Encoding(字符集编码)">Charset Encoding(字符集编码)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;meta charset=&#34;UTF-8&#34;&#62;</span><br></pre></td></tr></table></figure>
+<h2 id="Form_Elements(表单元素)">Form Elements(表单元素)</h2><ul>
+<li><p>html5新增加的元素：</p>
+<ul>
+<li><code>&lt;datalist&gt;</code> - 指定一个有默认选项值的input<pre><code>&lt;datalist id=<span class="string">"browsers"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Internet Explorer"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Firefox"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Chrome"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Opera"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Safari"</span>&gt;
+&lt;/datalist&gt;
+</code></pre><img src="/imgs/html5-datalist.png" alt=""></li>
+</ul>
+</li>
+<li><p>html 新增加的input type:</p>
+<ul>
+<li>color</li>
+<li>date</li>
+<li>datetime</li>
+<li>datetime-local</li>
+<li>email</li>
+<li>month</li>
+<li>number</li>
+<li>range</li>
+<li>search</li>
+<li>tel</li>
+<li>time</li>
+<li>url</li>
+<li>week</li>
+</ul>
+</li>
+<li><p>Input Attributes(input常用属性)</p>
+<ul>
+<li>readonly - 只读</li>
+<li>disabled - 不能用</li>
+<li>maxlength - 最大长度</li>
+<li>autofocus</li>
+<li>min - 最小值</li>
+<li>max - 最大值</li>
+<li>multiple - 多选，针对file和image类型</li>
+<li>pattern - 正则验证，如：pattern=”[A-Za-z]{3}”</li>
+<li>placeholder - 默认值</li>
+<li>required - 必须填写</li>
+<li>step - 数字间隔，针对number类型</li>
+</ul>
+</li>
+</ul>
+<h2 id="New_HTML5_Elements(html5_新增的几个常用元素)">New HTML5 Elements(html5 新增的几个常用元素)</h2><ul>
+<li>语义化<ul>
+<li><code>&lt;header&gt;</code></li>
+<li><code>&lt;footer&gt;</code></li>
+<li><code>&lt;article&gt;</code></li>
+<li><code>&lt;section&gt;</code></li>
+</ul>
+</li>
+<li>图像处理<ul>
+<li><code>&lt;svg&gt;</code></li>
+<li><code>&lt;canvas&gt;</code></li>
+</ul>
+</li>
+<li>多媒体<ul>
+<li><code>&lt;audio&gt;</code></li>
+<li><code>&lt;video&gt;</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;video width=&#34;320&#34; height=&#34;240&#34; controls&#62;&#10;  &#60;source src=&#34;forrest_gump.mp4&#34; type=&#34;video/mp4&#34;&#62;&#10;  &#60;source src=&#34;forrest_gump.ogg&#34; type=&#34;video/ogg&#34;&#62;&#10;  &#60;track src=&#34;subtitles_en.vtt&#34; kind=&#34;subtitles&#34; srclang=&#34;en&#34; label=&#34;English&#34;&#62;&#10;  &#60;track src=&#34;subtitles_no.vtt&#34; kind=&#34;subtitles&#34; srclang=&#34;no&#34; label=&#34;Norwegian&#34;&#62;&#10;&#60;/video&#62;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="SVG_和_Canvas_最大的不同">SVG 和 Canvas 最大的不同</h2><ul>
+<li>SVG是基于XML的，每一个元素都是一个DOM元素，可以添加事件</li>
+<li>Canvas是通过javascript一像素一像素的画出来的</li>
+</ul>
+<h2 id="HTML_plug-ins(插件)">HTML plug-ins(插件)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;object width=&#34;400&#34; height=&#34;50&#34; data=&#34;bookmark.swf&#34;&#62;&#60;/object&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;embed width=&#34;400&#34; height=&#34;50&#34; src=&#34;bookmark.swf&#34;&#62;</span><br></pre></td></tr></table></figure>
+<h2 id="HTML5_APIs">HTML5 APIs</h2><ul>
+<li>Geolocation - 定位</li>
+<li>Drag/Drop - 拖拽</li>
+<li>Local Storage - 本地存储</li>
+<li>Web Workers - 可以在后台运行脚本而不影响页面的性能</li>
+</ul>
+<h2 id="详细使用请参考：">详细使用请参考：</h2><p><a href="http://www.w3schools.com/html/" target="_blank" rel="external">http://www.w3schools.com/html/</a></p>
 
       
     </div>
@@ -150,66 +439,201 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-02-04T09:04:41.000Z"><a href="/2015/02/04/javascript-javascript-object-layout/">Feb 4 2015</a></time>
+        <time datetime="2015-01-16T07:37:34.000Z"><a href="/2015/01/16/regexp-introduce/">Jan 16 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/02/04/javascript-javascript-object-layout/">javascript Object Layout(javascript对象设计图)</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <blockquote>
-<p>你真的懂 javascript 吗？ javascript中的对象都是如何设计的？能看懂下面这张图就算你懂!</p>
-</blockquote>
-<p><img src="/imgs/javascript_object_layout.jpg" alt=""></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-02-04T02:31:56.000Z"><a href="/2015/02/04/link-css/">Feb 4 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/02/04/link-css/">CSS相关文章收集</a></h1>
+    <h1 class="title"><a href="/2015/01/16/regexp-introduce/">正则表达式参考手册 - (收集,仅供个人参考)</a></h1>
   
 
     </header>
     <div class="entry">
       
-        <ul>
-<li><p><a href="http://fuseinteractive.ca/blog/understanding-humble-clearfix#.VZSieNyqqkp" target="_blank" rel="external">Understanding the Humble Clearfix - 彻底弄明白清除浮动</a></p>
-</li>
-<li><p><a href="http://kayosite.com/remove-floating-style-in-detail.html" target="_blank" rel="external">详说清除浮动</a></p>
-</li>
-<li><p><a href="http://kayosite.com/block-formatting-contexts-in-detail.html" target="_blank" rel="external">Block Formatting Contexts - 块级格式化上下文</a></p>
-</li>
-<li><p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">A Complete Guide to Flexbox - 一个完整的弹性盒子使用指南</a></p>
-</li>
-<li><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">Flex 布局语法教程</a></p>
-</li>
-<li><p><a href="https://css-tricks.com/using-flexbox/" target="_blank" rel="external">使用Flexbox：新旧语法混用实现最佳浏览器兼容 - Using Flexbox: Mixing Old and New for the Best Browser Support</a></p>
-</li>
-</ul>
+        <style type="text/css">
+  tr td:first-child{
+    min-width: 100px;
+    font-weight: bold;
+  }
+</style>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left">将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。</td>
+</tr>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配“\n”或“\r”之后的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">$</td>
+<td style="text-align:left">匹配输入字符串的结束位置。如果设置了RegExp对象的Multiline属性，$也匹配“\n”或“\r”之前的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">匹配前面的子表达式零次或多次。例如，zo*能匹配“z”以及“zoo”。*等价于{0,}。</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">匹配前面的子表达式一次或多次。例如，“zo+”能匹配“zo”以及“zoo”，但不能匹配“z”。+等价于{1,}。</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">匹配前面的子表达式零次或一次。例如，“do(es)?”可以匹配“does”或“does”中的“do”。?等价于{0,1}。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n}</td>
+<td style="text-align:left">n是一个非负整数。匹配确定的n次。例如，“o{2}”不能匹配“Bob”中的“o”，但是能匹配“food”中的两个o。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n,}</td>
+<td style="text-align:left">n是一个非负整数。至少匹配n次。例如，“o{2,}”不能匹配“Bob”中的“o”，但能匹配“foooood”中的所有o。“o{1,}”等价于“o+”。“o{0,}”则等价于“o*”。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n,m}</td>
+<td style="text-align:left">m和n均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次。例如，“o{1,3}”将匹配“fooooood”中的前三个o。“o{0,1}”等价于“o?”。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">当该字符紧跟在任何一个其他限制符（*,+,?，{n}，{n,}，{n,m}）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“oooo”，“o+?”将匹配单个“o”，而“o+”将匹配所有“o”。</td>
+</tr>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">匹配除“\n”之外的任何单个字符。要匹配包括“\n”在内的任何字符，请使用像“(.&#124;\n)”的模式。</td>
+</tr>
+<tr>
+<td style="text-align:left">(pattern)</td>
+<td style="text-align:left">匹配pattern并获取这一匹配。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用$0…$9属性。要匹配圆括号字符，请使用“\(”或“\)”。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?:pattern)</td>
+<td style="text-align:left">匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“(&#124;)”来组合一个模式的各个部分是很有用。例如“industr(?:y&#124;ies)”就是一个比“industry&#124;industries”更简略的表达式。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?=pattern)</td>
+<td style="text-align:left">正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“Windows(?=95&#124;98&#124;NT&#124;2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?!pattern)</td>
+<td style="text-align:left">正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“Windows(?!95&#124;98&#124;NT&#124;2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;=pattern)</td>
+<td style="text-align:left">反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“(?&lt;=95&#124;98&#124;NT&#124;2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;!pattern)</td>
+<td style="text-align:left">反向否定预查，与正向否定预查类拟，只是方向相反。例如“(?&lt;!95&#124;98&#124;NT&#124;2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。</td>
+</tr>
+<tr>
+<td style="text-align:left">x&#124;y</td>
+<td style="text-align:left">匹配x或y。例如，“z&#124;food”能匹配“z”或“food”。“(z&#124;f)ood”则匹配“zood”或“food”。</td>
+</tr>
+<tr>
+<td style="text-align:left">[xyz]</td>
+<td style="text-align:left">字符集合。匹配所包含的任意一个字符。例如，“[abc]”可以匹配“plain”中的“a”。</td>
+</tr>
+<tr>
+<td style="text-align:left">[^xyz]</td>
+<td style="text-align:left">负值字符集合。匹配未包含的任意字符。例如，“[^abc]”可以匹配“plain”中的“p”。</td>
+</tr>
+<tr>
+<td style="text-align:left">[a-z]</td>
+<td style="text-align:left">字符范围。匹配指定范围内的任意字符。例如，“[a-z]”可以匹配“a”到“z”范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">[^a-z]</td>
+<td style="text-align:left">负值字符范围。匹配任何不在指定范围内的任意字符。例如，“[^a-z]”可以匹配任何不在“a”到“z”范围内的任意字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">匹配一个单词边界，也就是指单词和空格间的位置。例如，“er\b”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”。</td>
+</tr>
+<tr>
+<td style="text-align:left">\B</td>
+<td style="text-align:left">匹配非单词边界。“er\B”能匹配“verb”中的“er”，但不能匹配“never”中的“er”。</td>
+</tr>
+<tr>
+<td style="text-align:left">\cx</td>
+<td style="text-align:left">匹配由x指明的控制字符。例如，\cM匹配一个Control-M或回车符。x的值必须为A-Z或a-z之一。否则，将c视为一个原义的“c”字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\d</td>
+<td style="text-align:left">匹配一个数字字符。等价于[0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\D</td>
+<td style="text-align:left">匹配一个非数字字符。等价于[^0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\f</td>
+<td style="text-align:left">匹配一个换页符。等价于\x0c和\cL。</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">匹配一个换行符。等价于\x0a和\cJ。</td>
+</tr>
+<tr>
+<td style="text-align:left">\r</td>
+<td style="text-align:left">匹配一个回车符。等价于\x0d和\cM。</td>
+</tr>
+<tr>
+<td style="text-align:left">\s</td>
+<td style="text-align:left">匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\S</td>
+<td style="text-align:left">匹配任何非空白字符。等价于[^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\t</td>
+<td style="text-align:left">匹配一个制表符。等价于\x09和\cI。</td>
+</tr>
+<tr>
+<td style="text-align:left">\v</td>
+<td style="text-align:left">匹配一个垂直制表符。等价于\x0b和\cK。</td>
+</tr>
+<tr>
+<td style="text-align:left">\w</td>
+<td style="text-align:left">匹配包括下划线的任何单词字符。等价于“[A-Za-z0-9_]”。</td>
+</tr>
+<tr>
+<td style="text-align:left">\W</td>
+<td style="text-align:left">匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。</td>
+</tr>
+<tr>
+<td style="text-align:left">\xn</td>
+<td style="text-align:left">匹配n，其中n为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，“\x41”匹配“A”。“\x041”则等价于“\x04&amp;1”。正则表达式中可以使用ASCII编码。.</td>
+</tr>
+<tr>
+<td style="text-align:left">\num</td>
+<td style="text-align:left">匹配num，其中num是一个正整数。对所获取的匹配的引用。例如，“(.)\1”匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">标识一个八进制转义值或一个向后引用。如果\n之前至少n个获取的子表达式，则n为向后引用。否则，如果n为八进制数字（0-7），则n为一个八进制转义值。</td>
+</tr>
+<tr>
+<td style="text-align:left">\nm</td>
+<td style="text-align:left">标识一个八进制转义值或一个向后引用。如果\nm之前至少有nm个获得子表达式，则nm为向后引用。如果\nm之前至少有n个获取，则n为一个后跟文字m的向后引用。如果前面的条件都不满足，若n和m均为八进制数字（0-7），则\nm将匹配八进制转义值nm。</td>
+</tr>
+<tr>
+<td style="text-align:left">\nml</td>
+<td style="text-align:left">如果n为八进制数字（0-3），且m和l均为八进制数字（0-7），则匹配八进制转义值nml。</td>
+</tr>
+<tr>
+<td style="text-align:left">\un</td>
+<td style="text-align:left">匹配n，其中n是一个用四个十六进制数字表示的Unicode字符。例如，\u00A9匹配版权符号（©）。</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -268,7 +692,7 @@
   
     <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
   
-    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+    <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
     <li><a href="/categories/Link/">Link</a><small>6</small></li>
   
@@ -280,7 +704,7 @@
   
     <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
   
-    <li><a href="/categories/other/">other</a><small>3</small></li>
+    <li><a href="/categories/other/">other</a><small>1</small></li>
   
   </ul>
 </div>

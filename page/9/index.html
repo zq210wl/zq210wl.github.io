@@ -53,61 +53,23 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-30T07:33:47.000Z"><a href="/2015/01/30/css-horizontal-center-align/">Jan 30 2015</a></time>
+        <time datetime="2015-01-07T06:34:21.000Z"><a href="/2015/01/07/tool-git-issues/">Jan 7 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/01/30/css-horizontal-center-align/">设置元素水平居中</a></h1>
+    <h1 class="title"><a href="/2015/01/07/tool-git-issues/">git使用中遇到的一些疑难杂症</a></h1>
   
 
     </header>
     <div class="entry">
       
         <ul>
-<li>固定宽度的<code>block</code>元素的水平居中<ul>
-<li>方法一: 设置左右margin为auto<pre><code><span class="class">.center</span> <span class="rules">{
-    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> auto</span></span>;
-    <span class="rule"><span class="attribute">margin-right</span>:<span class="value"> auto</span></span>;
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;
-}</span>
-</code></pre></li>
-<li>方法二：<pre><code><span class="class">.center</span> <span class="rules">{
-    <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
-    <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;
-    <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">200px</span></span></span>;
-    <span class="rule"><span class="attribute">margin-left</span>:<span class="value"> -<span class="number">100px</span></span></span>;
-}</span>
-</code></pre></li>
+<li>解决Git的大小不敏感问题:<ul>
+<li>设置Git大小写敏感：<br><code>git config core.ignorecase false</code></li>
 </ul>
 </li>
-</ul>
-<blockquote>
-<p>注意：当把<code>img</code>元素设置成block元素之后，其宽度默认就是图片本身的宽度，所以也属于有固定宽度的。</p>
-</blockquote>
-<ul>
-<li>不确定宽度的元素的居中<ul>
-<li>方法一：设置父级元素text-align:center;然后自身display:inline;</li>
-<li>方法二：利用<strong>浮动的包裹性</strong>和相对定位<strong>百分比数据值特性</strong>,传说称之为“相对浮动”(推荐)<pre><code><span class="class">.parent</span> <span class="rules">{ <span class="comment">/* 其父级元素要设置清楚浮动，不然可能会出现问题*/</span>
-  <span class="rule"><span class="attribute">float</span>:<span class="value"> left</span></span>;
-  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
-  <span class="rule"><span class="attribute">left</span>:<span class="value"> <span class="number">50%</span></span></span>;
-}</span>
-<span class="class">.children</span> <span class="rules">{
-  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
-  <span class="rule"><span class="attribute">left</span>:<span class="value"> -<span class="number">50%</span></span></span>;
-}</span>
-</code></pre></li>
-<li>方法三：使用table作为容器的方法来实现.(Table标签本身并不是块级元素,当我们不设置table的宽度的话,他里面的宽度是<strong>由他内部元素的宽度撑起来的</strong>。但即使我们没有设置table的宽度,直接设置table的外边距margin:0 auto;就可以实现水平居中了!这样我们就可以通过设置table水平居中,间接使里面的内容居中。)<pre><code><span class="tag">&lt;<span class="title">table</span> <span class="attribute">class</span>=<span class="value">"center"</span>&gt;</span><span class="tag">&lt;<span class="title">tr</span>&gt;</span><span class="tag">&lt;<span class="title">td</span>&gt;</span>元素<span class="tag">&lt;/<span class="title">td</span>&gt;</span><span class="tag">&lt;/<span class="title">tr</span>&gt;</span><span class="tag">&lt;/<span class="title">table</span>&gt;</span>
-.center{margin:0 auto}
-</code></pre></li>
-<li>方法四：利用table table-cell(利用table的可以宽度可以内容撑起来的特性)<pre><code><span class="class">.container</span> <span class="rules">{
-  <span class="rule"><span class="attribute">display</span>:<span class="value">table</span></span>;
-  <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span> auto</span></span>;
-}</span>
-<span class="class">.children</span> <span class="rules">{
-  <span class="rule"><span class="attribute">display</span>:<span class="value">table-cell</span></span>;
-}</span>
-</code></pre></li>
+<li>解决通过Git下载文件时显示无法连接的问题:<ul>
+<li>将git的连接协议设置为https协议<br><code>git config --global url.&quot;https://&quot;.insteadOf &quot;git://&quot;</code><br><em>未完待续…</em></li>
 </ul>
 </li>
 </ul>
@@ -133,71 +95,41 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-30T02:54:38.000Z"><a href="/2015/01/30/css3-float/">Jan 30 2015</a></time>
+        <time datetime="2015-01-06T07:07:29.000Z"><a href="/2015/01/06/tool-submit-sitemap/">Jan 6 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/01/30/css3-float/">float元素对兄弟元素的影响</a></h1>
+    <h1 class="title"><a href="/2015/01/06/tool-submit-sitemap/">如何提交sitemap文件到Google和百度</a></h1>
   
 
     </header>
     <div class="entry">
       
         <blockquote>
-<p>提示：下面所说的前、后，指的是元素在 html 节点中的书写顺序。</p>
+<p>对于广大的博主来说，人生最悲惨的事莫过于：辛辛苦苦写完的文章，在搜索引擎一搜，却怎么也看不到自己的文章!</p>
 </blockquote>
-<h2 id="对块级元素的影响">对块级元素的影响</h2><ol>
-<li>块级元素在float元素的前面和后面的显示效果是<b style="color:red;">不一样</b>的;</li>
-<li>块级元素在前，则float元素就会在块级元素之后<b style="color:red;">另起一行</b>来显示;</li>
-<li>块级元素在后，则块级元素会<b style="color:red;">占据float元素所在行</b>，且<b style="color:red;">被float元素覆盖</b>;<br>但是块级元素内的inline元素遇到float元素则会<b style="color:red;">环绕</b>其显示;</li>
-<li>注意：上面的显示规则跟块级元素是否设置宽度无关;</li>
-</ol>
-<h2 id="二、对inline元素的影响">二、对inline元素的影响</h2><ol>
-<li>inline元素不多说，inline元素会环绕float元素显示;</li>
-<li>直接看<a href="/demo/floatFeaturesSummary.html">demo</a>了解细节</li>
-</ol>
-<h2 id="三、float元素对float元素的影响">三、float元素对float元素的影响</h2><ol>
-<li>父容器的宽度足够容纳所有子元素，则<b style="color:red;">在一行</b>显示</li>
-<li>父容器的宽度不够容纳所有子元素，则<b style="color:red;">后面</b>元素会另起一行显示</li>
-</ol>
-<p><strong>请看：<a href="/demo/floatFeaturesSummary.html">demo</a></strong></p>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-01-29T08:41:27.000Z"><a href="/2015/01/29/css-vertical-horizontal-center/">Jan 29 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/01/29/css-vertical-horizontal-center/">设置元素水平垂直居中N中方法</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <p>自己在实际开发中经常会遇到要水平、垂直居中一个元素，甚至是多个元素实现水平垂直居中。但是每次到用的时候都会出现这样那样的问题，很是纠结。So，我索性就狠下来心花点时间来总结一下这方面的知识，也帮助我来理解、融汇贯通。好了，废话不多说，直接看 <a href="/demo/verticalAndHorizontalCenter/index.html">demo</a>。</p>
-<p>此Demo中包括一下两点：</p>
 <ul>
-<li>单个元素的水平垂直居中</li>
-<li>多个元素的水平垂直居中</li>
+<li>Why？<ul>
+<li>这是因为你的网站没有被搜索引擎纳入索引。</li>
+</ul>
+</li>
+<li>What can you do?<ul>
+<li>提交sitemap到搜索引擎来将你的网站纳入索引。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>什么是sitemap文件？请看百度的解释：</strong></p>
+<ul>
+<li>Sitemap（即站点地图）就是您网站上各网页的列表。创建并提交Sitemap有助于百度发现并了解您网站上的所有网页。您还可以使用Sitemap提供有关您网站的其他信息，如上次更新日期、Sitemap文件的更新频率等，供百度Spider参考。</li>
+<li>详情请参考：<a href="http://zhanzhang.baidu.com/wiki/93#01" target="_blank" rel="external">http://zhanzhang.baidu.com/wiki/93#01</a></li>
+</ul>
+</li>
+<li><p><strong>如何提交sitemap文件到Google和百度？</strong></p>
+<ul>
+<li>请参看详细步骤：<a href="http://jingyan.baidu.com/article/14bd256e339103bb6c261250.html" target="_blank" rel="external">http://jingyan.baidu.com/article/14bd256e339103bb6c261250.html</a></li>
+</ul>
+</li>
 </ul>
 
       
@@ -221,38 +153,148 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-01-28T07:42:42.000Z"><a href="/2015/01/28/css-vertical-align/">Jan 28 2015</a></time>
+        <time datetime="2015-01-05T08:49:22.000Z"><a href="/2015/01/05/html-meta-tag/">Jan 5 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/01/28/css-vertical-align/">理解vertical-align属性</a></h1>
+    <h1 class="title"><a href="/2015/01/05/html-meta-tag/">html中meta标签的详解</a></h1>
   
 
     </header>
     <div class="entry">
       
         <ul>
-<li>vertical-align<ul>
-<li>设置元素在垂直方向上的对齐方式</li>
+<li><p><strong>meta标签是什么1</strong></p>
+<ul>
+<li>META标签是HTML语言HEAD区的一个辅助性标签</li>
 </ul>
 </li>
+<li><p><strong>meta标签是干什么用的？</strong></p>
+<ul>
+<li>META标签用来描述一个HTML网页文档的属性，例如作者、日期和时间、网页描述、关键词、页面刷新等。它提供的信息虽然用户不可见，但却是文档的最基本的<code>元数据</code>.</li>
+</ul>
+</li>
+<li><p><strong><code>元数据</code>又是什么东西？</strong></p>
+<ul>
+<li>元数据(Metadata)是用来概括描述数据的一些基本数据。也就是描述数据的数据。<code>还不清楚？</code>那在形象的来解释一下：</li>
 </ul>
 <blockquote>
-<p>注意：<br>1.垂直对齐属性只对<code>行内</code>元素有效<br>2.垂直对齐属性只对父级元素设置了<code>line-height</code>的元素</p>
+<p>你今天在下班途中邂逅了一个美女，然后回到家之后你就迫不及待的想跟你的朋友炫耀一下。但是你不能只说你邂逅了一个美女，你得描述具体点啊，不然谁信啊？所以你得通过年龄（三十岁上下）、身高（个子高挑）、相貌（身材匀称，黑黑的眉毛，红红的脸蛋）、性格（活跃）来描述。这样你的朋友就可以通过这些信息来意淫一下啦。OK. 废话不多说，到底什么是metadata呢？</p>
 </blockquote>
+<p>这个例子中的”年龄”、”身高”、”相貌”、”性格”，就是元数据，因为它们是用来描述具体数据/信息的数据/信息。<br>当然，这几个元数据用来刻画个人状况还不够精确。我们每个人从小到大，都填过《个人情况登记表》之类的东西吧，其中包括姓名、性别、民族、政治面貌、一寸照片、学历、职称等等……这一套元数据才算比较完备。</p>
+<p><strong>那么对于网页也来说，metadata就是通过一些字段信息来描述一下当前网页，以便浏览器和搜索引擎在访问到此网页的时候，可以通过这些描述信息来知道如何去解析此网页数据。</strong></p>
+</li>
+<li><p><strong>meta标签的使用</strong></p>
 <ul>
-<li><p>基线对齐（vertical-align : baseline）</p>
+<li><p>meta标签共有两个属性：<code>http-equiv</code>和<code>name</code>;不同的属性又有不同的<em>参数值</em>，这些不同的<em>参数值</em>就实现了不同的网页功能。</p>
+<ol>
+<li><strong>name属性</strong></li>
+</ol>
+<p>name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。<br>meta标签的name属性语法格式是：＜meta name=”参数” content=”具体的参数值”＞ 。其中name属性主要有以下几种参数:</p>
 <ul>
-<li>所谓的基线对齐就是：使元素的基线同父元素的基线对齐</li>
-<li>默认对齐方式是基线对齐</li>
+<li>Keywords(关键字)<ul>
+<li>说明：keywords用来告诉搜索引擎你网页的关键字是什么。</li>
+<li>举例：<code>＜meta name =&quot;keywords&quot; content=&quot;science, education,culture,politics,ecnomics，relationships, entertaiment, human&quot;＞</code></li>
 </ul>
 </li>
-<li><p>中间对齐（vertical-align : middle）</p>
+<li>description(网站内容描述)<ul>
+<li>说明：description用来告诉搜索引擎你的网站主要内容。</li>
+<li>举例：<code>＜meta name=&quot;description&quot; content=&quot;This page is about the meaning of science, education,culture.&quot;＞</code></li>
+</ul>
+</li>
+<li>author(作者)<ul>
+<li>说明：标注网页的作者</li>
+<li>举例：<code>＜meta name=&quot;author&quot; content&quot;root,root@21cn.com&quot;＞</code></li>
+</ul>
+<ol>
+<li><strong>http-equiv属性</strong></li>
+</ol>
+</li>
+</ul>
+<p>http-equiv顾名思义，相当于http协议中文件头的作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。<br>meat标签的http-equiv属性语法格式是：＜meta http-equiv=”参数” content=”参数变量值”＞ ；其中http-equiv属性主要有以下几种参数：</p>
 <ul>
-<li>使元素的中线同父元素的中线对齐，也就达到了垂直居中的效果</li>
+<li>content-Type(显示字符集的设定)<ul>
+<li>说明：设定页面使用的字符集。</li>
+<li>用法：<code>＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞</code></li>
+</ul>
+</li>
+<li>Expires(期限)<ul>
+<li>说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。</li>
+<li>用法：<code>＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞</code><br>注意：必须使用GMT的时间格式。</li>
+</ul>
+</li>
+<li>Pragma(cache模式)<ul>
+<li>说明：禁止浏览器从本地计算机的缓存中访问页面内容。</li>
+<li>用法：<code>＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞</code><br>注意：这样设定，访问者将无法脱机浏览。</li>
+</ul>
+</li>
+<li>Refresh(刷新)<ul>
+<li>说明：自动刷新并指向新页面。</li>
+<li>用法：<code>＜meta http-equiv=&quot;Refresh&quot; content=&quot;2; URL=http://www.root.net&quot;＞</code><br>注意：其中的2是指停留2秒钟后自动刷新到URL网址。</li>
+</ul>
+</li>
+<li>Set-Cookie(cookie设定)<ul>
+<li>说明：设置cookie, 如果网页过期，那么存盘的cookie将被删除。</li>
+<li>用法：<code>＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞</code><br>注意：必须使用GMT的时间格式。</li>
+</ul>
+</li>
+<li>Window-target(显示窗口的设定)<ul>
+<li>说明：强制页面在当前窗口以独立页面显示。</li>
+<li>用法：<code>＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞</code><br>注意：用来防止别人在框架里调用自己的页面。<br>*</li>
 </ul>
 </li>
 </ul>
+</li>
+</ul>
+</li>
+<li><p><strong>meta标签对搜索引擎的作用</strong></p>
+<p>meta标签的一个很重要的功能就是设置关键字，来帮助你的主页被各大搜索引擎登录，提高网站的访问量。在这个功能中，最重要的就是对Keywords和description的设置。因为按照搜索引擎的工作原理,搜索引擎首先派出机器人自动检索页面中的keywords和decription，并将其加入到自己的数据库，然后再根据关键词的密度将网站排序。因此，我们必须设置好关键字，来提高页面的搜索点击率。下面我们来举一个例子供大家参考：</p>
+</li>
+</ul>
+<p>　<code>＜meta name=&quot;keywords&quot; content=&quot;政治,经济, 科技,文化, 卫生, 情感，心灵，娱乐，生活，社会，企业，交通&quot;＞</code><br>　<code>＜meta name=&quot;description&quot; content=&quot;政治,经济, 科技,文化, 卫生, 情感，心灵，娱乐，生活，社会，企业，交通&quot;＞</code></p>
+<p>　设置好这些关键字后，搜索引擎将会自动把这些关键字添加到数据库中，并根据这些关键字的密度来进行合适的排序。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-05T05:40:55.000Z"><a href="/2015/01/05/javascript-excel-table/">Jan 5 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/05/javascript-excel-table/">当移动滚动条时固定table的第一行和第一列，类似excel的滚动效果，jquery实现</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>项目中遇到个需求，就是要把table的第一行和第一列固定，这样当出现滚动条的时候就方便在滚动数据的时候可以对照title来看，而且为了美观还必须要跟excel的滚动效果一样，也就是滚动条不能只出现在table内容区域，还必须包括title区域，这样的话就不能简单的只在内容区域的div上设置overflow:auto，刚开始本想在网上搜一些现成的代码，但是很不幸没有搜到有这样的需求，大部分都是只有固定头一行或头一列，这样还好实现，但是要两个都实现就有以下复杂了。最后我还是自己来实现了。</p>
+</blockquote>
+<p>看效果图：</p>
+<p><strong>页面刚初始化的table样式：</strong></p>
+<p><img src="/imgs/javascript_excel_table_init.jpg" alt=""></p>
+<p><strong>拖动滚动条后的table样式：</strong></p>
+<p><img src="/imgs/javascript_excel_table_move.jpg" alt=""></p>
+<p><strong><a href="http://plnkr.co/edit/MUxu6a87lzR2Xptishjq?p=preview" target="_blank" rel="external">在线看效果</a></strong></p>
+<p><strong><a href="https://github.com/zq210wl/Fixed-the-first-line-and-first-column-of-table" target="_blank" rel="external">访问github上的源码</a></strong></p>
 
       
     </div>
@@ -311,7 +353,7 @@
   
     <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
   
-    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+    <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
     <li><a href="/categories/Link/">Link</a><small>6</small></li>
   
@@ -323,7 +365,7 @@
   
     <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
   
-    <li><a href="/categories/other/">other</a><small>3</small></li>
+    <li><a href="/categories/other/">other</a><small>1</small></li>
   
   </ul>
 </div>

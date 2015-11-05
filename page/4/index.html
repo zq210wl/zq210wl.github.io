@@ -53,182 +53,169 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-07-05T03:47:09.000Z"><a href="/2015/07/05/mobile-weinre-debug/">Jul 5 2015</a></time>
+        <time datetime="2015-02-06T08:04:09.000Z"><a href="/2015/02/06/Link-mobile-development/">Feb 6 2015</a></time>
       
       
   
-    <h1 class="title"><a href="/2015/07/05/mobile-weinre-debug/">mobile_weinre_debug</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-07-02T06:46:43.000Z"><a href="/2015/07/02/angular-directive-excute-order/">Jul 2 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/07/02/angular-directive-excute-order/">理解Directive中各个方法的执行顺序</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <blockquote>
-<p>Directive 在angular中扮演着非常重要的角色，而且对新手来说了使用起来也比较复杂。所以有必要来对 directive 做一个详细的分析，本片文章只来谈一下Directive中各个方法的执行顺序。</p>
-</blockquote>
-<ul>
-<li><p>先看下面的比较完整的Directive代码：</p>
-<pre><code>app.directive(<span class="string">"simple"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
-   <span class="keyword">return</span> {
-     restrict: <span class="string">"E"</span>,
-     template:<span class="string">"&lt;div&gt;&lt;/div&gt;"</span>,
-     controller: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attributes</span>)</span>{
-       <span class="built_in">console</span>.log(<span class="string">"controller"</span>);
-     },
-     compile: <span class="function"><span class="keyword">function</span>(<span class="params">element, attributes</span>)</span>{
-       <span class="built_in">console</span>.log(<span class="string">"compile"</span>);
-       <span class="keyword">return</span> {
-           pre: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attributes, controller, transcludeFn</span>)</span>{
-             <span class="built_in">console</span>.log(<span class="string">"pre"</span>);
-           },
-           post: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attributes, controller, transcludeFn</span>)</span>{
-             <span class="built_in">console</span>.log(<span class="string">"post"</span>);
-           }
-       }
-     }
-   };
-});
-</code></pre></li>
-<li><p>controller, compile, pre 和 post 的执行顺序如下：<br>1.compile (只会执行一次, 此过程是用来编译template, 但是不会执行渲染)<br>2.controller (不执行渲染)<br>3.pre (不执行渲染)<br>4.post (执行渲染)</p>
-</li>
-<li><p>其他关于Directive的详细讲解请看下面链接：</p>
-<ul>
-<li><a href="http://odetocode.com/blogs/scott/archive/2014/05/28/compile-pre-and-post-linking-in-angularjs.aspx" target="_blank" rel="external">深入理解Directive里的每个方法</a></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-07-02T02:45:14.000Z"><a href="/2015/07/02/other-weekly-blog/">Jul 2 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/07/02/other-weekly-blog/">推荐几个追踪前端知识的博客</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h2 id="下面这几个都是每周推送一次的博客,让你及时了解前端的动态(不过都是英文的)">下面这几个都是每周推送一次的博客,让你及时了解前端的动态(不过都是英文的)</h2><ul>
-<li><p><a href="http://javascriptweekly.com/" target="_blank" rel="external">JavaScript Weekly</a></p>
-</li>
-<li><p><a href="http://html5weekly.com/" target="_blank" rel="external">HTML5 Weekly</a></p>
-</li>
-<li><p><a href="http://css-weekly.com/" target="_blank" rel="external">CSS Weekly</a></p>
-</li>
-<li><p><a href="http://mobilewebweekly.co/" target="_blank" rel="external">Mobile Web Weekly</a></p>
-</li>
-<li><p><a href="http://nodeweekly.com/" target="_blank" rel="external">node Weekly</a></p>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2015-06-29T02:57:19.000Z"><a href="/2015/06/29/angular-provider-compare/">Jun 29 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/06/29/angular-provider-compare/">angular中自定定义服务service的方法以及比较</a></h1>
+    <h1 class="title"><a href="/2015/02/06/Link-mobile-development/">移动开发相关文章收集</a></h1>
   
 
     </header>
     <div class="entry">
       
         <ul>
-<li><p>第一种 provider 方法</p>
-<ul>
-<li>需要实现 <strong>this.$get</strong> 方法，并且此方法返回一个对象</li>
-<li>Providers 是唯一一种你可以传进 <strong>.config()</strong> 函数的 <strong>service</strong>。当你想要在service对象启用之前，先进行模块范围的配置，那就应该用 <strong>provider</strong>。</li>
-<li>所有的provider都可以通过在后面添加后缀<strong>Provider</strong>串来传进.config().<ul>
-<li>比如一个叫 <strong>xxx</strong> provider service, 需要写成 <strong>xxxProvider</strong> .</li>
+<li><p><a href="http://www.hswsolutions.com/services/mobile-web-development/mobile-website-vs-apps/" target="_blank" rel="external">Mobile Website vs. Mobile App (Application):Which is Best for Your Organization? - 移动网站 vs 移动应用</a></p>
+</li>
+<li><p><a href="http://app.ft.com/" target="_blank" rel="external">一个不错的mobile website</a></p>
+</li>
+<li><p><a href="http://jsdashi.com/development/420.html" target="_blank" rel="external">制作一个web App应用程序</a></p>
+</li>
+<li><p><a href="http://www.cnblogs.com/2050/p/3877280.html" target="_blank" rel="external">移动前端开发之viewport的深入理解</a></p>
+</li>
+<li><p><a href="http://www.lingulo.com/tutorials/css/how-to-build-a-html5-website-from-scratch" target="_blank" rel="external">入门级 - 一步一步教你如何用html5开发一个兼容各个设备端的页面</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/Firefox_OS/Platform/Gaia/Weinre_As_Remote_Debugger" target="_blank" rel="external">远程调试之 Weinre 的使用- Weinre As Remote Debugger</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-02-06T03:05:41.000Z"><a href="/2015/02/06/javascript-instanceof-typeof/">Feb 6 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/02/06/javascript-instanceof-typeof/">instanceof 和 typeof 的介绍</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="typeof">typeof</h2><ul>
+<li>返回对应数据的类型</li>
+<li>语法：typeof xxx</li>
+<li>javascript常用类型及其typeof返回值：<ul>
+<li>Undefined : “undefined”</li>
+<li>Null : <strong>“object”</strong></li>
+<li>Boolean : “boolean”</li>
+<li>Number : “number”</li>
+<li>String : “string”</li>
+<li>Object<ul>
+<li>Function object : <strong>“function”</strong></li>
+<li>Any other object : “object”</li>
 </ul>
 </li>
-<li>写法如图：<br><img src="/imgs/angular_provider.png" alt=""></li>
 </ul>
 </li>
-<li><p>第二种 factory 方法</p>
-<ul>
-<li>Factory   方法直接把一个函数当成一个对象的 <strong>$get</strong> 方法, 可以直接返回字符串</li>
-<li>用  Factory 就是创建一个对象，为它添加属性，然后把这个对象返回出来。你把 <strong>service</strong> 传进 <strong>controller</strong> 之后，在 <strong>controller</strong> 里这个对象里的属性就可以通过 <strong>factory</strong> 定义的 service 使用了。</li>
-<li>写法如图：<br><img src="/imgs/angular_factory.png" alt=""></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank" rel="external">MDN官方说明</a></li>
 </ul>
+<ul>
+<li>instanceof</li>
+<li>判断一个对象的<strong>prototype属性对象</strong>是否在某个构造函数的<strong>prototype链</strong>中</li>
+<li>语法：object instanceof constructor</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof" target="_blank" rel="external">MDN官方说明</a></li>
+</ul>
+<ul>
+<li>火狐 javascript 文档<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-02-04T09:04:41.000Z"><a href="/2015/02/04/javascript-javascript-object-layout/">Feb 4 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/02/04/javascript-javascript-object-layout/">javascript Object Layout(javascript对象设计图)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>你真的懂 javascript 吗？ javascript中的对象都是如何设计的？能看懂下面这张图就算你懂!</p>
+</blockquote>
+<p><img src="/imgs/javascript_object_layout.jpg" alt=""></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-02-04T02:31:56.000Z"><a href="/2015/02/04/link-css/">Feb 4 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/02/04/link-css/">CSS相关文章收集</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p><a href="http://fuseinteractive.ca/blog/understanding-humble-clearfix#.VZSieNyqqkp" target="_blank" rel="external">Understanding the Humble Clearfix - 彻底弄明白清除浮动</a></p>
 </li>
-<li><p>第三种 service 方法</p>
-<ul>
-<li>Service 是用”new”关键字实例化的。因此，你应该给”this”添加属性，然后 <strong>service</strong> 返回”this”。你把 <strong>service</strong> 传进 <strong>controller</strong> 之后，在controller里  “this” 上的属性就可以通过 <strong>service</strong> 来使用了.</li>
-<li>写法如图：<br><img src="/imgs/angular_service.png" alt=""></li>
-</ul>
+<li><p><a href="http://kayosite.com/remove-floating-style-in-detail.html" target="_blank" rel="external">详说清除浮动</a></p>
+</li>
+<li><p><a href="http://kayosite.com/block-formatting-contexts-in-detail.html" target="_blank" rel="external">Block Formatting Contexts - 块级格式化上下文</a></p>
+</li>
+<li><p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">A Complete Guide to Flexbox - 一个完整的弹性盒子使用指南</a></p>
+</li>
+<li><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">Flex 布局语法教程</a></p>
+</li>
+<li><p><a href="https://css-tricks.com/using-flexbox/" target="_blank" rel="external">使用Flexbox：新旧语法混用实现最佳浏览器兼容 - Using Flexbox: Mixing Old and New for the Best Browser Support</a></p>
 </li>
 </ul>
 
@@ -289,7 +276,7 @@
   
     <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
   
-    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+    <li><a href="/categories/Javascript/">Javascript</a><small>6</small></li>
   
     <li><a href="/categories/Link/">Link</a><small>6</small></li>
   
@@ -301,7 +288,7 @@
   
     <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
   
-    <li><a href="/categories/other/">other</a><small>3</small></li>
+    <li><a href="/categories/other/">other</a><small>1</small></li>
   
   </ul>
 </div>
