@@ -1,1171 +1,364 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
-    
-    
-    
-    
-    
-    
+  
+  <url>
+    <loc>http://zq210wl.github.io/demo/verticalAndHorizontalCenter/style.css</loc>
+    <lastmod>2015-11-05T10:05:39.474Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://zq210wl.github.io/demo/verticalAndHorizontalCenter/index.html</loc>
+    <lastmod>2015-11-05T10:05:39.469Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://zq210wl.github.io/demo/floatFeaturesSummary.html</loc>
+    <lastmod>2015-11-05T10:05:39.464Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://zq210wl.github.io/demo/clearfix.html</loc>
+    <lastmod>2015-11-05T10:05:39.459Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://zq210wl.github.io/demo/blockFormattingContexts.html</loc>
+    <lastmod>2015-11-05T10:05:39.455Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://zq210wl.github.io/about/index.html</loc>
+    <lastmod>2015-11-05T10:05:39.454Z</lastmod>
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/06/tool-submit-sitemap/</loc>
     <lastmod>2015-11-05T10:05:39.451Z</lastmod>
-    <data>
-        <display>
-        <title>如何提交sitemap文件到Google和百度</title>
-        <pubTime>2015-01-06T07:07:29.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Tool" url="http://zq210wl.github.io/categories/Tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/13/tool-online-editors/</loc>
     <lastmod>2015-11-05T10:05:39.449Z</lastmod>
-    <data>
-        <display>
-        <title>推荐三个在线前端代码编辑器</title>
-        <pubTime>2015-01-13T05:15:57.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Tool" url="http://zq210wl.github.io/categories/Tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/03/tool-markdown-introduce/</loc>
     <lastmod>2015-11-05T10:05:39.448Z</lastmod>
-    <data>
-        <display>
-        <title>Markdown - 程序员写博客必备利器</title>
-        <pubTime>2015-02-03T08:58:22.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Tool" url="http://zq210wl.github.io/categories/Tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/07/tool-git-issues/</loc>
     <lastmod>2015-11-05T10:05:39.447Z</lastmod>
-    <data>
-        <display>
-        <title>git使用中遇到的一些疑难杂症</title>
-        <pubTime>2015-01-07T06:34:21.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Tool" url="http://zq210wl.github.io/categories/Tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/12/29/tool-git-collection/</loc>
     <lastmod>2015-11-05T10:05:39.445Z</lastmod>
-    <data>
-        <display>
-        <title>git学习总结</title>
-        <pubTime>2014-12-29T09:15:37.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Tool" url="http://zq210wl.github.io/categories/Tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/12/29/tool-css-sprites-tool-online/</loc>
     <lastmod>2015-11-05T10:05:39.443Z</lastmod>
-    <data>
-        <display>
-        <title>介绍一个在线css sprites工具</title>
-        <pubTime>2014-12-29T07:27:39.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Tool" url="http://zq210wl.github.io/categories/Tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/16/regexp-introduce/</loc>
     <lastmod>2015-11-05T10:05:39.442Z</lastmod>
-    <data>
-        <display>
-        <title>正则表达式参考手册 - (收集,仅供个人参考)</title>
-        <pubTime>2015-01-16T07:37:34.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="RegExp" url="http://zq210wl.github.io/categories/RegExp/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/07/02/other-weekly-blog/</loc>
     <lastmod>2015-11-05T10:05:39.441Z</lastmod>
-    <data>
-        <display>
-        <title>推荐几个追踪前端知识的博客</title>
-        <pubTime>2015-07-02T02:45:14.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/12/30/other-hexo-introduce/</loc>
     <lastmod>2015-11-05T10:05:39.438Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo - blog framework - 程序员写博客利器</title>
-        <pubTime>2014-12-30T08:58:48.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="other" url="http://zq210wl.github.io/categories/other/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/04/node-publish-npm-package/</loc>
     <lastmod>2015-11-05T10:05:39.437Z</lastmod>
-    <data>
-        <display>
-        <title>如何发布一个package到npm</title>
-        <pubTime>2015-01-04T10:48:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="NodeJS" url="http://zq210wl.github.io/categories/NodeJS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/07/node-grunt/</loc>
     <lastmod>2015-11-05T10:05:39.435Z</lastmod>
-    <data>
-        <display>
-        <title>Grunt介绍</title>
-        <pubTime>2015-01-07T06:54:05.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="NodeJS" url="http://zq210wl.github.io/categories/NodeJS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/07/node-bower/</loc>
     <lastmod>2015-11-05T10:05:39.434Z</lastmod>
-    <data>
-        <display>
-        <title>bower - 前端包管理器</title>
-        <pubTime>2015-01-07T06:54:05.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Tool" url="http://zq210wl.github.io/categories/Tool/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/07/05/mobile-weinre-debug/</loc>
     <lastmod>2015-11-05T10:05:39.432Z</lastmod>
-    <data>
-        <display>
-        <title>mobile_weinre_debug</title>
-        <pubTime>2015-07-05T03:47:09.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/06/mobile-viewport/</loc>
     <lastmod>2015-11-05T10:05:39.430Z</lastmod>
-    <data>
-        <display>
-        <title>viewport到底是什么东西?</title>
-        <pubTime>2015-02-06T09:09:53.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Mobile" url="http://zq210wl.github.io/categories/Mobile/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/06/26/mobile-dev-experiences/</loc>
     <lastmod>2015-11-05T10:05:39.428Z</lastmod>
-    <data>
-        <display>
-        <title>移动web开发技巧收集</title>
-        <pubTime>2015-06-26T02:08:39.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Mobile" url="http://zq210wl.github.io/categories/Mobile/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/03/29/mobile-base-knowledge-learn-node/</loc>
     <lastmod>2015-11-05T10:05:39.427Z</lastmod>
-    <data>
-        <display>
-        <title>自己刚开始学习移动web开发时的一些基础知识的学习笔记</title>
-        <pubTime>2014-03-29T08:21:26.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Mobile" url="http://zq210wl.github.io/categories/Mobile/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/07/06/link-useful/</loc>
     <lastmod>2015-11-05T10:05:39.426Z</lastmod>
-    <data>
-        <display>
-        <title>实用链接收集</title>
-        <pubTime>2015-07-06T05:12:38.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Link" url="http://zq210wl.github.io/categories/Link/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/02/link-javascript/</loc>
     <lastmod>2015-11-05T10:05:39.424Z</lastmod>
-    <data>
-        <display>
-        <title>javascript相关文章收集</title>
-        <pubTime>2015-02-02T02:25:34.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Link" url="http://zq210wl.github.io/categories/Link/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/04/link-css/</loc>
     <lastmod>2015-11-05T10:05:39.423Z</lastmod>
-    <data>
-        <display>
-        <title>CSS相关文章收集</title>
-        <pubTime>2015-02-04T02:31:56.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Link" url="http://zq210wl.github.io/categories/Link/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/04/06/link-collection/</loc>
     <lastmod>2015-11-05T10:05:39.422Z</lastmod>
-    <data>
-        <display>
-        <title>一些值得阅读的文章</title>
-        <pubTime>2015-04-06T05:08:36.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Link" url="http://zq210wl.github.io/categories/Link/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/24/link-angular/</loc>
     <lastmod>2015-11-05T10:05:39.419Z</lastmod>
-    <data>
-        <display>
-        <title>AngularJS文章收集</title>
-        <pubTime>2015-01-24T06:51:46.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Link" url="http://zq210wl.github.io/categories/Link/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/04/15/javascript-this/</loc>
     <lastmod>2015-11-05T10:05:39.418Z</lastmod>
-    <data>
-        <display>
-        <title>彻底弄清楚javascript中的”this”并掌握它</title>
-        <pubTime>2015-04-15T01:54:50.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://zq210wl.github.io/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/11/20/javascript-regular-express-using/</loc>
     <lastmod>2015-11-05T10:05:39.417Z</lastmod>
-    <data>
-        <display>
-        <title>javascript之正则表达式的使用</title>
-        <pubTime>2014-11-20T07:11:22.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://zq210wl.github.io/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/04/javascript-javascript-object-layout/</loc>
     <lastmod>2015-11-05T10:05:39.415Z</lastmod>
-    <data>
-        <display>
-        <title>javascript Object Layout(javascript对象设计图)</title>
-        <pubTime>2015-02-04T09:04:41.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://zq210wl.github.io/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/06/javascript-instanceof-typeof/</loc>
     <lastmod>2015-11-05T10:05:39.414Z</lastmod>
-    <data>
-        <display>
-        <title>instanceof 和 typeof 的介绍</title>
-        <pubTime>2015-02-06T03:05:41.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://zq210wl.github.io/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/05/javascript-excel-table/</loc>
     <lastmod>2015-11-05T10:05:39.412Z</lastmod>
-    <data>
-        <display>
-        <title>当移动滚动条时固定table的第一行和第一列，类似excel的滚动效果，jquery实现</title>
-        <pubTime>2015-01-05T05:40:55.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://zq210wl.github.io/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/03/javascript-design-pattern/</loc>
     <lastmod>2015-11-05T10:05:39.410Z</lastmod>
-    <data>
-        <display>
-        <title>设计模式之MVC，MVP 和 MVVM</title>
-        <pubTime>2015-02-03T08:23:35.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://zq210wl.github.io/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/23/html5-learning/</loc>
     <lastmod>2015-11-05T10:05:39.405Z</lastmod>
-    <data>
-        <display>
-        <title>HTML5学习总结</title>
-        <pubTime>2015-01-23T08:44:25.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="HTML" url="http://zq210wl.github.io/categories/HTML/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/05/html-meta-tag/</loc>
     <lastmod>2015-11-05T10:05:39.403Z</lastmod>
-    <data>
-        <display>
-        <title>html中meta标签的详解</title>
-        <pubTime>2015-01-05T08:49:22.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="HTML" url="http://zq210wl.github.io/categories/HTML/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/12/30/html-http-header-analysis/</loc>
     <lastmod>2015-11-05T10:05:39.402Z</lastmod>
-    <data>
-        <display>
-        <title>理解HTTP Header</title>
-        <pubTime>2014-12-30T07:48:06.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="HTML" url="http://zq210wl.github.io/categories/HTML/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zq210wl.github.io/2015/11/05/hello-world/</loc>
-    <lastmod>2015-11-05T10:05:39.400Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World</title>
-        <pubTime>2015-11-05T10:05:39.400Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/11/css3-learning/</loc>
     <lastmod>2015-11-05T10:05:39.398Z</lastmod>
-    <data>
-        <display>
-        <title>CSS3学习总结</title>
-        <pubTime>2015-02-11T09:15:26.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/30/css3-float/</loc>
     <lastmod>2015-11-05T10:05:39.397Z</lastmod>
-    <data>
-        <display>
-        <title>float元素对兄弟元素的影响</title>
-        <pubTime>2015-01-30T02:54:38.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/03/css-word-break-wrap/</loc>
     <lastmod>2015-11-05T10:05:39.395Z</lastmod>
-    <data>
-        <display>
-        <title>文本换行相关的CSS属性说明</title>
-        <pubTime>2015-02-03T08:43:41.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/29/css-vertical-horizontal-center/</loc>
     <lastmod>2015-11-05T10:05:39.394Z</lastmod>
-    <data>
-        <display>
-        <title>设置元素水平垂直居中N中方法</title>
-        <pubTime>2015-01-29T08:41:27.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/28/css-vertical-align/</loc>
     <lastmod>2015-11-05T10:05:39.393Z</lastmod>
-    <data>
-        <display>
-        <title>理解vertical-align属性</title>
-        <pubTime>2015-01-28T07:42:42.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/15/css-triangle-tips/</loc>
     <lastmod>2015-11-05T10:05:39.389Z</lastmod>
-    <data>
-        <display>
-        <title>纯CSS代码实现小三角效果</title>
-        <pubTime>2015-01-15T03:09:05.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/07/14/css-position-zIndex/</loc>
     <lastmod>2015-11-05T10:05:39.386Z</lastmod>
-    <data>
-        <display>
-        <title>position属性和z-index属性对页面节点层级的影响总结</title>
-        <pubTime>2014-07-14T10:30:55.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/04/14/css-position-overflow/</loc>
     <lastmod>2015-11-05T10:05:39.385Z</lastmod>
-    <data>
-        <display>
-        <title>position属性对overflow的影响, 深入理解position和overflow的关系</title>
-        <pubTime>2014-04-14T10:29:23.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/02/13/css-negative-margin/</loc>
     <lastmod>2015-11-05T10:05:39.384Z</lastmod>
-    <data>
-        <display>
-        <title>负margin用法权威指南</title>
-        <pubTime>2014-02-13T01:35:34.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/28/css-line-height/</loc>
     <lastmod>2015-11-05T10:05:39.382Z</lastmod>
-    <data>
-        <display>
-        <title>理解line-height</title>
-        <pubTime>2015-01-28T06:10:02.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/30/css-horizontal-center-align/</loc>
     <lastmod>2015-11-05T10:05:39.381Z</lastmod>
-    <data>
-        <display>
-        <title>设置元素水平居中</title>
-        <pubTime>2015-01-30T07:33:47.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/06/25/css-clear-fix/</loc>
     <lastmod>2015-11-05T10:05:39.379Z</lastmod>
-    <data>
-        <display>
-        <title>深入理解清除浮动</title>
-        <pubTime>2014-06-25T07:21:41.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/04/14/css-block-formatting-context/</loc>
     <lastmod>2015-11-05T10:05:39.378Z</lastmod>
-    <data>
-        <display>
-        <title>BFC相关文章推荐，让你彻底明白BFC</title>
-        <pubTime>2015-04-14T09:13:56.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="CSS" url="http://zq210wl.github.io/categories/CSS/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/03/computer-process-and-threads/</loc>
     <lastmod>2015-11-05T10:05:39.376Z</lastmod>
-    <data>
-        <display>
-        <title>理解进程和线程</title>
-        <pubTime>2015-01-03T02:38:21.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Computer" url="http://zq210wl.github.io/categories/Computer/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/03/02/angular-weak-performance/</loc>
     <lastmod>2015-11-05T10:05:39.375Z</lastmod>
-    <data>
-        <display>
-        <title>angular的性能分析</title>
-        <pubTime>2015-03-02T06:15:07.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Angular" url="http://zq210wl.github.io/categories/Angular/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/12/31/angular-watch-using/</loc>
     <lastmod>2015-11-05T10:05:39.373Z</lastmod>
-    <data>
-        <display>
-        <title>Angular之watch的特殊使用</title>
-        <pubTime>2014-12-31T07:44:19.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Angular" url="http://zq210wl.github.io/categories/Angular/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/12/31/angular-require-vs-ngRequire/</loc>
     <lastmod>2015-11-05T10:05:39.371Z</lastmod>
-    <data>
-        <display>
-        <title>Angular之required和ng-required的区别</title>
-        <pubTime>2014-12-31T08:16:21.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Angular" url="http://zq210wl.github.io/categories/Angular/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/06/29/angular-provider-compare/</loc>
     <lastmod>2015-11-05T10:05:39.370Z</lastmod>
-    <data>
-        <display>
-        <title>angular中自定定义服务service的方法以及比较</title>
-        <pubTime>2015-06-29T02:57:19.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Angular" url="http://zq210wl.github.io/categories/Angular/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/04/01/angular-issue-ngclick-fired-twice/</loc>
     <lastmod>2015-11-05T10:05:39.368Z</lastmod>
-    <data>
-        <display>
-        <title>Angular issue 之 ng-click事件被执行两次</title>
-        <pubTime>2014-04-01T08:51:06.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Angular" url="http://zq210wl.github.io/categories/Angular/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/07/02/angular-directive-excute-order/</loc>
     <lastmod>2015-11-05T10:05:39.367Z</lastmod>
-    <data>
-        <display>
-        <title>理解Directive中各个方法的执行顺序</title>
-        <pubTime>2015-07-02T06:46:43.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Angular" url="http://zq210wl.github.io/categories/Angular/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2014/12/31/angular-compile-using/</loc>
     <lastmod>2015-11-05T10:05:39.364Z</lastmod>
-    <data>
-        <display>
-        <title>Angular之$compile函数的使用</title>
-        <pubTime>2014-12-31T08:29:45.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Angular" url="http://zq210wl.github.io/categories/Angular/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/06/Link-mobile-development/</loc>
     <lastmod>2015-11-05T10:05:39.363Z</lastmod>
-    <data>
-        <display>
-        <title>移动开发相关文章收集</title>
-        <pubTime>2015-02-06T08:04:09.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Link" url="http://zq210wl.github.io/categories/Link/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/11/05/zt-english-study/</loc>
     <lastmod>2015-11-05T10:05:39.361Z</lastmod>
-    <data>
-        <display>
-        <title>zt_english_study</title>
-        <pubTime>2015-11-05T10:05:39.361Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/11/05/wait-to-do/</loc>
     <lastmod>2015-11-05T10:05:39.359Z</lastmod>
-    <data>
-        <display>
-        <title>待看</title>
-        <pubTime>2015-11-05T10:05:39.359Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/11/05/regexp-collection/</loc>
     <lastmod>2015-11-05T10:05:39.357Z</lastmod>
-    <data>
-        <display>
-        <title>常用正则表达式收集整理</title>
-        <pubTime>2015-11-05T10:05:39.357Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/02/06/other-mobile-website-vs-app/</loc>
     <lastmod>2015-11-05T10:05:39.356Z</lastmod>
-    <data>
-        <display>
-        <title>other_mobile_website_vs_app</title>
-        <pubTime>2015-02-06T08:00:54.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="other" url="http://zq210wl.github.io/categories/other/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/11/05/other-common-words/</loc>
     <lastmod>2015-11-05T10:05:39.354Z</lastmod>
-    <data>
-        <display>
-        <title>前端开发必须知道的单词(实践中慢慢总结出来的)</title>
-        <pubTime>2015-11-05T10:05:39.354Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/07/node-learn-notes/</loc>
     <lastmod>2015-11-05T10:05:39.353Z</lastmod>
-    <data>
-        <display>
-        <title>node学习笔记</title>
-        <pubTime>2015-01-07T06:53:18.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/01/07/node-gulp/</loc>
     <lastmod>2015-11-05T10:05:39.352Z</lastmod>
-    <data>
-        <display>
-        <title>gulp介绍</title>
-        <pubTime>2015-01-07T06:54:05.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/11/05/javascript-web-component/</loc>
     <lastmod>2015-11-05T10:05:39.351Z</lastmod>
-    <data>
-        <display>
-        <title>javascript_web_component</title>
-        <pubTime>2015-11-05T10:05:39.351Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/07/16/javascript-util/</loc>
     <lastmod>2015-11-05T10:05:39.349Z</lastmod>
-    <data>
-        <display>
-        <title>实用工具方法</title>
-        <pubTime>2015-07-16T05:58:10.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Javascript" url="http://zq210wl.github.io/categories/Javascript/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/11/05/javascript-prototype-explain/</loc>
     <lastmod>2015-11-05T10:05:39.348Z</lastmod>
-    <data>
-        <display>
-        <title>详解prototype</title>
-        <pubTime>2015-11-05T10:05:39.348Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/07/06/javascript-native-function-and-property/</loc>
     <lastmod>2015-11-05T10:05:39.346Z</lastmod>
-    <data>
-        <display>
-        <title>原生javascript的一些实用但不为人知的方法和属性</title>
-        <pubTime>2015-07-06T07:57:34.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/11/05/javascript-createObject/</loc>
     <lastmod>2015-11-05T10:05:39.345Z</lastmod>
-    <data>
-        <display>
-        <title>解释Object.create()</title>
-        <pubTime>2015-11-05T10:05:39.345Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/07/06/interview-preparation/</loc>
     <lastmod>2015-11-05T10:05:39.343Z</lastmod>
-    <data>
-        <display>
-        <title>interview_preparation</title>
-        <pubTime>2015-07-06T06:44:57.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="other" url="http://zq210wl.github.io/categories/other/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
+  </url>
+  
   <url>
     <loc>http://zq210wl.github.io/2015/11/05/css-something-need-to-know/</loc>
     <lastmod>2015-11-05T10:05:39.342Z</lastmod>
-    <data>
-        <display>
-        <title>CSS相关的一些基本常识</title>
-        <pubTime>2015-11-05T10:05:39.342Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
+  </url>
+  
 </urlset>

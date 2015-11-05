@@ -53,86 +53,6 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-11-20T07:11:22.000Z"><a href="/2014/11/20/javascript-regular-express-using/">Nov 20 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/11/20/javascript-regular-express-using/">javascript之正则表达式的使用</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><strong>正则表达式的两种声明方法：</strong><ul>
-<li>直接变量法(建议使用)<ul>
-<li>语法: <code>/pattern/attributes</code></li>
-</ul>
-</li>
-<li>创建 RegExp 对象<ul>
-<li>语法：<code>new RegExp(pattern, attributes)</code></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>参数 attributes 是一个可选的字符串，包含属性 “g”、”i” 和 “m”，分别用于指定全局匹配、区分大小写的匹配和多行匹配。</strong><br>例如：<pre><code><span class="keyword">var</span> regExp = <span class="regexp">/(\d+)|([A-Za-z]+)/igm</span>;
-<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(\d+)|([A-Za-z]+)"</span>, <span class="string">"igm"</span>);
-</code></pre></li>
-</ul>
-<h2 id="RegExp_对象常用的两个方法的使用：">RegExp 对象常用的两个方法的使用：</h2><ul>
-<li>test() 方法检索字符串中的指定值。返回值是 true 或 false。<pre><code><span class="keyword">var</span> patt1 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);<span class="comment">//也可直接写为：var patt1 = /e/;</span>
-<span class="keyword">var</span> str1 = <span class="string">'fdfedsfsf'</span>;
-<span class="built_in">console</span>.log(patt1.test(str1));<span class="comment">// true</span>
-</code></pre></li>
-<li>exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null<pre><code><span class="keyword">var</span> patt2=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);
-<span class="built_in">console</span>.log(patt2.exec(<span class="string">"The best things in life are free"</span>));<span class="comment">//["e", index: 2, input: "The best things in life are free"]</span>
-</code></pre></li>
-</ul>
-<h2 id="String对象会用到正则的四个方法：">String对象会用到正则的四个方法：</h2><ul>
-<li><p>match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配;<br>返回值：存放匹配结果的数组</p>
-<pre><code><span class="keyword">var</span> regExp1 = /(\<span class="keyword">d</span>+)|([A-Za-z]+)/<span class="keyword">g</span>;
-<span class="comment">//或者：regExp1 = new RegExp('(\\d+)|([A-Za-z]+)', "g");</span>
-<span class="keyword">var</span> regStr1 = 'jkj12dsfs,.,fddsfFDF,.FDfsdfdsFdsfDSf￥32￥324f';
-<span class="keyword">var</span> matchArr1 = regStr1.<span class="literal">match</span>(regExp1);
-console.<span class="literal">log</span>(matchArr1);
-</code></pre></li>
-<li><p>replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br>返回值：一个新的字符串</p>
-<pre><code><span class="keyword">var</span> regExp2 = <span class="regexp">/\d+/gm</span>;
-<span class="keyword">var</span> regStr2 = <span class="string">'fdf78767ds6f6gf87dsf67ds8f5ds7f7dsf'</span>;
-<span class="keyword">var</span> newStr = regStr2.replace(regExp2, <span class="string">''</span>);
-<span class="built_in">console</span>.log(newStr);<span class="comment">//fdfdsfgfdsfdsfdsfdsf</span>
-</code></pre></li>
-<li><p>split() 方法用于把一个字符串分割成字符串数组。<br>返回值：一个字符串数组</p>
-<pre><code>console.<span class="keyword">log</span>(<span class="string">"2:3:4:5"</span>.<span class="keyword">split</span>(<span class="string">":"</span>));  <span class="regexp">//</span>返回[<span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"4"</span>, <span class="string">"5"</span>]
-console.<span class="keyword">log</span>(<span class="string">"|a|b|c"</span>.<span class="keyword">split</span>(<span class="string">"|"</span>))  //返回[<span class="string">""</span>, <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]
-</code></pre></li>
-<li><p>search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。<br>返回值：第一个与 regexp 相匹配的子串的起始位置<br>说明：search() 方法不执行全局匹配，它将忽略全局标志 g。</p>
-<pre><code>var <span class="built_in">str</span>=<span class="string">"hello World!"</span>;
-console.<span class="built_in">log</span>(<span class="built_in">str</span>.<span class="built_in">search</span>(/world/i));
-</code></pre></li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2014-07-14T10:30:55.000Z"><a href="/2014/07/14/css-position-zIndex/">Jul 14 2014</a></time>
       
       
@@ -334,6 +254,59 @@ console.<span class="built_in">log</span>(<span class="built_in">str</span>.<spa
 <p>示例2.2:<br>body{<br>A {position：relative; overflow: scroll;}<br>A-1 {position: relative;}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：跟示例1.2一样，当父节点A设置了position之后，子节点A-1还是遵循正常的文档流，因此A-1会受它父节点属性的影响</p>
 <p>示例2.3:(重点, 注意跟1.3示例对比)<br>body{<br>A {position：relative; overflow: scroll;}<br>A-1 {position: absolute;}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：当父节点A设置了position之后，效果就跟示例1.3不一样了，这时A-1会受到离它自己最近的一个设置了position属性的父节点的影响，再看下面一个示例：<br>body{<br>A {position：relative; overflow: hidden;}<br>A-1 {overflow: scroll;}<br>A-1-1 {position: absolute;}<br>}<br>注意：这时A-1-1不会收A-1的影响，但是会受到A的影响</p>
 <p>示例2.4:<br>body{<br>A {position:relative; overflow: scroll;}<br>A-1 {position: fixed;}<br>}<br>效果：A-1不会根据A滚动条的滚动而滚动<br>分析：跟1.4示例一样，当子节点的position属性设置为fixed之后，不管的父节点是否设置了position值，都只会受到body节点的影响，其他任何节点都不会影响它</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-04-01T08:51:06.000Z"><a href="/2014/04/01/angular-issue-ngclick-fired-twice/">Apr 1 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/04/01/angular-issue-ngclick-fired-twice/">Angular issue 之 ng-click事件被执行两次</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>用 angular 做公司的一个内部系统时，自己写了一个公用的 Dialog directive, 但是遇到一个问题：注册到一个button上的ng-click事件上的方法莫名其妙的总是点击一次执行两次，都快把我郁闷死了，不过问题到最后总是能找到原因并且解决的。下面我就说下为什么会出现这种问题。</p>
+</blockquote>
+<ul>
+<li><p>问题所在</p>
+<ul>
+<li>问题出现在我使用了$compile去编译了一些后加入到template中的element。但是我为了偷懒把真个template都compile了一次，这时候template中的一些元素等于被compile了两次，只要是被compile了两次的元素，在其上面注册事件都会被执行两次。</li>
+</ul>
+</li>
+<li><p>如何解决</p>
+<ul>
+<li>方法一：只compile后加入模板的元素(也就是没有编译过的元素)</li>
+<li>方法二：在preLink中完成对新元素的加入，因为这时候文章template都还么执行compile, 相加什么就加什么，加完之后，angular会自动把真个template compile 一次。</li>
+</ul>
+</li>
+<li><p>总结</p>
+<ul>
+<li>$compile虽强大，但还需谨慎。</li>
+</ul>
+</li>
+</ul>
 
       
     </div>

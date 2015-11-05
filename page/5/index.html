@@ -53,64 +53,6 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2015-06-29T02:57:19.000Z"><a href="/2015/06/29/angular-provider-compare/">Jun 29 2015</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2015/06/29/angular-provider-compare/">angular中自定定义服务service的方法以及比较</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><p>第一种 provider 方法</p>
-<ul>
-<li>需要实现 <strong>this.$get</strong> 方法，并且此方法返回一个对象</li>
-<li>Providers 是唯一一种你可以传进 <strong>.config()</strong> 函数的 <strong>service</strong>。当你想要在service对象启用之前，先进行模块范围的配置，那就应该用 <strong>provider</strong>。</li>
-<li>所有的provider都可以通过在后面添加后缀<strong>Provider</strong>串来传进.config().<ul>
-<li>比如一个叫 <strong>xxx</strong> provider service, 需要写成 <strong>xxxProvider</strong> .</li>
-</ul>
-</li>
-<li>写法如图：<br><img src="/imgs/angular_provider.png" alt=""></li>
-</ul>
-</li>
-<li><p>第二种 factory 方法</p>
-<ul>
-<li>Factory   方法直接把一个函数当成一个对象的 <strong>$get</strong> 方法, 可以直接返回字符串</li>
-<li>用  Factory 就是创建一个对象，为它添加属性，然后把这个对象返回出来。你把 <strong>service</strong> 传进 <strong>controller</strong> 之后，在 <strong>controller</strong> 里这个对象里的属性就可以通过 <strong>factory</strong> 定义的 service 使用了。</li>
-<li>写法如图：<br><img src="/imgs/angular_factory.png" alt=""></li>
-</ul>
-</li>
-<li><p>第三种 service 方法</p>
-<ul>
-<li>Service 是用”new”关键字实例化的。因此，你应该给”this”添加属性，然后 <strong>service</strong> 返回”this”。你把 <strong>service</strong> 传进 <strong>controller</strong> 之后，在controller里  “this” 上的属性就可以通过 <strong>service</strong> 来使用了.</li>
-<li>写法如图：<br><img src="/imgs/angular_service.png" alt=""></li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2015-06-26T02:08:39.000Z"><a href="/2015/06/26/mobile-dev-experiences/">Jun 26 2015</a></time>
       
       
@@ -277,6 +219,44 @@ otherElement { font-size: <span class="number">1</span>.<span class="number">4</
 <p><a href="http://www.sitepoint.com/understanding-block-formatting-contexts-in-css/" target="_blank" rel="external">http://www.sitepoint.com/understanding-block-formatting-contexts-in-css/</a></p>
 <p><strong>4. 是不是觉得自己已经对BFC有了一定的理解和掌握，但还是知其然而不知其所以然？似懂非懂？不要着急，下面这片文章会解决你所有的疑惑</strong></p>
 <p><a href="http://michael4css.info/fundamentals/context/formatting.htm" target="_blank" rel="external">http://michael4css.info/fundamentals/context/formatting.htm</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-06T05:08:36.000Z"><a href="/2015/04/06/link-collection/">Apr 6 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/04/06/link-collection/">一些值得阅读的文章</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p><a href="http://blog.jobbole.com/48746/" target="_blank" rel="external">毫秒必争，前端网页性能最佳实践</a></p>
+</li>
+<li><p><a href="http://www.uisdc.com/html5-front-end-optimization" target="_blank" rel="external">全是干货！移动HTML 5前端性能优化指南</a></p>
+</li>
+</ul>
 
       
     </div>

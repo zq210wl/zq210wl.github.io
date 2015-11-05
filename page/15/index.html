@@ -53,91 +53,6 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2014-12-30T08:58:48.000Z"><a href="/2014/12/30/other-hexo-introduce/">Dec 30 2014</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2014/12/30/other-hexo-introduce/">Hexo - blog framework - 程序员写博客利器</a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <ul>
-<li><strong>问题</strong><ul>
-<li>你曾经为写博客而烦恼吗？</li>
-<li>你曾经为选择哪个博客提供商而犹豫不决吗？</li>
-<li>你曾经为搭建自运营博客网站的繁琐而郁闷吗？(Wordpress)</li>
-<li>你曾经为Github + Jekyll的繁琐的安装环境而精力憔悴吗？</li>
-</ul>
-</li>
-<li><strong>解决方案</strong><ul>
-<li>有了<code>Hexo</code>你的生活不再烦恼，妈妈再也不用担心我的学习！<ul>
-<li><code>Hexo</code> - A fast, simple &amp; powerful blog framework</li>
-<li>详情请咨询Hexo官网(文档很详细，就不累赘具体介绍了)：<ul>
-<li><a href="http://hexo.io/" target="_blank" rel="external">http://hexo.io/</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><strong>Hexo的优点：</strong><ul>
-<li>Hexo 访问速度快<ul>
-<li>Hexo是基于Nodejs的静态博客工具。所谓静态博客区别于Wordress之类的博客系统主要是并不是由动态语言在服务端生成，而是使用者在使用完博客后生成全站静态文件。</li>
-</ul>
-</li>
-<li>环境安装方便<ul>
-<li>Hexo 是nodejs的一个plugin，只需要装node环境</li>
-<li>npm install -g hexo (一键搞定)</li>
-</ul>
-</li>
-<li>书写方便<ul>
-<li>使用markdown书写。</li>
-</ul>
-</li>
-<li>编译速度快<ul>
-<li>Hexo的编译速度比Jekyll快好多，特别是文章多的情况下</li>
-</ul>
-</li>
-<li>插件多<ul>
-<li>可以安装很多功能强大的插件，比如多说评论等等</li>
-</ul>
-</li>
-<li>容易保存原始资料<ul>
-<li>Hexo的原始资料可以纳入版本管理之中，随时保存原始资料。不用想wordpress那个需要自己去备份数据库</li>
-</ul>
-</li>
-<li>一键部署到github<ul>
-<li>Hexo 提供 command: <code>hexo deploy</code> 来部署网站</li>
-</ul>
-</li>
-<li>…</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
         <time datetime="2014-12-30T07:48:06.000Z"><a href="/2014/12/30/html-http-header-analysis/">Dec 30 2014</a></time>
       
       
@@ -561,6 +476,86 @@ Vary: Accept-Encoding, Cookie, User-Agent
 <li>可以对合并后的图片生成相应的CSS规则</li>
 </ul>
 </li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-11-20T07:11:22.000Z"><a href="/2014/11/20/javascript-regular-express-using/">Nov 20 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/11/20/javascript-regular-express-using/">javascript之正则表达式的使用</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><strong>正则表达式的两种声明方法：</strong><ul>
+<li>直接变量法(建议使用)<ul>
+<li>语法: <code>/pattern/attributes</code></li>
+</ul>
+</li>
+<li>创建 RegExp 对象<ul>
+<li>语法：<code>new RegExp(pattern, attributes)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>参数 attributes 是一个可选的字符串，包含属性 “g”、”i” 和 “m”，分别用于指定全局匹配、区分大小写的匹配和多行匹配。</strong><br>例如：<pre><code><span class="keyword">var</span> regExp = <span class="regexp">/(\d+)|([A-Za-z]+)/igm</span>;
+<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(\d+)|([A-Za-z]+)"</span>, <span class="string">"igm"</span>);
+</code></pre></li>
+</ul>
+<h2 id="RegExp_对象常用的两个方法的使用：">RegExp 对象常用的两个方法的使用：</h2><ul>
+<li>test() 方法检索字符串中的指定值。返回值是 true 或 false。<pre><code><span class="keyword">var</span> patt1 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);<span class="comment">//也可直接写为：var patt1 = /e/;</span>
+<span class="keyword">var</span> str1 = <span class="string">'fdfedsfsf'</span>;
+<span class="built_in">console</span>.log(patt1.test(str1));<span class="comment">// true</span>
+</code></pre></li>
+<li>exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null<pre><code><span class="keyword">var</span> patt2=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);
+<span class="built_in">console</span>.log(patt2.exec(<span class="string">"The best things in life are free"</span>));<span class="comment">//["e", index: 2, input: "The best things in life are free"]</span>
+</code></pre></li>
+</ul>
+<h2 id="String对象会用到正则的四个方法：">String对象会用到正则的四个方法：</h2><ul>
+<li><p>match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配;<br>返回值：存放匹配结果的数组</p>
+<pre><code><span class="keyword">var</span> regExp1 = /(\<span class="keyword">d</span>+)|([A-Za-z]+)/<span class="keyword">g</span>;
+<span class="comment">//或者：regExp1 = new RegExp('(\\d+)|([A-Za-z]+)', "g");</span>
+<span class="keyword">var</span> regStr1 = 'jkj12dsfs,.,fddsfFDF,.FDfsdfdsFdsfDSf￥32￥324f';
+<span class="keyword">var</span> matchArr1 = regStr1.<span class="literal">match</span>(regExp1);
+console.<span class="literal">log</span>(matchArr1);
+</code></pre></li>
+<li><p>replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br>返回值：一个新的字符串</p>
+<pre><code><span class="keyword">var</span> regExp2 = <span class="regexp">/\d+/gm</span>;
+<span class="keyword">var</span> regStr2 = <span class="string">'fdf78767ds6f6gf87dsf67ds8f5ds7f7dsf'</span>;
+<span class="keyword">var</span> newStr = regStr2.replace(regExp2, <span class="string">''</span>);
+<span class="built_in">console</span>.log(newStr);<span class="comment">//fdfdsfgfdsfdsfdsfdsf</span>
+</code></pre></li>
+<li><p>split() 方法用于把一个字符串分割成字符串数组。<br>返回值：一个字符串数组</p>
+<pre><code>console.<span class="keyword">log</span>(<span class="string">"2:3:4:5"</span>.<span class="keyword">split</span>(<span class="string">":"</span>));  <span class="regexp">//</span>返回[<span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"4"</span>, <span class="string">"5"</span>]
+console.<span class="keyword">log</span>(<span class="string">"|a|b|c"</span>.<span class="keyword">split</span>(<span class="string">"|"</span>))  //返回[<span class="string">""</span>, <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]
+</code></pre></li>
+<li><p>search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。<br>返回值：第一个与 regexp 相匹配的子串的起始位置<br>说明：search() 方法不执行全局匹配，它将忽略全局标志 g。</p>
+<pre><code>var <span class="built_in">str</span>=<span class="string">"hello World!"</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.<span class="built_in">search</span>(/world/i));
+</code></pre></li>
 </ul>
 
       
