@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular之$compile函数的使用 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Angular之$compile函数的使用"/>
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-31T08:29:45.000Z"><a href="/2014/12/31/angular-compile-using/">Dec 31 2014</a></time>
+      
+      
+  
+    <h1 class="title">Angular之$compile函数的使用</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p><strong>Angular之$compile函数的使用</strong></p>
+<blockquote>
+<p>在用Angular写一些比较复杂的功能的时候，难免会遇到这样的需求：需要懂动态的往页面中插入一些元素，而且这些元素还需要跟scope中的的某些值绑定。</p>
+</blockquote>
+<p>比如要将一个div动态的插入到body中,如下:</p>
+<pre><code>scope.attr = <span class="string">"hello"</span>;
+$(<span class="string">"body"</span>).append('&lt;<span class="keyword">div</span> ng-<span class="keyword">bind</span>=<span class="string">"attr"</span>&gt;&lt;/<span class="keyword">div</span>&gt;');
+</code></pre><blockquote>
+<p>但是如果只是上面这么写的话，不管你<code>scope.attr</code>怎么变化, div的html都不会有变化。那么怎么才能让它们绑定到一起的呢？这就要用到<code>$compile</code>函数了。</p>
+</blockquote>
+</li>
+<li><p><strong>$compile函数的作用</strong><br><code>$compile</code>函数可以将一段html字符串或者DOM元素跟scope编译绑定到一起。</p>
+</li>
+<li><p><strong>$compile函数如何使用</strong></p>
+<pre><code><span class="variable">$compile</span>(<span class="literal">element</span>)(scope);
+//<span class="literal">element</span>可以是一段html字符串，也可以是DOM元素；<span class="keyword">return</span>值为编译完后的DOM元素
+</code></pre></li>
+<li><p><strong>用$compile完成上面的需求</strong></p>
+<pre><code>scope.attr = <span class="string">"hello"</span>;
+var html = <span class="variable">$compile</span>(<span class="string">'&lt;div ng-bind="attr"&gt;&lt;/div&gt;'</span>)(scope);
+$(<span class="string">"body"</span>).append(html);
+scope.<span class="variable">$digest</span>();//遍历scope
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Angular/">Angular</a>
+  </div>
+
+        
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2014/12/31/angular-compile-using/" data-title="Angular之$compile函数的使用" data-url="http://zq210wl.github.io/2014/12/31/angular-compile-using/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zq210wl"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

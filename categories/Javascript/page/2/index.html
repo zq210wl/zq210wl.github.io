@@ -1,0 +1,353 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 2 页 | Javascript | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title category">Javascript</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-02-03T08:23:35.000Z"><a href="/2015/02/03/javascript-design-pattern/">Feb 3 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/02/03/javascript-design-pattern/">设计模式之MVC，MVP 和 MVVM</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>看了许多关于设计模式的文章，结合这些文章和自己的理解，谈谈个人对 MVC，MVP 和 MVVM 这三种设计模式的理解。</p>
+</blockquote>
+<h2 id="MVC">MVC</h2><ul>
+<li><p>MVC分别代表什么？</p>
+<ul>
+<li>Model(模型)：数据层,用于写<strong>业务</strong>逻辑代码<ul>
+<li>封装与应用程序的业务逻辑相关的<strong>数据</strong>以及对<strong>数据的处理方法</strong>。 “模型”有对数据直接访问的权力。 “模型”不依赖“视图”和“控制器”，也就是说，模型不关心它会被如何显示或是如何被操作。</li>
+</ul>
+</li>
+<li>Controller(控制器)：控制层，用于写<strong>应用程序</strong>逻辑<ul>
+<li>处理和响应事件，通常是用户操作，并监控模型上的变化，然后去修改视图。</li>
+</ul>
+</li>
+<li>View(视图)：用户界面，用于<strong>数据展示</strong>，view中包含跟显示相关的<strong>view逻辑</strong><ul>
+<li>能够实现数据有目的的显示，通常是一个用户界面元素。在视图中一般没有程序上的逻辑。在 Web 应用程序中的 MVC，通常把显示动态数据的 html 页面称为视图。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>到底怎么分清楚Model和Controller?</p>
+<p><em>举个简单例子吧：用户往购物车添加一个商品</em><br>用户点击商品的“添加到购物车”按钮，引起一次请求。服务器开始处理该请求，过程：<br>1、检查当前用户是否有权限（比如是否已经登录、用户帐户状态、是否可以购物等）<br>2、检查要添加的商品ID是否有效、<br>3、检查要添加的商品库存是否足够<br>4、将商品加入购物车，并保存购物车状态<br>5、反馈信息<br><em>在上述流程中：</em><br>1： 是应用程序逻辑（一般由框架实现）：因为和“添加商品到购物车”这个业务没有直接关系<br>2： 业务逻辑：不能购买不存在的商品，这是业务进行的基本条件<br>3： 业务逻辑：商品库存决定了是否可以购买此商品，这是业务进行的基本条件<br>4： 业务逻辑<br>5： 应用程序逻辑</p>
+</li>
+</ul>
+<h2 id="MVP">MVP</h2><p><img src="/imgs/javascript_mvp.png" alt="">;</p>
+<ul>
+<li>MVP 模式将 Controller 改名为 Presenter(推送器),</li>
+<li>这三部分是如果协调工作的？<ol>
+<li>各部分之间的通信，都是<strong>双向的</strong>。</li>
+<li><strong>View 与 Model 不发生联系</strong>，都通过 Presenter 传递。</li>
+<li>View 非常薄，<strong>不部署任何业务逻辑</strong>；而 Presenter非常厚，所有的应用程序逻辑和<strong>一些不知道应该算是业务逻辑还是应用程序逻辑的代码都部署在这层</strong>。</li>
+</ol>
+</li>
+</ul>
+<h2 id="MVVM_(Model-View-ViewModel)">MVVM (Model-View-ViewModel)</h2><p><img src="/imgs/javascript_mvvm.png" alt="">;</p>
+<ul>
+<li>MVVM 模式将 Presenter 改名为 ViewModel，基本上与 MVP 模式完全一致。</li>
+<li>唯一区别：ViewModel将密切关联的Model和View的逻辑单独提取出来，用双向绑定将他们关联到一起。Model的改变会通过ViewModel来映射到View上，反之亦然。<ul>
+<li>Angular就是采用这种模式，实现了双向绑定</li>
+</ul>
+</li>
+<li>好处：<ul>
+<li>省去了model变化之后手动修改view和view变化之后手动修改model的繁琐工作</li>
+<li>UI和功能更加松耦合了，功能的可测试性就越来越强。</li>
+</ul>
+</li>
+<li>有关MVVM的更详细解释：<ul>
+<li><a href="http://objccn.io/issue-13-1/" target="_blank" rel="external">http://objccn.io/issue-13-1/</a></li>
+</ul>
+</li>
+</ul>
+<p>其他关于这三种设计模式的相关文章：<br><a href="http://blog.nodejitsu.com/scaling-isomorphic-javascript-code/" target="_blank" rel="external">Scaling Isomorphic Javascript Code</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-05T05:40:55.000Z"><a href="/2015/01/05/javascript-excel-table/">Jan 5 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/05/javascript-excel-table/">当移动滚动条时固定table的第一行和第一列，类似excel的滚动效果，jquery实现</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>项目中遇到个需求，就是要把table的第一行和第一列固定，这样当出现滚动条的时候就方便在滚动数据的时候可以对照title来看，而且为了美观还必须要跟excel的滚动效果一样，也就是滚动条不能只出现在table内容区域，还必须包括title区域，这样的话就不能简单的只在内容区域的div上设置overflow:auto，刚开始本想在网上搜一些现成的代码，但是很不幸没有搜到有这样的需求，大部分都是只有固定头一行或头一列，这样还好实现，但是要两个都实现就有以下复杂了。最后我还是自己来实现了。</p>
+</blockquote>
+<p>看效果图：</p>
+<p><strong>页面刚初始化的table样式：</strong></p>
+<p><img src="/imgs/javascript_excel_table_init.jpg" alt=""></p>
+<p><strong>拖动滚动条后的table样式：</strong></p>
+<p><img src="/imgs/javascript_excel_table_move.jpg" alt=""></p>
+<p><strong><a href="http://plnkr.co/edit/MUxu6a87lzR2Xptishjq?p=preview" target="_blank" rel="external">在线看效果</a></strong></p>
+<p><strong><a href="https://github.com/zq210wl/Fixed-the-first-line-and-first-column-of-table" target="_blank" rel="external">访问github上的源码</a></strong></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-11-20T07:11:22.000Z"><a href="/2014/11/20/javascript-regular-express-using/">Nov 20 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/11/20/javascript-regular-express-using/">javascript之正则表达式的使用</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><strong>正则表达式的两种声明方法：</strong><ul>
+<li>直接变量法(建议使用)<ul>
+<li>语法: <code>/pattern/attributes</code></li>
+</ul>
+</li>
+<li>创建 RegExp 对象<ul>
+<li>语法：<code>new RegExp(pattern, attributes)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>参数 attributes 是一个可选的字符串，包含属性 “g”、”i” 和 “m”，分别用于指定全局匹配、区分大小写的匹配和多行匹配。</strong><br>例如：<pre><code><span class="keyword">var</span> regExp = <span class="regexp">/(\d+)|([A-Za-z]+)/igm</span>;
+<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(\d+)|([A-Za-z]+)"</span>, <span class="string">"igm"</span>);
+</code></pre></li>
+</ul>
+<h2 id="RegExp_对象常用的两个方法的使用：">RegExp 对象常用的两个方法的使用：</h2><ul>
+<li>test() 方法检索字符串中的指定值。返回值是 true 或 false。<pre><code><span class="keyword">var</span> patt1 = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);<span class="comment">//也可直接写为：var patt1 = /e/;</span>
+<span class="keyword">var</span> str1 = <span class="string">'fdfedsfsf'</span>;
+<span class="built_in">console</span>.log(patt1.test(str1));<span class="comment">// true</span>
+</code></pre></li>
+<li>exec() 方法检索字符串中的指定值。返回值是被找到的值。如果没有发现匹配，则返回 null<pre><code><span class="keyword">var</span> patt2=<span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"e"</span>);
+<span class="built_in">console</span>.log(patt2.exec(<span class="string">"The best things in life are free"</span>));<span class="comment">//["e", index: 2, input: "The best things in life are free"]</span>
+</code></pre></li>
+</ul>
+<h2 id="String对象会用到正则的四个方法：">String对象会用到正则的四个方法：</h2><ul>
+<li><p>match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配;<br>返回值：存放匹配结果的数组</p>
+<pre><code><span class="keyword">var</span> regExp1 = /(\<span class="keyword">d</span>+)|([A-Za-z]+)/<span class="keyword">g</span>;
+<span class="comment">//或者：regExp1 = new RegExp('(\\d+)|([A-Za-z]+)', "g");</span>
+<span class="keyword">var</span> regStr1 = 'jkj12dsfs,.,fddsfFDF,.FDfsdfdsFdsfDSf￥32￥324f';
+<span class="keyword">var</span> matchArr1 = regStr1.<span class="literal">match</span>(regExp1);
+console.<span class="literal">log</span>(matchArr1);
+</code></pre></li>
+<li><p>replace() 方法用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串。<br>返回值：一个新的字符串</p>
+<pre><code><span class="keyword">var</span> regExp2 = <span class="regexp">/\d+/gm</span>;
+<span class="keyword">var</span> regStr2 = <span class="string">'fdf78767ds6f6gf87dsf67ds8f5ds7f7dsf'</span>;
+<span class="keyword">var</span> newStr = regStr2.replace(regExp2, <span class="string">''</span>);
+<span class="built_in">console</span>.log(newStr);<span class="comment">//fdfdsfgfdsfdsfdsfdsf</span>
+</code></pre></li>
+<li><p>split() 方法用于把一个字符串分割成字符串数组。<br>返回值：一个字符串数组</p>
+<pre><code>console.<span class="keyword">log</span>(<span class="string">"2:3:4:5"</span>.<span class="keyword">split</span>(<span class="string">":"</span>));  <span class="regexp">//</span>返回[<span class="string">"2"</span>, <span class="string">"3"</span>, <span class="string">"4"</span>, <span class="string">"5"</span>]
+console.<span class="keyword">log</span>(<span class="string">"|a|b|c"</span>.<span class="keyword">split</span>(<span class="string">"|"</span>))  //返回[<span class="string">""</span>, <span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>]
+</code></pre></li>
+<li><p>search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。<br>返回值：第一个与 regexp 相匹配的子串的起始位置<br>说明：search() 方法不执行全局匹配，它将忽略全局标志 g。</p>
+<pre><code>var <span class="built_in">str</span>=<span class="string">"hello World!"</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.<span class="built_in">search</span>(/world/i));
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+    <a href="/categories/Javascript/" class="alignleft prev">上一页</a>
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

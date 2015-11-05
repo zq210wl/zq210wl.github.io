@@ -1,0 +1,269 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>移动web开发技巧收集 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="移动web开发技巧收集"/>
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-26T02:08:39.000Z"><a href="/2015/06/26/mobile-dev-experiences/">Jun 26 2015</a></time>
+      
+      
+  
+    <h1 class="title">移动web开发技巧收集</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="meta相关"><strong>meta相关</strong></h2><ul>
+<li><p>设置viewport</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"viewport"</span> content=<span class="string">"width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</span>&gt;
+</code></pre></li>
+<li><p>设置格式检测format-detection</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"format-detection"</span> content=<span class="string">"telephone=no,email=no,adress=no"</span>&gt;
+</code></pre></li>
+<li><p>添加到主屏幕后，全屏显示</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"apple-touch-fullscreen"</span> content=<span class="string">"yes"</span>&gt;
+&lt;meta <span class="property">name</span>=<span class="string">"full-screen"</span> content=<span class="string">"yes"</span>&gt;
+</code></pre></li>
+<li><p>开启webapp功能，全屏显示，删除默认的工具栏和菜单栏</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"apple-mobile-web-app-capable"</span> content=<span class="string">"yes"</span>&gt;
+</code></pre></li>
+<li><p>设置苹果状态栏显示样式为black</p>
+<pre><code>&lt;meta <span class="property">name</span>=<span class="string">"apple-mobile-web-app-status-bar-style"</span> content=<span class="string">"black"</span>&gt;
+</code></pre></li>
+</ul>
+<h2 id="link相关(web_app)"><strong>link相关(web app)</strong></h2><ul>
+<li><p>设置web应用程序的启动画面(对应不同设置使用不同size的图片)</p>
+<pre><code><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span> <span class="attribute">size</span>=<span class="value">"640x1096"</span> <span class="attribute">href</span>=<span class="value">"/startup5.png"</span> <span class="attribute">media</span>=<span class="value">"(device-height:568px)"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"apple-touch-startup-image"</span> <span class="attribute">size</span>=<span class="value">"640x920"</span> <span class="attribute">href</span>=<span class="value">"/startup.png"</span> <span class="attribute">media</span>=<span class="value">"(device-height:480px)"</span>&gt;</span>
+</code></pre></li>
+<li><p>添加至主屏幕(桌面)时的图标</p>
+<pre><code>&lt;link rel=<span class="string">"apple-touch-icon-precomposed"</span> sizes=<span class="string">"57x57"</span> href=<span class="string">"/touch-icon-57-precomposed.png"</span>&gt;
+
+&lt;link rel=<span class="string">"apple-touch-icon-precomposed"</span> sizes=<span class="string">"72x72"</span> href=<span class="string">"/touch-icon-72-precomposed.png"</span>&gt;
+
+各尺寸自适应代码：默认：<span class="number">57</span>x57; iPad：<span class="number">72</span>x72; iPhone <span class="number">4</span>和Retina屏：<span class="number">114</span>x114（原尺寸的<span class="number">2</span>倍）;
+</code></pre></li>
+</ul>
+<h2 id="CSS相关"><strong>CSS相关</strong></h2><ul>
+<li><p>字体大小设置</p>
+<pre><code>html, body { font-size: <span class="number">10</span>px; }
+otherElement { font-size: <span class="number">1</span>.<span class="number">4</span><span class="comment">rem; }</span>
+</code></pre></li>
+<li><p>实现网页在Safari快速滚动和回弹</p>
+<pre><code><span class="tag">body</span> <span class="rules">{
+  <span class="rule"><span class="attribute">position</span>:<span class="value"> relative</span></span>;
+  <span class="rule"><span class="attribute">-webkit-overflow-scrolling</span>:<span class="value"> touch</span></span>;
+}</span>
+</code></pre></li>
+<li><p>屏蔽ios和android下点击元素时出现的阴影</p>
+<pre><code><span class="tag">body</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-tap-highlight-color</span>:<span class="value"> <span class="function">rgba</span>(<span class="number">255</span>,<span class="number">255</span>,<span class="number">255</span>,<span class="number">0</span>)</span></span>; }</span>
+</code></pre></li>
+<li><p>阻止旋转屏幕时自动调整字体大小</p>
+<pre><code><span class="tag">body</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-text-size-adjust</span>:<span class="value"> <span class="number">100%</span></span></span>; }</span>
+</code></pre></li>
+<li><p>禁止用户选中文字</p>
+<pre><code><span class="tag">body</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-user-select</span>:<span class="value">none</span></span>; }</span>
+</code></pre></li>
+<li><p>禁止长按屏幕出现系统菜单(可以：禁止用户保存图片,复制图片,在新窗口打开)</p>
+<pre><code><span class="tag">img</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-touch-callout</span>:<span class="value">none</span></span>; }</span>
+</code></pre></li>
+<li><p>屏蔽输入框怪异的内阴影</p>
+<pre><code><span class="tag">input</span>,<span class="tag">textarea</span> <span class="rules">{ <span class="rule"><span class="attribute">-webkit-appearance</span>:<span class="value">none </span></span></span>}
+</code></pre></li>
+<li><p>做高清图标(宽高各缩放到一半: 100 <em> 100 -&gt; 50 </em> 50)</p>
+<pre><code><span class="built_in">background</span>-<span class="built_in">size</span>
+</code></pre></li>
+<li><p>设置元素的宽高</p>
+<pre><code><span class="attribute">-webkit-box-sizing</span>: border-box;
+</code></pre></li>
+</ul>
+<h2 id="DOM相关"><strong>DOM相关</strong></h2><ul>
+<li>自动大写与自动修正<pre><code>&lt;input <span class="class"><span class="keyword">type</span></span>=<span class="string">"text"</span> autocapitalize=<span class="string">"off"</span> autocorrect=<span class="string">"off"</span> /&gt;
+</code></pre></li>
+</ul>
+<h2 id="图片设置相关"><strong>图片设置相关</strong></h2><ul>
+<li>通常情况下设计师在设计移动网页psd图片时要按照 320 <em> 320 的两倍来设计图片大小，即 640 </em> 640。然后从图片到页面的时候统一又缩放到一半，图片用 background-size 来设置或img标签，这样做可以放图片在不同尺寸的设备上显示差异不会太大。</li>
+</ul>
+<h2 id="一些实用技巧"><strong>一些实用技巧</strong></h2><ul>
+<li>让元素border包含在的指定的宽高范围内<pre><code><span class="attribute">border-size</span>: <span class="string">border-box;</span>
+</code></pre></li>
+</ul>
+<p><em>此文章未完，将会不断更新总结</em></p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/Mobile/">Mobile</a>
+  </div>
+
+        
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2015/06/26/mobile-dev-experiences/" data-title="移动web开发技巧收集" data-url="http://zq210wl.github.io/2015/06/26/mobile-dev-experiences/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zq210wl"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

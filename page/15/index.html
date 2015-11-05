@@ -1,0 +1,675 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 15 页 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-30T08:58:48.000Z"><a href="/2014/12/30/other-hexo-introduce/">Dec 30 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/30/other-hexo-introduce/">Hexo - blog framework - 程序员写博客利器</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><strong>问题</strong><ul>
+<li>你曾经为写博客而烦恼吗？</li>
+<li>你曾经为选择哪个博客提供商而犹豫不决吗？</li>
+<li>你曾经为搭建自运营博客网站的繁琐而郁闷吗？(Wordpress)</li>
+<li>你曾经为Github + Jekyll的繁琐的安装环境而精力憔悴吗？</li>
+</ul>
+</li>
+<li><strong>解决方案</strong><ul>
+<li>有了<code>Hexo</code>你的生活不再烦恼，妈妈再也不用担心我的学习！<ul>
+<li><code>Hexo</code> - A fast, simple &amp; powerful blog framework</li>
+<li>详情请咨询Hexo官网(文档很详细，就不累赘具体介绍了)：<ul>
+<li><a href="http://hexo.io/" target="_blank" rel="external">http://hexo.io/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hexo的优点：</strong><ul>
+<li>Hexo 访问速度快<ul>
+<li>Hexo是基于Nodejs的静态博客工具。所谓静态博客区别于Wordress之类的博客系统主要是并不是由动态语言在服务端生成，而是使用者在使用完博客后生成全站静态文件。</li>
+</ul>
+</li>
+<li>环境安装方便<ul>
+<li>Hexo 是nodejs的一个plugin，只需要装node环境</li>
+<li>npm install -g hexo (一键搞定)</li>
+</ul>
+</li>
+<li>书写方便<ul>
+<li>使用markdown书写。</li>
+</ul>
+</li>
+<li>编译速度快<ul>
+<li>Hexo的编译速度比Jekyll快好多，特别是文章多的情况下</li>
+</ul>
+</li>
+<li>插件多<ul>
+<li>可以安装很多功能强大的插件，比如多说评论等等</li>
+</ul>
+</li>
+<li>容易保存原始资料<ul>
+<li>Hexo的原始资料可以纳入版本管理之中，随时保存原始资料。不用想wordpress那个需要自己去备份数据库</li>
+</ul>
+</li>
+<li>一键部署到github<ul>
+<li>Hexo 提供 command: <code>hexo deploy</code> 来部署网站</li>
+</ul>
+</li>
+<li>…</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-30T07:48:06.000Z"><a href="/2014/12/30/html-http-header-analysis/">Dec 30 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/30/html-http-header-analysis/">理解HTTP Header</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>HTTP协议是怎样传输的？<ul>
+<li>HTTP采用请求/响应模型，浏览器端发送请求，服务器给与响应。就整个网络资源传输而言，包括message-header和message-body两部分。</li>
+<li>http 请求的整个过程<br><img src="/imgs/http_request_process.gif" alt=""></li>
+</ul>
+</li>
+<li>http header<ul>
+<li>http header内容的组织形式，大体分为Request和Response两部分。</li>
+</ul>
+</li>
+<li>Request<ul>
+<li>当你在流览器位址栏里键入一个url，你的流览器会将类似如下的http请求<pre><code>GET <span class="regexp">/tutorials/</span>other<span class="regexp">/top-20-mysql-best-practices/</span> HTTP/<span class="number">1.1</span> (Request line)
+<span class="string">Host:</span> net.tutsplus.com
+User-<span class="string">Agent:</span> Mozilla<span class="regexp">/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.5) Gecko/</span><span class="number">20091102</span> Firefox/<span class="number">3.5</span><span class="number">.5</span> (.NET CLR <span class="number">3.5</span><span class="number">.30729</span>)
+<span class="string">Accept:</span> text<span class="regexp">/html,application/</span>xhtml+xml,application<span class="regexp">/xml;q=0.9,*/</span>*;q=<span class="number">0.8</span>
+Accept-<span class="string">Language:</span> en-us,en;q=<span class="number">0.5</span>
+Accept-<span class="string">Encoding:</span> gzip,deflate
+Accept-<span class="string">Charset:</span> ISO-<span class="number">8859</span>-<span class="number">1</span>,utf-<span class="number">8</span>;q=<span class="number">0.7</span>,*;q=<span class="number">0.7</span>
+Keep-<span class="string">Alive:</span> <span class="number">300</span>
+<span class="string">Connection:</span> keep-alive
+<span class="string">Cookie:</span> PHPSESSID=r2t5uvjq435r4q7ib3vtdjq120
+<span class="string">Pragma:</span> no-cache
+Cache-<span class="string">Control:</span> no-cache
+</code></pre><ul>
+<li>第一行被称为“Request Line” 它描述的是这个请求的基本资讯，剩下的就是HTTP headers了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Response<ul>
+<li>请求完成之后，你的流览器可能会收到如下的HTTP回应：<pre><code>HTTP/<span class="number">1.</span>x <span class="number">200</span> OK (state line)
+Transfer-Encoding: chunked
+Date: Sat, <span class="number">28</span> Nov <span class="number">2009</span> <span class="number">04</span>:<span class="number">36</span>:<span class="number">25</span> GMT
+Server: LiteSpeed
+Connection: close
+X-Powered-By: W3 Total Cache/<span class="number">0.8</span>
+Pragma: <span class="keyword">public</span>
+Expires: Sat, <span class="number">28</span> Nov <span class="number">2009</span> <span class="number">05</span>:<span class="number">36</span>:<span class="number">25</span> GMT
+Etag: <span class="string">"pub1259380237;gz"</span>
+Cache-Control: max-age=<span class="number">3600</span>, <span class="keyword">public</span>
+Content-Type: text/html; charset=UTF-<span class="number">8</span>
+Last-Modified: Sat, <span class="number">28</span> Nov <span class="number">2009</span> <span class="number">03</span>:<span class="number">50</span>:<span class="number">37</span> GMT
+X-Pingback: http:<span class="comment">//net.tutsplus.com/xmlrpc.php</span>
+Content-Encoding: gzip
+Vary: Accept-Encoding, Cookie, User-Agent
+&lt;!-- ... rest of the html ... --&gt;
+</code></pre><ul>
+<li>第一行被称为“Status Line”，它之后就是http headers，空行完了就开始输出内容了（在这个案例中是一些html输出）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTTP Request结构<br><img src="/imgs/http_request_composition.gif" alt=""><ul>
+<li>被称作“first line”的第一行包含三个部分：<ul>
+<li>“method” 表明这是何种类型的请求. 最常见的请求类型有GET,POST和HEAD.</li>
+<li>“path” 体现的是主机之后的路径. 例如，当你请求“<a href="http://net.tutsplus.com/tutorials/other”时" target="_blank" rel="external">http://net.tutsplus.com/tutorials/other”时</a>, path 就会是”/tutorials/other”.</li>
+<li>“protocol” 包含有“HTTP” 和版本号.</li>
+</ul>
+</li>
+<li>剩下的部分每行都是一个”Name:Value”对(即: MIME信息)。它们包含了各式各样关于请求和你流览器的资讯。<ul>
+<li>详细信息请参考：<ul>
+<li><a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank" rel="external">http://en.wikipedia.org/wiki/List_of_HTTP_header_fields</a></li>
+</ul>
+</li>
+<li>这些headers大部分都是可选的。HTTP 请求甚至可以被精简成这样子：<pre><code><span class="request">GET <span class="string">/tutorials/other/top-20-mysql-best-practices/</span> HTTP/1.1</span>
+<span class="attribute">Host</span>: <span class="string">net.tutsplus.com</span>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTTP Response结构<br><img src="/imgs/http_response_composition.gif" alt=""><ul>
+<li>第一个有价值的资讯就是协定。目前伺服器都会使用HTTP/1.x 或者HTTP/1.1。</li>
+<li>接下来一个简短的资讯代表状态。代码200意味着我们的请求已经发送成功了，伺服器将会返回给我们所请求的文档，在Header资讯之后。<ul>
+<li>HTTP 状态码<ul>
+<li>200 用来表示请求成功.</li>
+<li>300 来表示重定向.</li>
+<li>400 用来表示请求出现问题.</li>
+<li>500 用来表示伺服器出现问题.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>同样，这些Header资讯也是可选的。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-29T09:15:37.000Z"><a href="/2014/12/29/tool-git-collection/">Dec 29 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/29/tool-git-collection/">git学习总结</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="基本命令">基本命令</h2><ul>
+<li><p><strong>安装git</strong></p>
+<ul>
+<li>下载安装git</li>
+<li>配置username 和 emai<ul>
+<li>git config –global user.name “Your Name”</li>
+<li>git config –global user.email “email@example.com”</li>
+<li>注意git config命令的–global参数，用了这个参数，表示你这台机器上所有的Git仓库都会使用这个配置，当然也可以对某个仓库指定不同的用户名和Email地址。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>创建和初始化版本库</strong></p>
+<ul>
+<li>mkdir learngit</li>
+<li>git init</li>
+</ul>
+</li>
+<li><p><strong>添加文件到仓库</strong></p>
+<ul>
+<li>git add readme.txt   [添加到暂存区]</li>
+</ul>
+</li>
+<li><p><strong>提交文件到仓库</strong></p>
+<ul>
+<li>git commit -m “wrote a readme file”</li>
+</ul>
+</li>
+<li><p><strong>查看仓库当前状态</strong></p>
+<ul>
+<li>git status</li>
+</ul>
+</li>
+<li><p><strong>查看本地文件修改内容</strong></p>
+<ul>
+<li>git diff readme.txt   [比对工作区和缓存去的不同]</li>
+<li>git diff HEAD – readme.txt   [查看工作区和版本库里面最新版本的区别]</li>
+</ul>
+</li>
+<li><p><strong>查看提交日志</strong></p>
+<ul>
+<li>git log</li>
+<li>git log –pretty=oneline  [精简日志信息]</li>
+</ul>
+</li>
+<li><p><strong>回退到版本</strong></p>
+<ul>
+<li>git reset –hard HEAD^   [回退到上一版本]</li>
+<li>git reset –hard HEAD^^   [回退到上二版本]</li>
+<li>git reset –hard HEAD~10   [回退到上10个版本]</li>
+</ul>
+</li>
+<li><p><strong>回到未来的某个版本</strong></p>
+<ul>
+<li>git reset –hard 3628164 [只要知道未来的commit id就行]</li>
+</ul>
+</li>
+<li><p><strong>查看历史命令</strong></p>
+<ul>
+<li>git reflog  [可以用来找回未来的某个commit id, 用来回退]、</li>
+</ul>
+</li>
+<li><p><strong>撤销工作去的修改[或恢复到最新版本]</strong></p>
+<ul>
+<li>git checkout – readme.txt</li>
+</ul>
+</li>
+<li><p><strong>删除文件</strong></p>
+<ul>
+<li>git rm test.txt  [从版本库中删除]</li>
+<li>git commit test.txt</li>
+</ul>
+</li>
+</ul>
+<h2 id="远程仓库(已githup为例)">远程仓库(已githup为例)</h2><ul>
+<li><p><strong>创建SSH Key</strong></p>
+<ul>
+<li><p>ssh-keygen -t rsa -C “youremail@example.com”</p>
+<ul>
+<li>在用户主目录里找到.ssh目录，里面有id_rsa和id_rsa.pub两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥。</li>
+</ul>
+</li>
+<li><p>在Github上添加SSH Key</p>
+<ul>
+<li>登陆GitHub，打开“Account settings”，“SSH Keys”页面</li>
+<li>然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>添加远程仓库</strong></p>
+<ul>
+<li>git remote add origin git@github.com:zq210wl/learngit.git [添加远程仓库origin]</li>
+</ul>
+</li>
+<li><p><strong>把本地库的内容推送到远程库上</strong></p>
+<ul>
+<li>git push -u origin master  [第一次提交分支时]<ul>
+<li>由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送到远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。</li>
+</ul>
+</li>
+<li>git push origin master  [把当前本地库内容推动到远程origin库下的master分支]</li>
+<li>git push  [推送当前所在分支到远程库，如果当前是在dev分支，那么会提交到dev上]</li>
+</ul>
+</li>
+<li><p><strong>克隆远程分支到本地</strong></p>
+<ul>
+<li>git clone git@github.com:zq210wl/learngit.git destinationDir  [目标文件夹可选]<ul>
+<li>默认从远程clone的仓库，在本地只有主分支，如果要用其他分支就必须自己创建，然后建立对应联系</li>
+<li>当你从远程仓库克隆时，实际上Git自动把本地的master分支和远程的master分支对应起来了，并且，远程仓库的默认名称是origin。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>创建分支</strong></p>
+<ul>
+<li>git branch dev  [在当前分支上创建dev分支]</li>
+</ul>
+</li>
+<li><p><strong>切换分支</strong></p>
+<ul>
+<li>git checkout dev</li>
+</ul>
+</li>
+<li><p><strong>创建并切换到分支</strong></p>
+<ul>
+<li>git checkout -b dev  [加上-b参数表示创建并切换]</li>
+</ul>
+</li>
+<li><p><strong>查看分支</strong></p>
+<ul>
+<li>git branch</li>
+</ul>
+</li>
+<li><p><strong>查看远程仓库信息</strong></p>
+<ul>
+<li>git remote</li>
+<li>git remote -v  [显示更详细的信息]</li>
+</ul>
+</li>
+<li><p><strong>合并分支</strong></p>
+<ul>
+<li>git merge dev  [合并某分支到当前分支，如果要合并到master分支，就必须切换到master分支下]   [Fast forward模式]</li>
+<li>git merge –no-ff -m “merge with no-ff” dev  [–no-ff]<ul>
+<li>合并分支时，加上–no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>删除分支</strong></p>
+<ul>
+<li>git branch -d dev</li>
+<li>git branch -D dev  [强行删除还没有合并的分支]</li>
+<li>git push origin :dev  [删除远程dev分支]</li>
+</ul>
+</li>
+<li><p><strong>解决冲突</strong></p>
+<ul>
+<li>Git用&lt;&lt;&lt;&lt;&lt;&lt;&lt;，=======，&gt;&gt;&gt;&gt;&gt;&gt;&gt;标记出不同分支的内容</li>
+<li>需要手动解决冲突</li>
+</ul>
+</li>
+<li><p><strong>查看分支合并图</strong></p>
+<ul>
+<li>git log –graph –pretty=oneline –abbrev-commit</li>
+<li>git log –graph</li>
+</ul>
+</li>
+<li><p><strong>设置本地分支和远程分支的联系</strong></p>
+<ul>
+<li>git branch –set-upstream dev origin/dev<ul>
+<li>如果远程已经有一个dev分支，而你又在本地创建了自己的dev分支，如果要从远程dev分支上更新文件就需要建立联系</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><strong>从远程抓取分支</strong><ul>
+<li>git pull<ul>
+<li>如果git pull提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>注意：</strong></p>
+<ul>
+<li>一个仓库只能关联一个远程库，所以get remote 只会有一个库</li>
+<li>一个库可以有多个分支</li>
+<li><p>本地分支和远程分支的区别？</p>
+<ul>
+<li>在本地创建的分支就是本地分支;   git branch</li>
+<li>如果把本地创建的分支push到远程仓库，那么在远程仓库上就存在了这个分支，也就叫做远程分支;  git remote</li>
+<li>开发两种有一些分支是不需要提交到远程仓库，只需要在本地合并到主分支，然后再push到远程主分支</li>
+</ul>
+</li>
+<li><p>什么时候用分支？</p>
+<ul>
+<li>一般是在开发一个新feature时，先创建一个分支, 在这个分支完成此feature然后再merge到master分支，合并完后，如果此feature已经完成，可以删除此分支，如果有另一个feature的话，可以再重新常见分支，以此类推</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>分支策略：</strong></p>
+<ul>
+<li><img src="/imgs/git_branch.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="高级使用">高级使用</h2><ul>
+<li><strong>创建标签</strong></li>
+<li><strong>忽略某些文件</strong><ul>
+<li>在库的根目录下创建 .gitignore 文件，并提交次文件</li>
+<li>格式<ul>
+<li># 注释符号</li>
+<li>每行写一个要忽略的文件或目录</li>
+<li>示例：<ul>
+<li>build.xml</li>
+<li>*.class</li>
+<li>*.log</li>
+<li>bin/</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>配置别名</strong></li>
+<li><strong>搭建Git服务器</strong></li>
+</ul>
+<h2 id="参考网址">参考网址</h2><ul>
+<li><p>Git cheat sheet</p>
+<ul>
+<li><a href="http://www.git-tower.com/blog/assets/2013-05-22-git-cheat-sheet/cheat-sheet-large01.png" target="_blank" rel="external">http://www.git-tower.com/blog/assets/2013-05-22-git-cheat-sheet/cheat-sheet-large01.png</a></li>
+</ul>
+</li>
+<li><p>Git official website</p>
+<ul>
+<li><a href="http://git-scm.com/" target="_blank" rel="external">http://git-scm.com/</a></li>
+</ul>
+</li>
+<li><p>Git 中文教程</p>
+<ul>
+<li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-29T07:27:39.000Z"><a href="/2014/12/29/tool-css-sprites-tool-online/">Dec 29 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/29/tool-css-sprites-tool-online/">介绍一个在线css sprites工具</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>请访问以下地址(不用注册和登陆，可以直接使用，非常方便)<ul>
+<li><a href="http://cn.spritegen.website-performance.org/" target="_blank" rel="external">http://cn.spritegen.website-performance.org/</a></li>
+</ul>
+</li>
+<li>简单介绍<ul>
+<li>可以将想要的合并的图片压缩到一个ZIP包中来一次性上传</li>
+<li>可以对将要生成的sprite图片做一些预先的设置</li>
+<li>可以对合并后的图片生成相应的CSS规则</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+    <a href="/page/14/" class="alignleft prev">上一页</a>
+  
+  
+    <a href="/page/16/" class="alignright next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

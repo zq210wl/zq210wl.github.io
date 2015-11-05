@@ -1,0 +1,244 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>纯CSS代码实现小三角效果 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="纯CSS代码实现小三角效果"/>
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-15T03:09:05.000Z"><a href="/2015/01/15/css-triangle-tips/">Jan 15 2015</a></time>
+      
+      
+  
+    <h1 class="title">纯CSS代码实现小三角效果</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>实现方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-all&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 30px;&#10;  border-style: solid;&#10;  border-color: #c03 #fc0 #69c #6c6;/* &#32418; &#40644; &#34013; &#32511; */&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效 果 图<br><img src="/imgs/css_triangle.png" alt=""></p>
+</li>
+<li>实现原理<ul>
+<li>利用元素的四个border会彼此叠加的性质来制作三角形，只要让其他三条边隐藏起来就可达到效果。</li>
+</ul>
+</li>
+</ul>
+<h2 id="通过上面的原理，我们来制作一个指向下的三角形：">通过上面的原理，我们来制作一个指向下的三角形：</h2><ul>
+<li><p>实现方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-all&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle_down&#123;&#10;  width:0;&#10;  height:0;&#10;  border-width:30px 30px 0;&#10;  border-style:solid;&#10;  border-color:#c03 transparent transparent ;/* &#32418; &#36879;&#26126; &#36879;&#26126; */&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效 果 图<br><img src="/imgs/css_triangle_down.png" alt=""></p>
+</li>
+<li>原理分析<ul>
+<li>border-color:#c03 transparent transparent ;是将需要隐藏的边的颜色设置成透明；</li>
+<li>border-width:30px 30px 0; 是将三角形对边的宽度设置为0(这里对边是border-bottom)这么做的原因是减小三角形有效作用区域。</li>
+</ul>
+</li>
+</ul>
+<h2 id="通过上面的原理，我们来制作类似下面的tip效果：">通过上面的原理，我们来制作类似下面的tip效果：</h2><p><img src="/imgs/css_triangle_tip.png" alt=""></p>
+<ul>
+<li><p>实现方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-tip-up&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-tip-up&#123;&#10;  width: 200px;&#10;  height: 30px;&#10;  background:#3FB58E;&#10;  border-radius: 4px;&#10;  position: relative;&#10;&#125;&#10;.triangle-tip-up:before&#123;&#10;  content:&#39;&#39;;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 10px 10px;&#10;  border-style: solid;&#10;  border-color: transparent transparent #3FB58E;&#10;  position: absolute;&#10;  left: 80px;&#10;  top: -10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现原理</p>
+<ul>
+<li>利用一个div来做tip的主体框，设置其position为relative(为了控制三角形的位置)</li>
+<li>利用css的:before属性来做三角形的主体元素，设置其position为absolute(这样可以通过设置left和top的值来随意控制小三角的位置)</li>
+</ul>
+</li>
+</ul>
+<h2 id="实现类似下面的不规则三角形">实现类似下面的不规则三角形</h2><p><img src="/imgs/css_triangle_scalene.png" alt=""></p>
+<ul>
+<li><p>实现方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-scalene&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-scalene&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 0 60px 20px;/* &#35774;&#32622;&#23545;&#35282;&#21644;&#30456;&#37051;&#30340;border&#37117;&#20026;0&#26469;&#23454;&#29616;&#19981;&#35268;&#21017;&#25928;&#26524; */&#10;  border-style: solid;&#10;  border-color: transparent transparent #69c;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现原理</p>
+<ul>
+<li>设置对角和相邻一边的border都为0,然后通过改变其余两边border的宽度来实现不规则效果</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="在线效果预览">在线效果预览</h2><p></p><p data-height="750" data-theme-id="0" data-slug-hash="ogZpqP" data-default-tab="result" data-user="zq210wl" class="codepen">See the Pen <a href="http://codepen.io/zq210wl/pen/ogZpqP/" target="_blank" rel="external">ogZpqP</a> by zhangqi (<a href="http://codepen.io/zq210wl" target="_blank" rel="external">@zq210wl</a>) on <a href="http://codepen.io" target="_blank" rel="external">CodePen</a>.</p><p></p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/CSS/">CSS</a>
+  </div>
+
+        
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2015/01/15/css-triangle-tips/" data-title="纯CSS代码实现小三角效果" data-url="http://zq210wl.github.io/2015/01/15/css-triangle-tips/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zq210wl"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

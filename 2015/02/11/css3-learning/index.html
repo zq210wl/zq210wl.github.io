@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>CSS3学习总结 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="CSS3学习总结"/>
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-02-11T09:15:26.000Z"><a href="/2015/02/11/css3-learning/">Feb 11 2015</a></time>
+      
+      
+  
+    <h1 class="title">CSS3学习总结</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="CSS的层叠优先级顺序(以下为从低到高优先级)">CSS的层叠优先级顺序(以下为从低到高优先级)</h2><ul>
+<li>1)浏览器默认样式</li>
+<li>2)外部CSS文件样式</li>
+<li>3)内部样式(在head里面的)</li>
+<li>4)行内样式<blockquote>
+<p>注意：<br>如果引入的外部css文件放在了内部样式之后，则外部样式就会覆盖内部样式！</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Links(超链接)">Links(超链接)</h2><ul>
+<li>超链接(a)的四种状态的顺序从高到低如下：<ul>
+<li>a:link - 正常的，没被访问过</li>
+<li>a:visited - 已访问过</li>
+<li>a:hover - 鼠标移动之上</li>
+<li>a:active - 点击的瞬间动作</li>
+</ul>
+</li>
+</ul>
+<h2 id="List(ul,ol)(列表)">List(ul,ol)(列表)</h2><ul>
+<li>隐藏ul列表前面符号<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ul &#123; list-style-type: none; &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="CSS_Box_Model(盒子模型)">CSS Box Model(盒子模型)</h2><p><img src="/imgs/css_box_model.png" alt=""></p>
+<ul>
+<li><code>width</code>属性值得只是内容的宽度，不包括padding、border</li>
+<li>元素的总width = width + paddnig + border + margin</li>
+</ul>
+<h2 id="Border(边框)">Border(边框)</h2><ul>
+<li>要设置border-width和border-color，必须先设置border-style</li>
+</ul>
+<h2 id="Positioning(定位)">Positioning(定位)</h2><ul>
+<li>fixed - 针对浏览器窗口的位置</li>
+<li>relative - 针对元素本身的位置</li>
+<li>absolute - 针对父元素设置了relative或absolute</li>
+</ul>
+<h2 id="Combinators(关系选择器)">Combinators(关系选择器)</h2><ul>
+<li>选定<strong>所有子孙</strong><pre><code><span class="keyword">div</span> p { }
+</code></pre></li>
+<li>选定<strong>直接子孙</strong><pre><code><span class="keyword">div</span> &gt; p { }
+</code></pre></li>
+<li>选定元素<code>后面</code><strong>所有同辈元素</strong><pre><code><span class="title">div</span> <span class="regexp">~ p</span> { }
+</code></pre></li>
+<li>选定元素<code>后面</code><strong>紧邻的第一个同辈元素</strong><pre><code><span class="keyword">div</span> + p { }
+</code></pre></li>
+</ul>
+<h2 id="Pseudo(伪)">Pseudo(伪)</h2><ul>
+<li>pseudo-class(伪类)<ul>
+<li>:link</li>
+</ul>
+</li>
+<li>pseudo-element(伪元素)<ul>
+<li>::after</li>
+</ul>
+</li>
+</ul>
+<h2 id="Opacity(不透明度)">Opacity(不透明度)</h2><ul>
+<li>取值范围为：0-1.0, 1.0为不透明<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">img &#123;&#10;  opacity: 0.4;&#10;  filter: alpha(opacity=40); /* For IE8 and earlier */&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="CSS_sprites">CSS sprites</h2><ul>
+<li><code>background:url(test.png) no-repeat 0 0;</code></li>
+<li>主要应用<code>background-position</code>属性<ul>
+<li><percentage>： 用百分比指定背景图像填充的位置。可以为负值。</percentage></li>
+<li><length>： 用长度值指定背景图像填充的位置。可以为负值。</length></li>
+<li>center： 背景图像横向和纵向居中。</li>
+<li>left： 背景图像在横向上填充从左边开始。</li>
+<li>right： 背景图像在横向上填充从右边开始。</li>
+<li>top： 背景图像在纵向上填充从顶部开始。</li>
+<li>bottom： 背景图像在纵向上填充从底部开始。</li>
+</ul>
+</li>
+</ul>
+<h2 id="Media_queries">Media queries</h2><h2 id="Gradients">Gradients</h2><h2 id="Text_Shadow">Text Shadow</h2><h2 id="@font-face_(使用自定义字体)">@font-face (使用自定义字体)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@font-face &#123;&#10;  font-family: __myFirstFont__;&#10;  src: url(sansation_light.woff); // &#25351;&#23450;&#23383;&#20307;&#25991;&#20214;&#30340;&#20301;&#32622;&#10;  font-weight: bold;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2D_Transforms">2D Transforms</h2><ul>
+<li>2D transform 有以下常用方法：<ul>
+<li>translate(x,y) - 将元素沿着X轴和Y轴移动</li>
+<li>scale(x,y) - 将元素的宽和高分别增加响应的倍数</li>
+<li>rotate(angle) - 将元素沿着<strong>垂直于元素水平面</strong>的<strong>中心轴</strong>顺时针旋转响应角度，可以为负数</li>
+<li>skew(x-angle,y-angle) - 斜交;将元素分别沿着X轴和Y收轴转动响应的度数</li>
+</ul>
+</li>
+<li>使用方法：<ul>
+<li>transform: method();</li>
+</ul>
+</li>
+<li>示例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;&#10;    -ms-transform: translate(50px,100px); /* IE 9 */&#10;    -webkit-transform: translate(50px,100px); /* Chrome, Safari, Opera */&#10;    transform: translate(50px,100px);&#10;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3D_Transforms">3D Transforms</h2><ul>
+<li>3D transform 的方法：<ul>
+<li>rotateX(angle)  –沿着X轴旋转</li>
+<li>rotateY(angle)  - 沿着Y轴旋转</li>
+</ul>
+</li>
+</ul>
+<h2 id="CSS3_Transitions">CSS3 Transitions</h2><ul>
+<li>什么是transition？<ul>
+<li>让元素在一定时间内从一种样式渐渐地变化为另一种样式，从而形成一种渐变的动画效果</li>
+</ul>
+</li>
+<li>示例：(当div的width,height以及transform属性发生变化时，让其指定的相应属性在两秒内渐渐变化)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;&#10;  -webkit-transition: width 2s, height 2s,-webkit-transform 2s;  /* For Safari 3.1 to 6.0 */&#10;  transition: width 2s, height 2s, transform 2s;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>详细参数使用：<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;&#10;  transition-property: width;&#10;  transition-duration: 1s;&#10;  transition-timing-function: linear;&#10;  transition-delay: 2s;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="CSS3_Animations">CSS3 Animations</h2><ol>
+<li>用 @keyframes 来定义动画</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@keyframes myfirst &#123;&#10;  from &#123;background: red;&#125;&#10;  to &#123;background: yellow;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>用animation属性将定义好的动画应用到元素上</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">div &#123;&#10;    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */&#10;    animation: myfirst 5s; // &#38656;&#35201;&#25351;&#23450;&#21160;&#30011;&#21517;&#31216;&#21644;&#28176;&#21464;&#30340;&#26102;&#38388;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>用百分比指定更详细的动画,指定多个关键帧：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">@keyframes myfirst &#123;&#10;    0%   &#123;background: red;&#125;&#10;    25%  &#123;background: yellow;&#125;&#10;    50%  &#123;background: blue;&#125;&#10;    100% &#123;background: green;&#125;&#10;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>更多animation参数的使用：<br>div {<br>animation-name: myfirst;<br>animation-duration: 5s;<br>animation-timing-function: linear;<br>animation-delay: 2s;<br>animation-iteration-count: infinite;<br>animation-direction: alternate;<br>animation-play-state: running;<br>}</li>
+</ul>
+<h2 id="box-sizing_–很有用">box-sizing –<strong>很有用</strong></h2><ul>
+<li>指定对元素的width和height大小的设置是否包括边框在内</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">box-sizing: border-box;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2015/02/11/css3-learning/" data-title="CSS3学习总结" data-url="http://zq210wl.github.io/2015/02/11/css3-learning/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zq210wl"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

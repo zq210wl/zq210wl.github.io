@@ -1,0 +1,204 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>position属性和z-index属性对页面节点层级的影响总结 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="position属性和z-index属性对页面节点层级的影响总结"/>
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-07-14T10:30:55.000Z"><a href="/2014/07/14/css-position-zIndex/">Jul 14 2014</a></time>
+      
+      
+  
+    <h1 class="title">position属性和z-index属性对页面节点层级的影响总结</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>最近在做的一个Web项目中因为很多地方都要用tooltip对某些功能和操作做一些信息提示，以便用户可以很容易的理解和使用本系统，由于页面和tips比较多，做的当中遇到了各种奇葩的z-index的问题，也相信很多人在项目中也都多多少少曾因遇到各种不可预期层级遮盖问题而烦恼，所以我决定花点时间来好好研究一些这方面的问题，跟大家分享一下，希望能对大家有所帮助。</p>
+</blockquote>
+<h2 id="同级元素比较：">同级元素比较：</h2><p>一.<br>结论：只设置z-index还没有设置position为relative或absolute或fixed，则z-index是不会起作用的。<br>示例：<br>{<br>A: {z-index:3}<br>B: {z-index:2}<br>C: {z-index:1}<br>}<br>从上到下的层级关系为：C &gt; B &gt; A<br>二：<br>结论：同级元素不设置position,则后面元素会覆盖前面元素<br>示例：<br>{<br>A: {}<br>B: {}<br>C: {}<br>}<br>从上到下的层级关系为：C &gt; B &gt; A<br>三：<br>结论：同级元素之间设置了position(非static)的元素会覆盖没有设置position(或为static)的元素<br>示例：<br>{<br>A: {position:relative;}<br>B: {}<br>}<br>从上到下的层级关系为：A &gt; C<br>四：<br>结论：同级元素之间都设置了position(非static)，则后面的元素会覆盖前面的元素<br>示例：<br>{<br>A: {position:relative;}<br>B: {position:relative;}<br>}<br>从上到下的层级关系为：B &gt; A<br>五：<br>结论：同级元素之间都设置了position(非static)，那么设置了z-index(大于0)的元素会覆盖没有设置的元素<br>示例：<br>{<br>A: {position:relative;z-index:1}<br>B: {position:relative;}<br>}<br>从上到下的层级关系为：A &gt; B<br>六：同级元素之间，各种层级的混合比较，直接看示例：<br>{<br>A: {}<br>B: {position:relative;z-index:2}<br>C: {position:relative;}<br>D: {position:relative;z-index:1}<br>E: {position:relative;z-index:0}<br>F: {position:relative;}<br>G: {}<br>H: {position:relative;z-index:-1}<br>}<br>从上到下的层级关系为：B &gt; D &gt; F &gt; E &gt; C &gt; G &gt; A &gt; H</p>
+<h2 id="多级元素比较：">多级元素比较：</h2><p>一.<br>结论：父级元素设置了position(非static)或者没有设置的情况下，当子节点没有设置position或只设置了position的情况下，则子节点的层级会受到父节点的影响; 当子节点设置了position(非static)且又设置了z-index(大于0)，则子节点的层级不会受到父节点层级的影响<br>示例1：<br>{<br>A: {}<br>A-1: {}<br>B: {}<br>B-1: {}<br>}<br>B以及B的所以子元素会覆盖在A以及A的所有子元素<br>从上到下的层级关系为：B-1 &gt; B &gt; A-1 &gt; A<br>示例2：<br>{<br>A: {position:relative}<br>A-1: {}<br>B: {position:relative}<br>B-1: {}<br>}<br>B以及B的所以子元素会覆盖在A以及A的所有子元素<br>从上到下的层级关系为：B-1 &gt; B &gt; A-1 &gt; A<br>示例3：<br>{<br>A: {}<br>A-1: {position:relative}<br>B: {}<br>}<br>从上到下的层级关系为：A-1 &gt; B &gt; A<br>示例4：<br>{<br>A: {position:relative;}<br>A-1: {position:relative;z-index:2;}<br>A-2: {}<br>B: {position:relative;}<br>B-1: {position:relative;z-index:1}<br>B-2: {}<br>}</p>
+<p>从上到下的层级关系为：A-1 &gt; B-1 &gt; B-2 &gt; B &gt; A-2 &gt; A</p>
+<p>二.<br>结论：父级元素设置了position(非static)和z-index的情况下，则子节点的层级会受到父节点层级的影响，且子节点会一直覆盖父节点的。<br>示例1：<br>{<br>A: {position:relative;z-index:1}<br>A-1: {position:relative;z-index:2}<br>A-2: {position:relative;z-index:-100}<br>B: {position:relative;z-index:3;}<br>B-1: {position:relative;z-index:4}<br>B-2: {position:relative;z-index:5}<br>}<br>B以及B的所有子元素会覆盖A以及A的所有子元素<br>从上到下的层级关系为：B-2 &gt; B-1 &gt; B &gt; A-1 &gt; A-2 &gt; A</p>
+<p>很多人将 z-index 设得很大, 9999 什么的都出来了, 如果不考虑父节点的影响, 设得再大也没用, 那是无法逾越的层级.</p>
+<p>三.【负z-index跟position的关系】<br>结论1：当父节点设置了position(非static)但没有设置z-index的情况下，子节点如果设置position(非static)和负的z-index值，子节点会被父节点覆盖<br>{<br>A: {position:relative;}<br>A-1: {position:relative;z-index:-1}<br>}<br>从上到下的层级关系为：A &gt; A-1</p>
+<p>结论2：当父节点设置了position(非static)和z-index的情况下，子节点如果设置position(非static)和负的z-index值，子节点不会被父节点覆盖<br>{<br>A: {position:relative;z-index:1}<br>A-1: {position:relative;z-index:-1}<br>}<br>从上到下的层级关系为：A-1 &gt; A</p>
+<h2 id="总结">总结</h2><p><strong>上中下三个大层级</strong>(非W3C官方定义，只是个人为了好理解，以下文字总结可能不是太准确，请参照示例来分析)：<br>将没有设置z-index值，或z-index值为0，或z-index值为auto的所有元素归为一类(AAA);<br>将设置了position(非static)和z-index值大于0的所有元素归为一类(BBB);<br>将设置了position(非static)和z-index值小于0的所有元素归为一类(CCC);<br>结论：BBB类的元素会高于AAA和CCC类, AAA类元素会高于CCC类。<br>示例：<br>{<br>A: {position:relative}<br>A-1: {position:relative;z-index:-20}<br>B: {position:relative;z-index:2}<br>B-1: {position:relative;z-index:-10}<br>C: {position:absolute;z-index:3}<br>D: {}<br>E: {position:fixed;z-index:1}<br>F: {position:fixed;z-index:-1}<br>G: {position:relative;z-index:0}<br>H: {position:fixed;z-index:-2}<br>}<br>从上到下的层级关系为：B B-1 C E &gt; A D G &gt; A-1 F H</p>
+<h2 id="后话：">后话：</h2><p>以上是我本人对position属性和z-index属性的所有可能性情况的分析以及总结。相信很多人也曾遇到过这样的问题：滚动条任你如何滚动，也奈何不了子节点一动不动。 针对这个问题，有时间我会写一篇position属性和scroll属性之间关系的文章跟大家分享一下。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/CSS/">CSS</a>
+  </div>
+
+        
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2014/07/14/css-position-zIndex/" data-title="position属性和z-index属性对页面节点层级的影响总结" data-url="http://zq210wl.github.io/2014/07/14/css-position-zIndex/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zq210wl"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

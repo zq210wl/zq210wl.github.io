@@ -1,0 +1,332 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 4 页 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-06T05:12:38.000Z"><a href="/2015/07/06/link-useful/">Jul 6 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/06/link-useful/">实用链接收集</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p><a href="http://dev.w3.org/csswg/" target="_blank" rel="external">关于CSS的W3C标准</a></p>
+</li>
+<li><p><a href="http://www.uisdc.com/tgideas-html5-api-test-1" target="_blank" rel="external">腾讯技术总结！超实用的HTML 5接口全方位测试总结文（一）</a></p>
+</li>
+<li><p><a href="http://www.uisdc.com/tgideas-html5-api-test-2" target="_blank" rel="external">腾讯技术总结！超实用的HTML 5接口全方位测试总结文（二）</a></p>
+</li>
+<li><p><a href="/demo/floatFeaturesSummary.html">float元素对兄弟元素的影响</a></p>
+</li>
+<li><p><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">Flex 布局语法教程</a></p>
+</li>
+<li><p><a href="http://www.iconfont.cn/" target="_blank" rel="external">阿里巴巴iconfont制作</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-05T03:47:09.000Z"><a href="/2015/07/05/mobile-weinre-debug/">Jul 5 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/05/mobile-weinre-debug/">mobile_weinre_debug</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-02T06:46:43.000Z"><a href="/2015/07/02/angular-directive-excute-order/">Jul 2 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/02/angular-directive-excute-order/">理解Directive中各个方法的执行顺序</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>Directive 在angular中扮演着非常重要的角色，而且对新手来说了使用起来也比较复杂。所以有必要来对 directive 做一个详细的分析，本片文章只来谈一下Directive中各个方法的执行顺序。</p>
+</blockquote>
+<ul>
+<li><p>先看下面的比较完整的Directive代码：</p>
+<pre><code>app.directive(<span class="string">"simple"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+   <span class="keyword">return</span> {
+     restrict: <span class="string">"E"</span>,
+     template:<span class="string">"&lt;div&gt;&lt;/div&gt;"</span>,
+     controller: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attributes</span>)</span>{
+       <span class="built_in">console</span>.log(<span class="string">"controller"</span>);
+     },
+     compile: <span class="function"><span class="keyword">function</span>(<span class="params">element, attributes</span>)</span>{
+       <span class="built_in">console</span>.log(<span class="string">"compile"</span>);
+       <span class="keyword">return</span> {
+           pre: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attributes, controller, transcludeFn</span>)</span>{
+             <span class="built_in">console</span>.log(<span class="string">"pre"</span>);
+           },
+           post: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attributes, controller, transcludeFn</span>)</span>{
+             <span class="built_in">console</span>.log(<span class="string">"post"</span>);
+           }
+       }
+     }
+   };
+});
+</code></pre></li>
+<li><p>controller, compile, pre 和 post 的执行顺序如下：<br>1.compile (只会执行一次, 此过程是用来编译template, 但是不会执行渲染)<br>2.controller (不执行渲染)<br>3.pre (不执行渲染)<br>4.post (执行渲染)</p>
+</li>
+<li><p>其他关于Directive的详细讲解请看下面链接：</p>
+<ul>
+<li><a href="http://odetocode.com/blogs/scott/archive/2014/05/28/compile-pre-and-post-linking-in-angularjs.aspx" target="_blank" rel="external">深入理解Directive里的每个方法</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-02T02:45:14.000Z"><a href="/2015/07/02/other-weekly-blog/">Jul 2 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/02/other-weekly-blog/">推荐几个追踪前端知识的博客</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="下面这几个都是每周推送一次的博客,让你及时了解前端的动态(不过都是英文的)">下面这几个都是每周推送一次的博客,让你及时了解前端的动态(不过都是英文的)</h2><ul>
+<li><p><a href="http://javascriptweekly.com/" target="_blank" rel="external">JavaScript Weekly</a></p>
+</li>
+<li><p><a href="http://html5weekly.com/" target="_blank" rel="external">HTML5 Weekly</a></p>
+</li>
+<li><p><a href="http://css-weekly.com/" target="_blank" rel="external">CSS Weekly</a></p>
+</li>
+<li><p><a href="http://mobilewebweekly.co/" target="_blank" rel="external">Mobile Web Weekly</a></p>
+</li>
+<li><p><a href="http://nodeweekly.com/" target="_blank" rel="external">node Weekly</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+    <a href="/page/3/" class="alignleft prev">上一页</a>
+  
+  
+    <a href="/page/5/" class="alignright next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

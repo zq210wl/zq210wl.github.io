@@ -1,0 +1,305 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 2 页 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-05T10:05:39.354Z"><a href="/2015/11/05/other-common-words/">Nov 5 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/11/05/other-common-words/">前端开发必须知道的单词(实践中慢慢总结出来的)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>recursion - 递归</li>
+<li>maximum - 最大值</li>
+<li>minimum - 最小值</li>
+<li>program - 程序</li>
+<li>URI - 统一资源标识符(Uniform Resource Identifier)</li>
+<li>sequence - 序列</li>
+<li>request - 请求</li>
+<li>response - 响应</li>
+<li>exception - 异常</li>
+<li>animation - 动画</li>
+<li>namespace - 命名空间</li>
+<li>enumerable - 可列举的</li>
+<li>horizontal - 水平的</li>
+<li>vertical - 垂直的</li>
+<li>opacity - 不透明度</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-05T10:05:39.351Z"><a href="/2015/11/05/javascript-web-component/">Nov 5 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/11/05/javascript-web-component/">javascript_web_component</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="http://www.cnblogs.com/powertoolsteam/p/web-component.html" target="_blank" rel="external">http://www.cnblogs.com/powertoolsteam/p/web-component.html</a></p>
+<p><a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/" target="_blank" rel="external">http://www.html5rocks.com/en/tutorials/webcomponents/customelements/</a></p>
+<p><a href="http://css-tricks.com/modular-future-web-components/" target="_blank" rel="external">http://css-tricks.com/modular-future-web-components/</a></p>
+<p><a href="https://www.polymer-project.org/" target="_blank" rel="external">https://www.polymer-project.org/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-05T10:05:39.348Z"><a href="/2015/11/05/javascript-prototype-explain/">Nov 5 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/11/05/javascript-prototype-explain/">详解prototype</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>prototype 和 constructor 中声明属性的不同</li>
+<li>prototype 属性的修改以及顺序会对实例属性造成声明影响</li>
+</ul>
+<p>详细解释一下prototype的原理</p>
+<h2 id="实例属性的获取">实例属性的获取</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">function A()&#123;&#10;  this.y = &#34;yy&#34;;&#10;&#125;&#10;A.prototype.x = &#34;xx&#34;;&#10;A.prototype.y = function()&#123;&#10;  console.log(&#34;yyyyy&#34;);&#10;&#125;&#10;var a = new A();</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>a.x // &quot;xx&quot;</code></li>
+<li><code>a.y // &quot;yy&quot;</code></li>
+<li><code>a.y() // TypeError: string is not a function</code></li>
+</ul>
+<h2 id="只有构造函数才有prototype属性">只有构造函数才有prototype属性</h2>
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-11-05T10:05:39.345Z"><a href="/2015/11/05/javascript-createObject/">Nov 5 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/11/05/javascript-createObject/">解释Object.create()</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p><a href="http://www.htmlgoodies.com/beyond/javascript/object.create-the-new-way-to-create-objects-in-javascript.html" target="_blank" rel="external">http://www.htmlgoodies.com/beyond/javascript/object.create-the-new-way-to-create-objects-in-javascript.html</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+    <a href="/" class="alignleft prev">上一页</a>
+  
+  
+    <a href="/page/3/" class="alignright next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

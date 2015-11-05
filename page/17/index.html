@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 17 页 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-04-01T08:51:06.000Z"><a href="/2014/04/01/angular-issue-ngclick-fired-twice/">Apr 1 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/04/01/angular-issue-ngclick-fired-twice/">Angular issue 之 ng-click事件被执行两次</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>用 angular 做公司的一个内部系统时，自己写了一个公用的 Dialog directive, 但是遇到一个问题：注册到一个button上的ng-click事件上的方法莫名其妙的总是点击一次执行两次，都快把我郁闷死了，不过问题到最后总是能找到原因并且解决的。下面我就说下为什么会出现这种问题。</p>
+</blockquote>
+<ul>
+<li><p>问题所在</p>
+<ul>
+<li>问题出现在我使用了$compile去编译了一些后加入到template中的element。但是我为了偷懒把真个template都compile了一次，这时候template中的一些元素等于被compile了两次，只要是被compile了两次的元素，在其上面注册事件都会被执行两次。</li>
+</ul>
+</li>
+<li><p>如何解决</p>
+<ul>
+<li>方法一：只compile后加入模板的元素(也就是没有编译过的元素)</li>
+<li>方法二：在preLink中完成对新元素的加入，因为这时候文章template都还么执行compile, 相加什么就加什么，加完之后，angular会自动把真个template compile 一次。</li>
+</ul>
+</li>
+<li><p>总结</p>
+<ul>
+<li>$compile虽强大，但还需谨慎。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-03-29T08:21:26.000Z"><a href="/2014/03/29/mobile-base-knowledge-learn-node/">Mar 29 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/03/29/mobile-base-knowledge-learn-node/">自己刚开始学习移动web开发时的一些基础知识的学习笔记</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ol>
+<li>设备/物理/屏幕像素（px）:  点（dot）；一个 px 代表一个点。</li>
+<li>css像素（px）: 相对与物理像素的像素；一个css px 等于 一个或多个物理px。</li>
+<li>分辨率像素：指整个设备屏幕里所能容纳的像素（dot）数。1024px * 768px ；当分辨率调整到最大值时，一个px代表一个物理px。分辨率调小时，一个px代表多个物理px。</li>
+<li>像素（px）密度：不同分辨率下的像素密度不用。这里的px也是相对的。</li>
+<li>图片在设备中的显示情况：一个图片设计为 80px<em>90px，这里的px指的是真正物理像素点，如果缩放比为2，则图片将被放大到两倍的物理像素 160px</em>180px 。</li>
+<li>devicePixelRatio = 手机的物理像素与实际使用像素的缩放比。</li>
+<li>width=device-width：<br> width指的是layout（页面布局）宽度；<br> device指的是屏幕分辨率宽度，即设备独立像素（dip）。</li>
+<li>DPI：Dots Per Inch</li>
+<li>PPI: Pixels Per Inch</li>
+</ol>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-02-13T01:35:34.000Z"><a href="/2014/02/13/css-negative-margin/">Feb 13 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/02/13/css-negative-margin/">负margin用法权威指南</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>从事前端如果连负margin都不懂那就赶紧来学习一下吧！</p>
+</blockquote>
+<p>下面是 w3cplus 的一篇对负margin的译文，讲的很清楚，如果觉得看中文不爽可以直接看英文。</p>
+<ul>
+<li><p>中文译文<br><a href="http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html" target="_blank" rel="external">http://www.w3cplus.com/css/the-definitive-guide-to-using-negative-margins.html</a></p>
+</li>
+<li><p>英文原文<br><a href="http://www.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/" target="_blank" rel="external">http://www.smashingmagazine.com/2009/07/27/the-definitive-guide-to-using-negative-margins/</a></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+    <a href="/page/16/" class="alignleft prev">上一页</a>
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

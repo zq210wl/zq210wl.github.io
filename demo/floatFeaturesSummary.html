@@ -1,0 +1,227 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>float元素特性总结</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+      *{margin:0;padding:0;}
+    </style>
+  </head>
+  <body>
+    <div style="color:red;">注意：为了更清楚的看到效果，所有的float元素都设置了向左或向后的margin</div>
+    <h1>float元素对块级元素的影响</h1>
+
+    <h3>块级在前，float在后</h3>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;">
+        我是没有设置宽度的块级元素
+      </div>
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是 float:left 元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;width:300px;">
+        我是设置了宽度的块级元素
+      </div>
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是 float:left 元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;">
+        我是没有设置宽度的块级元素
+      </div>
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是 float:right 元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;width:300px;">
+        我是设置了宽度的块级元素
+      </div>
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是 float:right 元素
+      </div>
+    </div>
+
+    <h3 style="margin-top:20px;">块级在后，float在前</h3>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是 float:left 元素
+      </div>
+      <div style="background:red;">
+        我是没有设置宽度的块级元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是 float:left 元素
+      </div>
+      <div style="background:red;width:300px;">
+        我是设置了宽度的块级元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是 float:right 元素
+      </div>
+      <div style="background:red;">
+        我是没有设置宽度的块级元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是 float:right 元素
+      </div>
+      <div style="background:red;width:300px;">
+        我是设置了宽度的块级元素
+      </div>
+    </div>
+
+    <h1 style="margin-top:30px;">float元素对inline元素的影响</h1>
+
+    <h3>inline在前，float在后</h3>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <span style="background:red;">
+        我是inline元素
+      </span>
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是 float:left 元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <span style="background:red;">
+        我是inline元素，我的长度很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很
+      </span>
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是 float:left 元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <span style="background:red;">
+        我是inline元素
+      </span>
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是 float:right 元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <span style="background:red;">
+        我是inline元素，我的长度很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很
+      </span>
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是 float:right 元素
+      </div>
+    </div>
+
+    <h3 style="margin-top:20px;">inline在后，float在前</h3>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是 float:left 元素
+      </div>
+      <span style="background:red;">
+        我是inline元素
+      </span>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是 float:left 元素
+      </div>
+      <span style="background:red;">
+        我是inline元素，我的长度很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很
+      </span>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是 float:right 元素
+      </div>
+      <span style="background:red;">
+        我是inline元素
+      </span>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是 float:right 元素
+      </div>
+      <span style="background:red;">
+        我是inline元素，我的长度很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很
+      </span>
+    </div>
+
+    <h1 style="margin-top:30px;">float元素对float元素的影响</h1>
+
+    <h3>父容器的宽度足够容纳所有子元素</h3>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;float:left;margin-left:10px;">
+        我是前面 float:left 元素
+      </div>
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是后面 float:left 元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;float:left;margin-left:10px;">
+        我是前面 float:left 元素
+      </div>
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是后面 float:right 元素
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;float:right;margin-right:10px;">
+        我是前面 float:right 元素
+      </div>
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是后面 float:left 元素
+      </div>
+    </div>
+
+    <h3 style="margin-top:20px;">父容器的宽度不够容纳所有子元素</h3>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;float:left;margin-left:10px;">
+        我是前面 float:left 元素
+      </div>
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是后面 float:left 元素, 我的长度很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;float:left;margin-left:10px;">
+        我是前面 float:left 元素
+      </div>
+      <div style="float:right;background:#00ff00;margin-right:10px;">
+        我是后面 float:right 元素, 我的长度很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很
+      </div>
+    </div>
+    <div style="border:1px #000 solid;overflow:hidden;margin-top:10px;">
+      <div style="background:red;float:right;margin-right:10px;">
+        我是前面 float:right 元素
+      </div>
+      <div style="float:left;background:#00ff00;margin-left:10px;">
+        我是后面 float:left 元素, 我的长度很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很
+      </div>
+    </div>
+
+<h1 style="margin-top:20px;">大总结：</h1>
+<pre style="background:#000;color:#fff;font-size:20px;">
+一、对块级元素的影响
+  1. 块级元素在float元素的前面和后面的显示效果是<b style="color:red;">不一样</b>的;
+  2. 块级元素在前，则float元素就会在块级元素之后<b style="color:red;">另起一行</b>来显示;
+  3. 块级元素在后，则块级元素会<b style="color:red;">占据float元素所在行</b>，且<b style="color:red;">被float元素覆盖</b>;
+     但是块级元素内的inline元素遇到float元素则会<b style="color:red;">环绕</b>其显示;
+  4. 注意：上面的显示规则跟块级元素是否设置宽度无关;
+
+二、对inline元素的影响
+  1. inline元素不多说，inline元素会环绕float元素显示;
+  2. 直接看示例了解细节
+
+三、float元素对float元素的影响
+  1. 父容器的宽度足够容纳所有子元素，则<b style="color:red;">在一行</b>显示
+  2. 父容器的宽度不够容纳所有子元素，则<b style="color:red;">后面</b>元素会另起一行显示
+</pre>
+  </body>
+</html>

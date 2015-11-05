@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Javascript | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title category">Javascript</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-16T05:58:10.000Z"><a href="/2015/07/16/javascript-util/">Jul 16 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/16/javascript-util/">实用工具方法</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>获取两个数之间的一个整数</p>
+<pre><code><span class="function"><span class="keyword">function</span></span> getRandomInt(<span class="built_in">min</span>, <span class="built_in">max</span>) {
+  <span class="keyword">return</span> Math.<span class="built_in">floor</span>(Math.random() * (<span class="built_in">max</span> - <span class="built_in">min</span>)) + <span class="built_in">min</span>;
+}
+</code></pre></li>
+<li><p>获取数组中的最大值</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">getMaxOfArray</span>(<span class="params">numArray</span>) </span>{
+  <span class="keyword">return</span> <span class="built_in">Math</span>.max.apply(<span class="literal">null</span>, numArray);
+}
+</code></pre></li>
+<li><p>获取数组中的最小值</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">getMinOfArray</span>(<span class="params">numArray</span>) </span>{
+  <span class="keyword">return</span> <span class="built_in">Math</span>.min.apply(<span class="literal">null</span>, numArray);
+}
+</code></pre></li>
+<li><p>将数组中的数字按升序排列</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">sortByAsc</span><span class="params">(numArray)</span> </span>{
+  <span class="keyword">return</span> numArray.sort(<span class="function"><span class="keyword">function</span><span class="params">(x, y)</span></span>{
+    <span class="keyword">if</span>(x &gt; y){
+      <span class="keyword">return</span> <span class="number">1</span>;
+    }<span class="keyword">else</span>{
+      <span class="keyword">return</span> -<span class="number">1</span>;
+    }
+  });
+}
+</code></pre></li>
+<li><p>将数组中的数字按降序排列</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">sortByAsc</span><span class="params">(numArray)</span> </span>{
+  <span class="keyword">return</span> numArray.sort(<span class="function"><span class="keyword">function</span><span class="params">(x, y)</span></span>{
+    <span class="keyword">if</span>(x &lt; y){
+      <span class="keyword">return</span> <span class="number">1</span>;
+    }<span class="keyword">else</span>{
+      <span class="keyword">return</span> -<span class="number">1</span>;
+    }
+  });
+}
+</code></pre></li>
+<li><p>去除数组重复的数据</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">delRepeat</span><span class="params">(arr)</span></span>{
+  <span class="keyword">var</span> newArr = [];
+  <span class="keyword">var</span> obj = {};
+  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;arr.length;i++){
+    <span class="keyword">if</span>(obj[arr[i]]==<span class="literal">undefined</span>){
+      obj[arr[i]] = <span class="number">1</span>;
+      newArr.push(arr[i]);
+    }
+  }
+  <span class="keyword">return</span> newArr;
+}
+</code></pre></li>
+<li><p>将一个伪数组转换为真正的数组</p>
+<pre><code><span class="keyword">var</span> arg = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-15T01:54:50.000Z"><a href="/2015/04/15/javascript-this/">Apr 15 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/04/15/javascript-this/">彻底弄清楚javascript中的”this”并掌握它</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>介绍一篇值得你去细细品味的关于 javascript 中 <strong>this</strong> 的详解，这是我看过的关于 this 介绍的最好的文章，没有之一。我相信只要你认真去阅读这篇文章肯定会受益匪浅。</p>
+</blockquote>
+<p><a href="http://javascriptissexy.com/understand-javascripts-this-with-clarity-and-master-it/" target="_blank" rel="external">Understand JavaScript’s “this” With Clarity, and Master It</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-02-06T03:05:41.000Z"><a href="/2015/02/06/javascript-instanceof-typeof/">Feb 6 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/02/06/javascript-instanceof-typeof/">instanceof 和 typeof 的介绍</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="typeof">typeof</h2><ul>
+<li>返回对应数据的类型</li>
+<li>语法：typeof xxx</li>
+<li>javascript常用类型及其typeof返回值：<ul>
+<li>Undefined : “undefined”</li>
+<li>Null : <strong>“object”</strong></li>
+<li>Boolean : “boolean”</li>
+<li>Number : “number”</li>
+<li>String : “string”</li>
+<li>Object<ul>
+<li>Function object : <strong>“function”</strong></li>
+<li>Any other object : “object”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof" target="_blank" rel="external">MDN官方说明</a></li>
+</ul>
+<ul>
+<li>instanceof</li>
+<li>判断一个对象的<strong>prototype属性对象</strong>是否在某个构造函数的<strong>prototype链</strong>中</li>
+<li>语法：object instanceof constructor</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof" target="_blank" rel="external">MDN官方说明</a></li>
+</ul>
+<ul>
+<li>火狐 javascript 文档<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript</a></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-02-04T09:04:41.000Z"><a href="/2015/02/04/javascript-javascript-object-layout/">Feb 4 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/02/04/javascript-javascript-object-layout/">javascript Object Layout(javascript对象设计图)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>你真的懂 javascript 吗？ javascript中的对象都是如何设计的？能看懂下面这张图就算你懂!</p>
+</blockquote>
+<p><img src="/imgs/javascript_object_layout.jpg" alt=""></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+    <a href="/categories/Javascript/page/2/" class="alignright next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

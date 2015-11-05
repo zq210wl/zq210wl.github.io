@@ -1,0 +1,409 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 2 页 | CSS | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title category">CSS</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-29T08:41:27.000Z"><a href="/2015/01/29/css-vertical-horizontal-center/">Jan 29 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/29/css-vertical-horizontal-center/">设置元素水平垂直居中N中方法</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>自己在实际开发中经常会遇到要水平、垂直居中一个元素，甚至是多个元素实现水平垂直居中。但是每次到用的时候都会出现这样那样的问题，很是纠结。So，我索性就狠下来心花点时间来总结一下这方面的知识，也帮助我来理解、融汇贯通。好了，废话不多说，直接看 <a href="/demo/verticalAndHorizontalCenter/index.html">demo</a>。</p>
+<p>此Demo中包括一下两点：</p>
+<ul>
+<li>单个元素的水平垂直居中</li>
+<li>多个元素的水平垂直居中</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-28T07:42:42.000Z"><a href="/2015/01/28/css-vertical-align/">Jan 28 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/28/css-vertical-align/">理解vertical-align属性</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>vertical-align<ul>
+<li>设置元素在垂直方向上的对齐方式</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>注意：<br>1.垂直对齐属性只对<code>行内</code>元素有效<br>2.垂直对齐属性只对父级元素设置了<code>line-height</code>的元素</p>
+</blockquote>
+<ul>
+<li><p>基线对齐（vertical-align : baseline）</p>
+<ul>
+<li>所谓的基线对齐就是：使元素的基线同父元素的基线对齐</li>
+<li>默认对齐方式是基线对齐</li>
+</ul>
+</li>
+<li><p>中间对齐（vertical-align : middle）</p>
+<ul>
+<li>使元素的中线同父元素的中线对齐，也就达到了垂直居中的效果</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-28T06:10:02.000Z"><a href="/2015/01/28/css-line-height/">Jan 28 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/28/css-line-height/">理解line-height</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="基本概念">基本概念</h2><ul>
+<li>基线、中线、顶线、底线<br><img src="/imgs/css_line_height.png" alt=""></li>
+<li><p>基线</p>
+<ul>
+<li>基线并不是汉字的下端沿，而是英文字母”x”的下端沿</li>
+</ul>
+</li>
+<li><p>行高</p>
+<ul>
+<li>文本间基线的距离</li>
+</ul>
+</li>
+<li><p>行距</p>
+<ul>
+<li>上行文本的底线到下行文本顶线之间的具体</li>
+</ul>
+</li>
+<li><p>内容区<br><img src="/imgs/css_line_height_content.gif" alt=""></p>
+</li>
+<li><p>行内框<br><img src="/imgs/css_line_height_inner.gif" alt=""></p>
+<ul>
+<li>行内框只是一个概念，它无法显示出来，但是它又确实存在</li>
+<li>它的高度就是行高</li>
+<li>在没有其他因素（padding）影响的时候，行内框等于内容区域</li>
+</ul>
+</li>
+<li><p>行框(line box)<br><img src="/imgs/css_line_box.gif" alt=""></p>
+</li>
+<li>同行内框类似，行框是指本行的一个虚拟的矩形框</li>
+<li>行框高度等于本行内所有元素中行高最大的值</li>
+</ul>
+<h2 id="line-height的设置">line-height的设置</h2><ul>
+<li><p>行高继承</p>
+<ul>
+<li>默认情况下，如果父元素设置了line-height，而子元素没有设置，那么子元素将会将会继承父元素的line-height</li>
+</ul>
+</li>
+<li><p>行高的计算</p>
+<ul>
+<li>行高常用的单位：<ul>
+<li>px - 固定值</li>
+<li>em - 一个em的大小等于当前行中font-size的大小</li>
+<li>number - 一个纯数字，数字大小表示的是font-size的倍数</li>
+<li>normal - 正常，默认值，默认一般为1.2</li>
+<li>inherit - 继承</li>
+</ul>
+</li>
+<li>一般情况下如果行内有多种大小字体，可以用一个纯数字设置行高，这样可以避免行高小于字体大小而导致文字重叠</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-15T03:09:05.000Z"><a href="/2015/01/15/css-triangle-tips/">Jan 15 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/15/css-triangle-tips/">纯CSS代码实现小三角效果</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>实现方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-all&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 30px;&#10;  border-style: solid;&#10;  border-color: #c03 #fc0 #69c #6c6;/* &#32418; &#40644; &#34013; &#32511; */&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效 果 图<br><img src="/imgs/css_triangle.png" alt=""></p>
+</li>
+<li>实现原理<ul>
+<li>利用元素的四个border会彼此叠加的性质来制作三角形，只要让其他三条边隐藏起来就可达到效果。</li>
+</ul>
+</li>
+</ul>
+<h2 id="通过上面的原理，我们来制作一个指向下的三角形：">通过上面的原理，我们来制作一个指向下的三角形：</h2><ul>
+<li><p>实现方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-all&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle_down&#123;&#10;  width:0;&#10;  height:0;&#10;  border-width:30px 30px 0;&#10;  border-style:solid;&#10;  border-color:#c03 transparent transparent ;/* &#32418; &#36879;&#26126; &#36879;&#26126; */&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效 果 图<br><img src="/imgs/css_triangle_down.png" alt=""></p>
+</li>
+<li>原理分析<ul>
+<li>border-color:#c03 transparent transparent ;是将需要隐藏的边的颜色设置成透明；</li>
+<li>border-width:30px 30px 0; 是将三角形对边的宽度设置为0(这里对边是border-bottom)这么做的原因是减小三角形有效作用区域。</li>
+</ul>
+</li>
+</ul>
+<h2 id="通过上面的原理，我们来制作类似下面的tip效果：">通过上面的原理，我们来制作类似下面的tip效果：</h2><p><img src="/imgs/css_triangle_tip.png" alt=""></p>
+<ul>
+<li><p>实现方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-tip-up&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-tip-up&#123;&#10;  width: 200px;&#10;  height: 30px;&#10;  background:#3FB58E;&#10;  border-radius: 4px;&#10;  position: relative;&#10;&#125;&#10;.triangle-tip-up:before&#123;&#10;  content:&#39;&#39;;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 10px 10px;&#10;  border-style: solid;&#10;  border-color: transparent transparent #3FB58E;&#10;  position: absolute;&#10;  left: 80px;&#10;  top: -10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现原理</p>
+<ul>
+<li>利用一个div来做tip的主体框，设置其position为relative(为了控制三角形的位置)</li>
+<li>利用css的:before属性来做三角形的主体元素，设置其position为absolute(这样可以通过设置left和top的值来随意控制小三角的位置)</li>
+</ul>
+</li>
+</ul>
+<h2 id="实现类似下面的不规则三角形">实现类似下面的不规则三角形</h2><p><img src="/imgs/css_triangle_scalene.png" alt=""></p>
+<ul>
+<li><p>实现方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-scalene&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-scalene&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 0 60px 20px;/* &#35774;&#32622;&#23545;&#35282;&#21644;&#30456;&#37051;&#30340;border&#37117;&#20026;0&#26469;&#23454;&#29616;&#19981;&#35268;&#21017;&#25928;&#26524; */&#10;  border-style: solid;&#10;  border-color: transparent transparent #69c;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现原理</p>
+<ul>
+<li>设置对角和相邻一边的border都为0,然后通过改变其余两边border的宽度来实现不规则效果</li>
+</ul>
+</li>
+</ul>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/01/15/css-triangle-tips/#more" class="more-link">阅读全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+    <a href="/categories/CSS/" class="alignleft prev">上一页</a>
+  
+  
+    <a href="/categories/CSS/page/3/" class="alignright next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

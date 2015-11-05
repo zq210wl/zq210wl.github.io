@@ -1,0 +1,361 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 14 页 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-03T02:38:21.000Z"><a href="/2015/01/03/computer-process-and-threads/">Jan 3 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/03/computer-process-and-threads/">理解进程和线程</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p><strong>进程</strong></p>
+<ul>
+<li>进程是一个“执行中的程序”；比如我们在系统中安装QQ和浏览器，也就是说我们安装了两个程序；当我们打开了QQ程序，这时CPU就会开启一个进程来运行QQ程序；当然如果我们又打开了浏览器，CPU又会再开启一个进程来运行浏览器；</li>
+<li>一个应用程序就是一个进程</li>
+<li>CPU没开启一个进程就会给这个进程分配一块内存。</li>
+<li>进程之间是相互独立的，内存是不共享的。</li>
+</ul>
+</li>
+<li><p><strong>线程</strong></p>
+<ul>
+<li>通常在一个进程中可以包含若干个线程。比如在QQ应用程序中，我们可以边视频边语音，也就有两个线程，一个是视频的线程，一个是语音的线程。</li>
+<li>进程是一个容器，线程是此容器中的工作单位。</li>
+<li>线程是CPU的基本调度单位。多线程是CPU对线程的频繁切换调用现实的伪多线程。</li>
+<li>同一个进程中的多个线程是内存共享的。</li>
+</ul>
+</li>
+<li><p><strong>线程与进程的区别</strong></p>
+<ul>
+<li><strong>地址空间和其它资源</strong>：进程间相互独立，同一进程的各线程间共享。某进程内的线程在其它进程不可见。</li>
+<li><strong>通信</strong>：进程间通信IPC，线程间可以直接读写进程数据段（如全局变量）来进行通信——需要进程同步和互斥手段的辅助，以保证数据的一致性。</li>
+<li><strong>调度和切换</strong>：线程上下文切换比进程上下文切换要快得多。</li>
+</ul>
+</li>
+<li><p><strong>系统、进程、线程的关系图</strong></p>
+<p>  <img src="/imgs/computer_process_and_threads.png" alt=""></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-31T08:29:45.000Z"><a href="/2014/12/31/angular-compile-using/">Dec 31 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/31/angular-compile-using/">Angular之$compile函数的使用</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p><strong>Angular之$compile函数的使用</strong></p>
+<blockquote>
+<p>在用Angular写一些比较复杂的功能的时候，难免会遇到这样的需求：需要懂动态的往页面中插入一些元素，而且这些元素还需要跟scope中的的某些值绑定。</p>
+</blockquote>
+<p>比如要将一个div动态的插入到body中,如下:</p>
+<pre><code>scope.attr = <span class="string">"hello"</span>;
+$(<span class="string">"body"</span>).append('&lt;<span class="keyword">div</span> ng-<span class="keyword">bind</span>=<span class="string">"attr"</span>&gt;&lt;/<span class="keyword">div</span>&gt;');
+</code></pre><blockquote>
+<p>但是如果只是上面这么写的话，不管你<code>scope.attr</code>怎么变化, div的html都不会有变化。那么怎么才能让它们绑定到一起的呢？这就要用到<code>$compile</code>函数了。</p>
+</blockquote>
+</li>
+<li><p><strong>$compile函数的作用</strong><br><code>$compile</code>函数可以将一段html字符串或者DOM元素跟scope编译绑定到一起。</p>
+</li>
+<li><p><strong>$compile函数如何使用</strong></p>
+<pre><code><span class="variable">$compile</span>(<span class="literal">element</span>)(scope);
+//<span class="literal">element</span>可以是一段html字符串，也可以是DOM元素；<span class="keyword">return</span>值为编译完后的DOM元素
+</code></pre></li>
+<li><p><strong>用$compile完成上面的需求</strong></p>
+<pre><code>scope.attr = <span class="string">"hello"</span>;
+var html = <span class="variable">$compile</span>(<span class="string">'&lt;div ng-bind="attr"&gt;&lt;/div&gt;'</span>)(scope);
+$(<span class="string">"body"</span>).append(html);
+scope.<span class="variable">$digest</span>();//遍历scope
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-31T08:16:21.000Z"><a href="/2014/12/31/angular-require-vs-ngRequire/">Dec 31 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/31/angular-require-vs-ngRequire/">Angular之required和ng-required的区别</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>required和ng-required的作用</p>
+<p>当提交的表单时，通常都会做一些表单验证，当然也避免不了空值的检测。在angular里可以给input，select等设置required属性来对表单进行验证，不用自己再花时间去写验证。</p>
+</li>
+<li><p>例如我们需要验证name名为myFrom下的userName文本框是否为空，我们可以给文本框设置required属性，然后通过myForm.userName.$error.required来获取验证结果。</p>
+<pre><code>&lt;<span class="tag">form</span> name=<span class="string">"myForm"</span>&gt;
+  User name: &lt;<span class="tag">input</span> type=<span class="string">"text"</span> name=<span class="string">"userName"</span> required&gt;
+  &lt;<span class="tag">span</span> class=<span class="string">"error"</span> ng-show=<span class="string">"myForm.userName.$error.required"</span>&gt;Required!&lt;/span&gt;
+&lt;/form&gt;
+</code></pre></li>
+<li><p>也可以设置ng-required来进行验证设置，ng-required跟required的区别是前者可以通过设置一些表达式来判断是否需要验证。</p>
+<pre><code><span class="tag">&lt;<span class="title">javascript</span>&gt;</span>
+  scope.userName = {name: 'zhangsan', validate: true}
+<span class="tag">&lt;/<span class="title">javascript</span>&gt;</span>
+<span class="tag">&lt;<span class="title">form</span> <span class="attribute">name</span>=<span class="value">"myForm"</span>&gt;</span>
+  User name: <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"userName"</span> <span class="attribute">ng-required</span>=<span class="value">"userName.validate"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"error"</span> <span class="attribute">ng-show</span>=<span class="value">"myForm.userName.$error.required"</span>&gt;</span>Required!<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-31T07:44:19.000Z"><a href="/2014/12/31/angular-watch-using/">Dec 31 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/31/angular-watch-using/">Angular之watch的特殊使用</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>使用AngularJs开发项目的同学应该对watch很熟悉了，在项目中难免会用到watch来监听scope中值的变化来执行相应的操作.</p>
+</blockquote>
+<ul>
+<li><p>$watch的常规使用：</p>
+<pre><code>scope.name = <span class="string">'aa'</span>;
+scope.<span class="variable">$watch</span>(<span class="string">'aa'</span>, <span class="keyword">function</span>(newVal, oldVal){
+   //执行相应操作
+});
+</code></pre></li>
+<li><p>特殊使用，因为watch可以用来监听一个函数，所以当我们需要每次执行$digest()都执行一个操作（即scope发生变化的时候），这是我们就可以把第一个参数设置成一个我们需要每次都执行的函数。</p>
+<pre><code>scope.<span class="variable">$watch</span>(<span class="keyword">function</span>(){
+   //每次都需要执行的操作
+});
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+    <a href="/page/13/" class="alignleft prev">上一页</a>
+  
+  
+    <a href="/page/15/" class="alignright next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

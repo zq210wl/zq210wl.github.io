@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 2 页 | Angular | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title category">Angular</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-31T08:16:21.000Z"><a href="/2014/12/31/angular-require-vs-ngRequire/">Dec 31 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/31/angular-require-vs-ngRequire/">Angular之required和ng-required的区别</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>required和ng-required的作用</p>
+<p>当提交的表单时，通常都会做一些表单验证，当然也避免不了空值的检测。在angular里可以给input，select等设置required属性来对表单进行验证，不用自己再花时间去写验证。</p>
+</li>
+<li><p>例如我们需要验证name名为myFrom下的userName文本框是否为空，我们可以给文本框设置required属性，然后通过myForm.userName.$error.required来获取验证结果。</p>
+<pre><code>&lt;<span class="tag">form</span> name=<span class="string">"myForm"</span>&gt;
+  User name: &lt;<span class="tag">input</span> type=<span class="string">"text"</span> name=<span class="string">"userName"</span> required&gt;
+  &lt;<span class="tag">span</span> class=<span class="string">"error"</span> ng-show=<span class="string">"myForm.userName.$error.required"</span>&gt;Required!&lt;/span&gt;
+&lt;/form&gt;
+</code></pre></li>
+<li><p>也可以设置ng-required来进行验证设置，ng-required跟required的区别是前者可以通过设置一些表达式来判断是否需要验证。</p>
+<pre><code><span class="tag">&lt;<span class="title">javascript</span>&gt;</span>
+  scope.userName = {name: 'zhangsan', validate: true}
+<span class="tag">&lt;/<span class="title">javascript</span>&gt;</span>
+<span class="tag">&lt;<span class="title">form</span> <span class="attribute">name</span>=<span class="value">"myForm"</span>&gt;</span>
+  User name: <span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"userName"</span> <span class="attribute">ng-required</span>=<span class="value">"userName.validate"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">span</span> <span class="attribute">class</span>=<span class="value">"error"</span> <span class="attribute">ng-show</span>=<span class="value">"myForm.userName.$error.required"</span>&gt;</span>Required!<span class="tag">&lt;/<span class="title">span</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-31T07:44:19.000Z"><a href="/2014/12/31/angular-watch-using/">Dec 31 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/31/angular-watch-using/">Angular之watch的特殊使用</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>使用AngularJs开发项目的同学应该对watch很熟悉了，在项目中难免会用到watch来监听scope中值的变化来执行相应的操作.</p>
+</blockquote>
+<ul>
+<li><p>$watch的常规使用：</p>
+<pre><code>scope.name = <span class="string">'aa'</span>;
+scope.<span class="variable">$watch</span>(<span class="string">'aa'</span>, <span class="keyword">function</span>(newVal, oldVal){
+   //执行相应操作
+});
+</code></pre></li>
+<li><p>特殊使用，因为watch可以用来监听一个函数，所以当我们需要每次执行$digest()都执行一个操作（即scope发生变化的时候），这是我们就可以把第一个参数设置成一个我们需要每次都执行的函数。</p>
+<pre><code>scope.<span class="variable">$watch</span>(<span class="keyword">function</span>(){
+   //每次都需要执行的操作
+});
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-04-01T08:51:06.000Z"><a href="/2014/04/01/angular-issue-ngclick-fired-twice/">Apr 1 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/04/01/angular-issue-ngclick-fired-twice/">Angular issue 之 ng-click事件被执行两次</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>用 angular 做公司的一个内部系统时，自己写了一个公用的 Dialog directive, 但是遇到一个问题：注册到一个button上的ng-click事件上的方法莫名其妙的总是点击一次执行两次，都快把我郁闷死了，不过问题到最后总是能找到原因并且解决的。下面我就说下为什么会出现这种问题。</p>
+</blockquote>
+<ul>
+<li><p>问题所在</p>
+<ul>
+<li>问题出现在我使用了$compile去编译了一些后加入到template中的element。但是我为了偷懒把真个template都compile了一次，这时候template中的一些元素等于被compile了两次，只要是被compile了两次的元素，在其上面注册事件都会被执行两次。</li>
+</ul>
+</li>
+<li><p>如何解决</p>
+<ul>
+<li>方法一：只compile后加入模板的元素(也就是没有编译过的元素)</li>
+<li>方法二：在preLink中完成对新元素的加入，因为这时候文章template都还么执行compile, 相加什么就加什么，加完之后，angular会自动把真个template compile 一次。</li>
+</ul>
+</li>
+<li><p>总结</p>
+<ul>
+<li>$compile虽强大，但还需谨慎。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+    <a href="/categories/Angular/" class="alignleft prev">上一页</a>
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

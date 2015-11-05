@@ -1,0 +1,649 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HTML | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title category">HTML</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-23T08:44:25.000Z"><a href="/2015/01/23/html5-learning/">Jan 23 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/23/html5-learning/">HTML5学习总结</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="Element(元素)">Element(元素)</h2><ul>
+<li>html5的空标签，如<code>&lt;br&gt;</code>,<code>&lt;hr&gt;</code>, 建议都带结束符，如：<code>&lt;br/&gt;</code>,<code>&lt;hr/&gt;</code></li>
+<li>html5的标签是大小写不敏感的，不过建议都小写</li>
+</ul>
+<h2 id="Attributes(属性)">Attributes(属性)</h2><ul>
+<li><code>alt</code><ul>
+<li>指定<code>alt</code>属性，可以在元素不能正常显示的时候，显示一段执行的文本</li>
+<li>如：<code>&lt;img src=&quot;hello.jpg&quot; alt=&quot;This is the description of img&quot;&gt;</code></li>
+</ul>
+</li>
+<li>建议所有的属性名称都<strong>小写</strong></li>
+<li>建议所有的属性值都用<strong>引号</strong>括起来,通常都用<code>双引号</code>，特殊情况下用<code>单引号</code><ul>
+<li><code>&lt;p title=&#39;John &quot;ShotGun&quot; Nelson&#39;&gt;</code></li>
+<li><code>&lt;p title=&quot;John &#39;ShotGun&#39; Nelson&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Meta_Elements(源元素)">Meta Elements(源元素)</h2><ul>
+<li>meta element 也叫做meta data, 即：元数据，用来描述数据的数据</li>
+<li>主要有：<code>&lt;title&gt;</code>,<code>&lt;meta&gt;</code>,<code>&lt;style&gt;</code>,<code>&lt;link&gt;</code>,,<code>&lt;script&gt;</code></li>
+</ul>
+<h2 id="paragraphs(段落)">paragraphs(段落)</h2><ul>
+<li><code>&lt;p&gt;</code> - 用来显示一个段文字，不过格式不好控制</li>
+<li><code>&lt;pre</code> - 用来显示已经格式化好的文本，此元素间的内容会把内容的格式如实显示</li>
+</ul>
+<h2 id="Formatting_Elements(格式化元素)">Formatting Elements(格式化元素)</h2><ul>
+<li><code>&lt;strong&gt;</code> - 加重(字体会加粗)</li>
+<li><code>&lt;em&gt;</code> - 强调(字体会倾斜)</li>
+<li><code>&lt;small&gt;</code> - 字体变小(在一段正常的字体中加一些小字体的文本)</li>
+<li><code>&lt;mark&gt;</code> - 标记或高亮文本(默认会给文本添加黄色背景)</li>
+<li><code>&lt;del&gt;</code> - 标记文本为删除(在文本中线上会添加一条线)</li>
+<li><code>&lt;ins&gt;</code> - 插入文本(在文本下面会有一条下划线)</li>
+<li><code>&lt;sub&gt;</code> - 下标文字</li>
+<li><code>&lt;sup&gt;</code> - 上标文字</li>
+</ul>
+<h2 id="Quotation_and_Citation_Elements(表引用或举证的元素)">Quotation and Citation Elements(表引用或举证的元素)</h2><ul>
+<li><p><code>&lt;q&gt;</code> - 行内引用，文本会被双引号括起来</p>
+</li>
+<li><p><code>&lt;blockquote&gt;</code> - 块级引用</p>
+<ul>
+<li>cite属性可以用于搜索引擎来搜索相关信息<pre><code>&lt;<span class="keyword">blockquote </span>cite=<span class="string">"http://www.worldwildlife.org/who/index.html"</span>&gt;
+  For <span class="number">50</span> years, WWF has <span class="keyword">been </span>protecting the future of nature.
+&lt;/<span class="keyword">blockquote&gt;</span>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><code>&lt;cite&gt;</code> - 定义一个work的标题，比如一本书、一首歌、一幅画、一个雕塑、一部电视剧</p>
+<pre><code><span class="variable">&lt;p&gt;</span><span class="variable">&lt;cite&gt;</span>The Scream<span class="variable">&lt;/cite&gt;</span> by Edward Munch. Painted <span class="keyword">in</span> <span class="number">1893</span>.<span class="variable">&lt;/p&gt;</span>
+</code></pre></li>
+<li><p><code>&lt;abbr&gt;</code> - 缩写(全称可以写在title属性中)，字体样式没有变化</p>
+<pre><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>The <span class="tag">&lt;<span class="title">abbr</span> <span class="attribute">title</span>=<span class="value">"World Health Organization"</span>&gt;</span>WHO<span class="tag">&lt;/<span class="title">abbr</span>&gt;</span> was founded in 1948.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</code></pre></li>
+<li><p><code>&lt;dfn&gt;</code> - 定义一个术语或缩写，跟<code>&lt;abbr&gt;</code>类似，但字体会倾斜</p>
+<pre><code><span class="tag">&lt;<span class="title">p</span>&gt;</span>The <span class="tag">&lt;<span class="title">dfn</span> <span class="attribute">title</span>=<span class="value">"World Health Organization"</span>&gt;</span>WHO<span class="tag">&lt;/<span class="title">dfn</span>&gt;</span> was founded in 1948.<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+</code></pre></li>
+<li><p><code>&lt;address&gt;</code> - 定义一个文档或文章的联系方式或信息，字体会倾斜</p>
+</li>
+<li><p><code>&lt;bdo&gt;</code> - 重写文本的显示方向位置</p>
+<ul>
+<li><code>&lt;bdo dir=&quot;rtl&quot;&gt;This text will be written from right to left&lt;/bdo&gt;</code></li>
+<li>通过控制dir属性来决定是从左到右显示，还是从右到左显示</li>
+<li><code>&lt;bdo dir=&quot;ltr|rtl&quot;&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="Computer_Code_Elements(代码元素)">Computer Code Elements(代码元素)</h2><ul>
+<li><code>&lt;code&gt;</code> - 用来显示一段代码，为了保持代码的显示格式，内容可以用<code>&lt;pre&gt;</code>包起来</li>
+</ul>
+<h2 id="Links(超链接)">Links(超链接)</h2><ul>
+<li>超链接(a)的四种状态的顺序从高到低如下：<ul>
+<li>a:link - 正常的，没被访问过</li>
+<li>a:visited - 已访问过</li>
+<li>a:hover - 鼠标移动之上</li>
+<li>a:active - 点击的瞬间动作</li>
+</ul>
+</li>
+</ul>
+<h2 id="Table(表格)">Table(表格)</h2><ul>
+<li>去掉table双边框效果<pre><code><span class="tag">table</span> <span class="rules">{
+  <span class="rule"><span class="attribute">border-collapse</span>:<span class="value"> collapse</span></span>;
+}</span>
+</code></pre></li>
+</ul>
+<h2 id="Layouts(布局)">Layouts(布局)</h2><ul>
+<li>html5中跟布局相关的几个元素：<ul>
+<li><code>header</code> - 定义一个document或一个section的头部区域</li>
+<li><code>nav</code> - 定义一个导航的容器</li>
+<li><code>section</code> - 在document中定义一个模块</li>
+<li><code>article</code> - 定义一个独立的文章区域块</li>
+<li><code>aside</code> - 定义除了具体内容一个外的其他内容(如：侧边栏)</li>
+<li><code>footer</code> - 定义一个document或一个section的底部区域</li>
+<li><code>details</code> - 定义额外的细节</li>
+<li><code>summary</code> - 为details元素定义一个标题<br><img src="/imgs/html5_layout.png" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="Color_value">Color value</h2><ul>
+<li>颜色值有三种写法：<ul>
+<li>1)直接写颜色单词;2)”#”加一个十六进制的数字;3)rgb颜色。最终都为被转化为十六进制来显示</li>
+</ul>
+</li>
+</ul>
+<h2 id="Responsive(响应式)">Responsive(响应式)</h2><ul>
+<li><code>viewport</code> - 响应式的meta标签的参数</li>
+<li>参数的属性值：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">width</td>
+<td style="text-align:left">虚拟视窗的宽度</td>
+</tr>
+<tr>
+<td style="text-align:left">device-width</td>
+<td style="text-align:left">设备屏幕的宽度</td>
+</tr>
+<tr>
+<td style="text-align:left">height</td>
+<td style="text-align:left">虚拟视窗的高度</td>
+</tr>
+<tr>
+<td style="text-align:left">device-height</td>
+<td style="text-align:left">设备屏幕的高度</td>
+</tr>
+<tr>
+<td style="text-align:left">initial-scale</td>
+<td style="text-align:left">页面初始化的缩放倍数。1.0为不缩放</td>
+</tr>
+<tr>
+<td style="text-align:left">minimum-scale</td>
+<td style="text-align:left">可以缩放的最小倍数</td>
+</tr>
+<tr>
+<td style="text-align:left">maximum-scale</td>
+<td style="text-align:left">可以缩放的最大倍数</td>
+</tr>
+<tr>
+<td style="text-align:left">user-scalable</td>
+<td style="text-align:left">是否允许缩放,值为Boolean</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;meta name=&#34;viewport&#34; content=&#34;width=device-width, initial-scale=1&#34;&#62;</span><br></pre></td></tr></table></figure>
+<h2 id="Charset_Encoding(字符集编码)">Charset Encoding(字符集编码)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;meta charset=&#34;UTF-8&#34;&#62;</span><br></pre></td></tr></table></figure>
+<h2 id="Form_Elements(表单元素)">Form Elements(表单元素)</h2><ul>
+<li><p>html5新增加的元素：</p>
+<ul>
+<li><code>&lt;datalist&gt;</code> - 指定一个有默认选项值的input<pre><code>&lt;datalist id=<span class="string">"browsers"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Internet Explorer"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Firefox"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Chrome"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Opera"</span>&gt;
+  &lt;<span class="keyword">option</span> <span class="keyword">value</span>=<span class="string">"Safari"</span>&gt;
+&lt;/datalist&gt;
+</code></pre><img src="/imgs/html5-datalist.png" alt=""></li>
+</ul>
+</li>
+<li><p>html 新增加的input type:</p>
+<ul>
+<li>color</li>
+<li>date</li>
+<li>datetime</li>
+<li>datetime-local</li>
+<li>email</li>
+<li>month</li>
+<li>number</li>
+<li>range</li>
+<li>search</li>
+<li>tel</li>
+<li>time</li>
+<li>url</li>
+<li>week</li>
+</ul>
+</li>
+<li><p>Input Attributes(input常用属性)</p>
+<ul>
+<li>readonly - 只读</li>
+<li>disabled - 不能用</li>
+<li>maxlength - 最大长度</li>
+<li>autofocus</li>
+<li>min - 最小值</li>
+<li>max - 最大值</li>
+<li>multiple - 多选，针对file和image类型</li>
+<li>pattern - 正则验证，如：pattern=”[A-Za-z]{3}”</li>
+<li>placeholder - 默认值</li>
+<li>required - 必须填写</li>
+<li>step - 数字间隔，针对number类型</li>
+</ul>
+</li>
+</ul>
+<h2 id="New_HTML5_Elements(html5_新增的几个常用元素)">New HTML5 Elements(html5 新增的几个常用元素)</h2><ul>
+<li>语义化<ul>
+<li><code>&lt;header&gt;</code></li>
+<li><code>&lt;footer&gt;</code></li>
+<li><code>&lt;article&gt;</code></li>
+<li><code>&lt;section&gt;</code></li>
+</ul>
+</li>
+<li>图像处理<ul>
+<li><code>&lt;svg&gt;</code></li>
+<li><code>&lt;canvas&gt;</code></li>
+</ul>
+</li>
+<li>多媒体<ul>
+<li><code>&lt;audio&gt;</code></li>
+<li><code>&lt;video&gt;</code><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;video width=&#34;320&#34; height=&#34;240&#34; controls&#62;&#10;  &#60;source src=&#34;forrest_gump.mp4&#34; type=&#34;video/mp4&#34;&#62;&#10;  &#60;source src=&#34;forrest_gump.ogg&#34; type=&#34;video/ogg&#34;&#62;&#10;  &#60;track src=&#34;subtitles_en.vtt&#34; kind=&#34;subtitles&#34; srclang=&#34;en&#34; label=&#34;English&#34;&#62;&#10;  &#60;track src=&#34;subtitles_no.vtt&#34; kind=&#34;subtitles&#34; srclang=&#34;no&#34; label=&#34;Norwegian&#34;&#62;&#10;&#60;/video&#62;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="SVG_和_Canvas_最大的不同">SVG 和 Canvas 最大的不同</h2><ul>
+<li>SVG是基于XML的，每一个元素都是一个DOM元素，可以添加事件</li>
+<li>Canvas是通过javascript一像素一像素的画出来的</li>
+</ul>
+<h2 id="HTML_plug-ins(插件)">HTML plug-ins(插件)</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;object width=&#34;400&#34; height=&#34;50&#34; data=&#34;bookmark.swf&#34;&#62;&#60;/object&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;embed width=&#34;400&#34; height=&#34;50&#34; src=&#34;bookmark.swf&#34;&#62;</span><br></pre></td></tr></table></figure>
+<h2 id="HTML5_APIs">HTML5 APIs</h2><ul>
+<li>Geolocation - 定位</li>
+<li>Drag/Drop - 拖拽</li>
+<li>Local Storage - 本地存储</li>
+<li>Web Workers - 可以在后台运行脚本而不影响页面的性能</li>
+</ul>
+<h2 id="详细使用请参考：">详细使用请参考：</h2><p><a href="http://www.w3schools.com/html/" target="_blank" rel="external">http://www.w3schools.com/html/</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-05T08:49:22.000Z"><a href="/2015/01/05/html-meta-tag/">Jan 5 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/05/html-meta-tag/">html中meta标签的详解</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p><strong>meta标签是什么1</strong></p>
+<ul>
+<li>META标签是HTML语言HEAD区的一个辅助性标签</li>
+</ul>
+</li>
+<li><p><strong>meta标签是干什么用的？</strong></p>
+<ul>
+<li>META标签用来描述一个HTML网页文档的属性，例如作者、日期和时间、网页描述、关键词、页面刷新等。它提供的信息虽然用户不可见，但却是文档的最基本的<code>元数据</code>.</li>
+</ul>
+</li>
+<li><p><strong><code>元数据</code>又是什么东西？</strong></p>
+<ul>
+<li>元数据(Metadata)是用来概括描述数据的一些基本数据。也就是描述数据的数据。<code>还不清楚？</code>那在形象的来解释一下：</li>
+</ul>
+<blockquote>
+<p>你今天在下班途中邂逅了一个美女，然后回到家之后你就迫不及待的想跟你的朋友炫耀一下。但是你不能只说你邂逅了一个美女，你得描述具体点啊，不然谁信啊？所以你得通过年龄（三十岁上下）、身高（个子高挑）、相貌（身材匀称，黑黑的眉毛，红红的脸蛋）、性格（活跃）来描述。这样你的朋友就可以通过这些信息来意淫一下啦。OK. 废话不多说，到底什么是metadata呢？</p>
+</blockquote>
+<p>这个例子中的”年龄”、”身高”、”相貌”、”性格”，就是元数据，因为它们是用来描述具体数据/信息的数据/信息。<br>当然，这几个元数据用来刻画个人状况还不够精确。我们每个人从小到大，都填过《个人情况登记表》之类的东西吧，其中包括姓名、性别、民族、政治面貌、一寸照片、学历、职称等等……这一套元数据才算比较完备。</p>
+<p><strong>那么对于网页也来说，metadata就是通过一些字段信息来描述一下当前网页，以便浏览器和搜索引擎在访问到此网页的时候，可以通过这些描述信息来知道如何去解析此网页数据。</strong></p>
+</li>
+<li><p><strong>meta标签的使用</strong></p>
+<ul>
+<li><p>meta标签共有两个属性：<code>http-equiv</code>和<code>name</code>;不同的属性又有不同的<em>参数值</em>，这些不同的<em>参数值</em>就实现了不同的网页功能。</p>
+<ol>
+<li><strong>name属性</strong></li>
+</ol>
+<p>name属性主要用于描述网页，与之对应的属性值为content，content中的内容主要是便于搜索引擎机器人查找信息和分类信息用的。<br>meta标签的name属性语法格式是：＜meta name=”参数” content=”具体的参数值”＞ 。其中name属性主要有以下几种参数:</p>
+<ul>
+<li>Keywords(关键字)<ul>
+<li>说明：keywords用来告诉搜索引擎你网页的关键字是什么。</li>
+<li>举例：<code>＜meta name =&quot;keywords&quot; content=&quot;science, education,culture,politics,ecnomics，relationships, entertaiment, human&quot;＞</code></li>
+</ul>
+</li>
+<li>description(网站内容描述)<ul>
+<li>说明：description用来告诉搜索引擎你的网站主要内容。</li>
+<li>举例：<code>＜meta name=&quot;description&quot; content=&quot;This page is about the meaning of science, education,culture.&quot;＞</code></li>
+</ul>
+</li>
+<li>author(作者)<ul>
+<li>说明：标注网页的作者</li>
+<li>举例：<code>＜meta name=&quot;author&quot; content&quot;root,root@21cn.com&quot;＞</code></li>
+</ul>
+<ol>
+<li><strong>http-equiv属性</strong></li>
+</ol>
+</li>
+</ul>
+<p>http-equiv顾名思义，相当于http协议中文件头的作用，它可以向浏览器传回一些有用的信息，以帮助正确和精确地显示网页内容，与之对应的属性值为content，content中的内容其实就是各个参数的变量值。<br>meat标签的http-equiv属性语法格式是：＜meta http-equiv=”参数” content=”参数变量值”＞ ；其中http-equiv属性主要有以下几种参数：</p>
+<ul>
+<li>content-Type(显示字符集的设定)<ul>
+<li>说明：设定页面使用的字符集。</li>
+<li>用法：<code>＜meta http-equiv=&quot;content-Type&quot; content=&quot;text/html; charset=gb2312&quot;＞</code></li>
+</ul>
+</li>
+<li>Expires(期限)<ul>
+<li>说明：可以用于设定网页的到期时间。一旦网页过期，必须到服务器上重新传输。</li>
+<li>用法：<code>＜meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2001 18:18:18 GMT&quot;＞</code><br>注意：必须使用GMT的时间格式。</li>
+</ul>
+</li>
+<li>Pragma(cache模式)<ul>
+<li>说明：禁止浏览器从本地计算机的缓存中访问页面内容。</li>
+<li>用法：<code>＜meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;＞</code><br>注意：这样设定，访问者将无法脱机浏览。</li>
+</ul>
+</li>
+<li>Refresh(刷新)<ul>
+<li>说明：自动刷新并指向新页面。</li>
+<li>用法：<code>＜meta http-equiv=&quot;Refresh&quot; content=&quot;2; URL=http://www.root.net&quot;＞</code><br>注意：其中的2是指停留2秒钟后自动刷新到URL网址。</li>
+</ul>
+</li>
+<li>Set-Cookie(cookie设定)<ul>
+<li>说明：设置cookie, 如果网页过期，那么存盘的cookie将被删除。</li>
+<li>用法：<code>＜meta http-equiv=&quot;Set-Cookie&quot; content=&quot;cookievalue=xxx; expires=Friday, 12-Jan-2001 18:18:18 GMT； path=/&quot;＞</code><br>注意：必须使用GMT的时间格式。</li>
+</ul>
+</li>
+<li>Window-target(显示窗口的设定)<ul>
+<li>说明：强制页面在当前窗口以独立页面显示。</li>
+<li>用法：<code>＜meta http-equiv=&quot;Window-target&quot; content=&quot;_top&quot;＞</code><br>注意：用来防止别人在框架里调用自己的页面。<br>*</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>meta标签对搜索引擎的作用</strong></p>
+<p>meta标签的一个很重要的功能就是设置关键字，来帮助你的主页被各大搜索引擎登录，提高网站的访问量。在这个功能中，最重要的就是对Keywords和description的设置。因为按照搜索引擎的工作原理,搜索引擎首先派出机器人自动检索页面中的keywords和decription，并将其加入到自己的数据库，然后再根据关键词的密度将网站排序。因此，我们必须设置好关键字，来提高页面的搜索点击率。下面我们来举一个例子供大家参考：</p>
+</li>
+</ul>
+<p>　<code>＜meta name=&quot;keywords&quot; content=&quot;政治,经济, 科技,文化, 卫生, 情感，心灵，娱乐，生活，社会，企业，交通&quot;＞</code><br>　<code>＜meta name=&quot;description&quot; content=&quot;政治,经济, 科技,文化, 卫生, 情感，心灵，娱乐，生活，社会，企业，交通&quot;＞</code></p>
+<p>　设置好这些关键字后，搜索引擎将会自动把这些关键字添加到数据库中，并根据这些关键字的密度来进行合适的排序。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-30T07:48:06.000Z"><a href="/2014/12/30/html-http-header-analysis/">Dec 30 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/30/html-http-header-analysis/">理解HTTP Header</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>HTTP协议是怎样传输的？<ul>
+<li>HTTP采用请求/响应模型，浏览器端发送请求，服务器给与响应。就整个网络资源传输而言，包括message-header和message-body两部分。</li>
+<li>http 请求的整个过程<br><img src="/imgs/http_request_process.gif" alt=""></li>
+</ul>
+</li>
+<li>http header<ul>
+<li>http header内容的组织形式，大体分为Request和Response两部分。</li>
+</ul>
+</li>
+<li>Request<ul>
+<li>当你在流览器位址栏里键入一个url，你的流览器会将类似如下的http请求<pre><code>GET <span class="regexp">/tutorials/</span>other<span class="regexp">/top-20-mysql-best-practices/</span> HTTP/<span class="number">1.1</span> (Request line)
+<span class="string">Host:</span> net.tutsplus.com
+User-<span class="string">Agent:</span> Mozilla<span class="regexp">/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.5) Gecko/</span><span class="number">20091102</span> Firefox/<span class="number">3.5</span><span class="number">.5</span> (.NET CLR <span class="number">3.5</span><span class="number">.30729</span>)
+<span class="string">Accept:</span> text<span class="regexp">/html,application/</span>xhtml+xml,application<span class="regexp">/xml;q=0.9,*/</span>*;q=<span class="number">0.8</span>
+Accept-<span class="string">Language:</span> en-us,en;q=<span class="number">0.5</span>
+Accept-<span class="string">Encoding:</span> gzip,deflate
+Accept-<span class="string">Charset:</span> ISO-<span class="number">8859</span>-<span class="number">1</span>,utf-<span class="number">8</span>;q=<span class="number">0.7</span>,*;q=<span class="number">0.7</span>
+Keep-<span class="string">Alive:</span> <span class="number">300</span>
+<span class="string">Connection:</span> keep-alive
+<span class="string">Cookie:</span> PHPSESSID=r2t5uvjq435r4q7ib3vtdjq120
+<span class="string">Pragma:</span> no-cache
+Cache-<span class="string">Control:</span> no-cache
+</code></pre><ul>
+<li>第一行被称为“Request Line” 它描述的是这个请求的基本资讯，剩下的就是HTTP headers了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Response<ul>
+<li>请求完成之后，你的流览器可能会收到如下的HTTP回应：<pre><code>HTTP/<span class="number">1.</span>x <span class="number">200</span> OK (state line)
+Transfer-Encoding: chunked
+Date: Sat, <span class="number">28</span> Nov <span class="number">2009</span> <span class="number">04</span>:<span class="number">36</span>:<span class="number">25</span> GMT
+Server: LiteSpeed
+Connection: close
+X-Powered-By: W3 Total Cache/<span class="number">0.8</span>
+Pragma: <span class="keyword">public</span>
+Expires: Sat, <span class="number">28</span> Nov <span class="number">2009</span> <span class="number">05</span>:<span class="number">36</span>:<span class="number">25</span> GMT
+Etag: <span class="string">"pub1259380237;gz"</span>
+Cache-Control: max-age=<span class="number">3600</span>, <span class="keyword">public</span>
+Content-Type: text/html; charset=UTF-<span class="number">8</span>
+Last-Modified: Sat, <span class="number">28</span> Nov <span class="number">2009</span> <span class="number">03</span>:<span class="number">50</span>:<span class="number">37</span> GMT
+X-Pingback: http:<span class="comment">//net.tutsplus.com/xmlrpc.php</span>
+Content-Encoding: gzip
+Vary: Accept-Encoding, Cookie, User-Agent
+&lt;!-- ... rest of the html ... --&gt;
+</code></pre><ul>
+<li>第一行被称为“Status Line”，它之后就是http headers，空行完了就开始输出内容了（在这个案例中是一些html输出）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTTP Request结构<br><img src="/imgs/http_request_composition.gif" alt=""><ul>
+<li>被称作“first line”的第一行包含三个部分：<ul>
+<li>“method” 表明这是何种类型的请求. 最常见的请求类型有GET,POST和HEAD.</li>
+<li>“path” 体现的是主机之后的路径. 例如，当你请求“<a href="http://net.tutsplus.com/tutorials/other”时" target="_blank" rel="external">http://net.tutsplus.com/tutorials/other”时</a>, path 就会是”/tutorials/other”.</li>
+<li>“protocol” 包含有“HTTP” 和版本号.</li>
+</ul>
+</li>
+<li>剩下的部分每行都是一个”Name:Value”对(即: MIME信息)。它们包含了各式各样关于请求和你流览器的资讯。<ul>
+<li>详细信息请参考：<ul>
+<li><a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank" rel="external">http://en.wikipedia.org/wiki/List_of_HTTP_header_fields</a></li>
+</ul>
+</li>
+<li>这些headers大部分都是可选的。HTTP 请求甚至可以被精简成这样子：<pre><code><span class="request">GET <span class="string">/tutorials/other/top-20-mysql-best-practices/</span> HTTP/1.1</span>
+<span class="attribute">Host</span>: <span class="string">net.tutsplus.com</span>
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>HTTP Response结构<br><img src="/imgs/http_response_composition.gif" alt=""><ul>
+<li>第一个有价值的资讯就是协定。目前伺服器都会使用HTTP/1.x 或者HTTP/1.1。</li>
+<li>接下来一个简短的资讯代表状态。代码200意味着我们的请求已经发送成功了，伺服器将会返回给我们所请求的文档，在Header资讯之后。<ul>
+<li>HTTP 状态码<ul>
+<li>200 用来表示请求成功.</li>
+<li>300 来表示重定向.</li>
+<li>400 用来表示请求出现问题.</li>
+<li>500 用来表示伺服器出现问题.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>同样，这些Header资讯也是可选的。</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

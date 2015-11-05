@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Angular | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+<h2 class="archive-title category">Angular</h2>
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-02T06:46:43.000Z"><a href="/2015/07/02/angular-directive-excute-order/">Jul 2 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/07/02/angular-directive-excute-order/">理解Directive中各个方法的执行顺序</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>Directive 在angular中扮演着非常重要的角色，而且对新手来说了使用起来也比较复杂。所以有必要来对 directive 做一个详细的分析，本片文章只来谈一下Directive中各个方法的执行顺序。</p>
+</blockquote>
+<ul>
+<li><p>先看下面的比较完整的Directive代码：</p>
+<pre><code>app.directive(<span class="string">"simple"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+   <span class="keyword">return</span> {
+     restrict: <span class="string">"E"</span>,
+     template:<span class="string">"&lt;div&gt;&lt;/div&gt;"</span>,
+     controller: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attributes</span>)</span>{
+       <span class="built_in">console</span>.log(<span class="string">"controller"</span>);
+     },
+     compile: <span class="function"><span class="keyword">function</span>(<span class="params">element, attributes</span>)</span>{
+       <span class="built_in">console</span>.log(<span class="string">"compile"</span>);
+       <span class="keyword">return</span> {
+           pre: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attributes, controller, transcludeFn</span>)</span>{
+             <span class="built_in">console</span>.log(<span class="string">"pre"</span>);
+           },
+           post: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attributes, controller, transcludeFn</span>)</span>{
+             <span class="built_in">console</span>.log(<span class="string">"post"</span>);
+           }
+       }
+     }
+   };
+});
+</code></pre></li>
+<li><p>controller, compile, pre 和 post 的执行顺序如下：<br>1.compile (只会执行一次, 此过程是用来编译template, 但是不会执行渲染)<br>2.controller (不执行渲染)<br>3.pre (不执行渲染)<br>4.post (执行渲染)</p>
+</li>
+<li><p>其他关于Directive的详细讲解请看下面链接：</p>
+<ul>
+<li><a href="http://odetocode.com/blogs/scott/archive/2014/05/28/compile-pre-and-post-linking-in-angularjs.aspx" target="_blank" rel="external">深入理解Directive里的每个方法</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-29T02:57:19.000Z"><a href="/2015/06/29/angular-provider-compare/">Jun 29 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/06/29/angular-provider-compare/">angular中自定定义服务service的方法以及比较</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>第一种 provider 方法</p>
+<ul>
+<li>需要实现 <strong>this.$get</strong> 方法，并且此方法返回一个对象</li>
+<li>Providers 是唯一一种你可以传进 <strong>.config()</strong> 函数的 <strong>service</strong>。当你想要在service对象启用之前，先进行模块范围的配置，那就应该用 <strong>provider</strong>。</li>
+<li>所有的provider都可以通过在后面添加后缀<strong>Provider</strong>串来传进.config().<ul>
+<li>比如一个叫 <strong>xxx</strong> provider service, 需要写成 <strong>xxxProvider</strong> .</li>
+</ul>
+</li>
+<li>写法如图：<br><img src="/imgs/angular_provider.png" alt=""></li>
+</ul>
+</li>
+<li><p>第二种 factory 方法</p>
+<ul>
+<li>Factory   方法直接把一个函数当成一个对象的 <strong>$get</strong> 方法, 可以直接返回字符串</li>
+<li>用  Factory 就是创建一个对象，为它添加属性，然后把这个对象返回出来。你把 <strong>service</strong> 传进 <strong>controller</strong> 之后，在 <strong>controller</strong> 里这个对象里的属性就可以通过 <strong>factory</strong> 定义的 service 使用了。</li>
+<li>写法如图：<br><img src="/imgs/angular_factory.png" alt=""></li>
+</ul>
+</li>
+<li><p>第三种 service 方法</p>
+<ul>
+<li>Service 是用”new”关键字实例化的。因此，你应该给”this”添加属性，然后 <strong>service</strong> 返回”this”。你把 <strong>service</strong> 传进 <strong>controller</strong> 之后，在controller里  “this” 上的属性就可以通过 <strong>service</strong> 来使用了.</li>
+<li>写法如图：<br><img src="/imgs/angular_service.png" alt=""></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-03-02T06:15:07.000Z"><a href="/2015/03/02/angular-weak-performance/">Mar 2 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/03/02/angular-weak-performance/">angular的性能分析</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>我从2013年9月份开学习并在项目中使用 Angular, 期间遇到一些新能问题，特别是加载大数据的时候，性能明显慢下来了，当时用的还是Angular-1.0.4版本的。下面我就Angular-1.0.x版本谈下我发现的几个性能问题。</p>
+</blockquote>
+<ul>
+<li>$watch 的实现原理和性能分析<ul>
+<li>只有双向绑定的scope才会被加入$watch队列，或者手动绑定$watch的$scope</li>
+<li>所有放在$scope中的变量或函数都被加入到了$watch队列当中，每次只要$scope中的一个变量的值发生变化，Angular就会自动调用$apply或者$digest来把所有在$watch队列中的变量或函数都执行一遍，然后把当前值和上一次的值就行比较，如果有变化，就会在执行一遍(一直循环，最多11次)，知道没有变化就会停止</li>
+<li>任何事件如果调用Angular的context中的函数之后，都会对$watch队列进行对比执行，不管有没有对$scope进行改变，例如：ng-click 执行了一个函数 $scope.say = function(){ \noing },在这个函数里面没有任何操作，但还是会执行$watch队列</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>ng-repeat 的原理和性能问题<ul>
+<li>在ng-repeat循环中的每一个item都会建立一个单独的scope并对每个scope中的model进行$watch. 这样的话如果有200条数据，每条数据中5个属性要被$watch, 那么就是 200 * 5次，又因为每次脏数据检测至少都需要执行两次来保证所有变化都被应用，那么就是 200 * 5 * 2, 在加上单独的 ng-repeat一个和其他的model为n个，就是 200 * 5 * 2 + 1 + n, 如果这个数据超过2500的话页面就会变得很慢了</li>
+<li>所以如果ng-repeat的数据如果只是用来展示不需要对其进行操作的话就可以取消$watch绑定，可以使用一个Angular的第三方directive： <a href="https://github.com/Pasvaz/bindonce" target="_blank" rel="external">Bindonce</a>.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>据说 Angular2.0 即将要发布了，跟之前的版本相比是一次革命性的改变。</p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+    <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-12-31T08:29:45.000Z"><a href="/2014/12/31/angular-compile-using/">Dec 31 2014</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2014/12/31/angular-compile-using/">Angular之$compile函数的使用</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p><strong>Angular之$compile函数的使用</strong></p>
+<blockquote>
+<p>在用Angular写一些比较复杂的功能的时候，难免会遇到这样的需求：需要懂动态的往页面中插入一些元素，而且这些元素还需要跟scope中的的某些值绑定。</p>
+</blockquote>
+<p>比如要将一个div动态的插入到body中,如下:</p>
+<pre><code>scope.attr = <span class="string">"hello"</span>;
+$(<span class="string">"body"</span>).append('&lt;<span class="keyword">div</span> ng-<span class="keyword">bind</span>=<span class="string">"attr"</span>&gt;&lt;/<span class="keyword">div</span>&gt;');
+</code></pre><blockquote>
+<p>但是如果只是上面这么写的话，不管你<code>scope.attr</code>怎么变化, div的html都不会有变化。那么怎么才能让它们绑定到一起的呢？这就要用到<code>$compile</code>函数了。</p>
+</blockquote>
+</li>
+<li><p><strong>$compile函数的作用</strong><br><code>$compile</code>函数可以将一段html字符串或者DOM元素跟scope编译绑定到一起。</p>
+</li>
+<li><p><strong>$compile函数如何使用</strong></p>
+<pre><code><span class="variable">$compile</span>(<span class="literal">element</span>)(scope);
+//<span class="literal">element</span>可以是一段html字符串，也可以是DOM元素；<span class="keyword">return</span>值为编译完后的DOM元素
+</code></pre></li>
+<li><p><strong>用$compile完成上面的需求</strong></p>
+<pre><code>scope.attr = <span class="string">"hello"</span>;
+var html = <span class="variable">$compile</span>(<span class="string">'&lt;div ng-bind="attr"&gt;&lt;/div&gt;'</span>)(scope);
+$(<span class="string">"body"</span>).append(html);
+scope.<span class="variable">$digest</span>();//遍历scope
+</code></pre></li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+  
+
+  <nav id="pagination">
+  
+  
+    <a href="/categories/Angular/page/2/" class="alignright next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

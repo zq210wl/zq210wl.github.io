@@ -1,0 +1,612 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>第 11 页 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-16T07:37:34.000Z"><a href="/2015/01/16/regexp-introduce/">Jan 16 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/16/regexp-introduce/">正则表达式参考手册 - (收集,仅供个人参考)</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <style type="text/css">
+  tr td:first-child{
+    min-width: 100px;
+    font-weight: bold;
+  }
+</style>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字符</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">\</td>
+<td style="text-align:left">将下一个字符标记为一个特殊字符、或一个原义字符、或一个向后引用、或一个八进制转义符。例如，“n”匹配字符“n”。“\n”匹配一个换行符。串行“\\”匹配“\”而“\(”则匹配“(”。</td>
+</tr>
+<tr>
+<td style="text-align:left">^</td>
+<td style="text-align:left">匹配输入字符串的开始位置。如果设置了RegExp对象的Multiline属性，^也匹配“\n”或“\r”之后的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">$</td>
+<td style="text-align:left">匹配输入字符串的结束位置。如果设置了RegExp对象的Multiline属性，$也匹配“\n”或“\r”之前的位置。</td>
+</tr>
+<tr>
+<td style="text-align:left">*</td>
+<td style="text-align:left">匹配前面的子表达式零次或多次。例如，zo*能匹配“z”以及“zoo”。*等价于{0,}。</td>
+</tr>
+<tr>
+<td style="text-align:left">+</td>
+<td style="text-align:left">匹配前面的子表达式一次或多次。例如，“zo+”能匹配“zo”以及“zoo”，但不能匹配“z”。+等价于{1,}。</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">匹配前面的子表达式零次或一次。例如，“do(es)?”可以匹配“does”或“does”中的“do”。?等价于{0,1}。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n}</td>
+<td style="text-align:left">n是一个非负整数。匹配确定的n次。例如，“o{2}”不能匹配“Bob”中的“o”，但是能匹配“food”中的两个o。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n,}</td>
+<td style="text-align:left">n是一个非负整数。至少匹配n次。例如，“o{2,}”不能匹配“Bob”中的“o”，但能匹配“foooood”中的所有o。“o{1,}”等价于“o+”。“o{0,}”则等价于“o*”。</td>
+</tr>
+<tr>
+<td style="text-align:left">{n,m}</td>
+<td style="text-align:left">m和n均为非负整数，其中n&lt;=m。最少匹配n次且最多匹配m次。例如，“o{1,3}”将匹配“fooooood”中的前三个o。“o{0,1}”等价于“o?”。请注意在逗号和两个数之间不能有空格。</td>
+</tr>
+<tr>
+<td style="text-align:left">?</td>
+<td style="text-align:left">当该字符紧跟在任何一个其他限制符（*,+,?，{n}，{n,}，{n,m}）后面时，匹配模式是非贪婪的。非贪婪模式尽可能少的匹配所搜索的字符串，而默认的贪婪模式则尽可能多的匹配所搜索的字符串。例如，对于字符串“oooo”，“o+?”将匹配单个“o”，而“o+”将匹配所有“o”。</td>
+</tr>
+<tr>
+<td style="text-align:left">.</td>
+<td style="text-align:left">匹配除“\n”之外的任何单个字符。要匹配包括“\n”在内的任何字符，请使用像“(.&#124;\n)”的模式。</td>
+</tr>
+<tr>
+<td style="text-align:left">(pattern)</td>
+<td style="text-align:left">匹配pattern并获取这一匹配。所获取的匹配可以从产生的Matches集合得到，在VBScript中使用SubMatches集合，在JScript中则使用$0…$9属性。要匹配圆括号字符，请使用“\(”或“\)”。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?:pattern)</td>
+<td style="text-align:left">匹配pattern但不获取匹配结果，也就是说这是一个非获取匹配，不进行存储供以后使用。这在使用或字符“(&#124;)”来组合一个模式的各个部分是很有用。例如“industr(?:y&#124;ies)”就是一个比“industry&#124;industries”更简略的表达式。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?=pattern)</td>
+<td style="text-align:left">正向肯定预查，在任何匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如，“Windows(?=95&#124;98&#124;NT&#124;2000)”能匹配“Windows2000”中的“Windows”，但不能匹配“Windows3.1”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?!pattern)</td>
+<td style="text-align:left">正向否定预查，在任何不匹配pattern的字符串开始处匹配查找字符串。这是一个非获取匹配，也就是说，该匹配不需要获取供以后使用。例如“Windows(?!95&#124;98&#124;NT&#124;2000)”能匹配“Windows3.1”中的“Windows”，但不能匹配“Windows2000”中的“Windows”。预查不消耗字符，也就是说，在一个匹配发生后，在最后一次匹配之后立即开始下一次匹配的搜索，而不是从包含预查的字符之后开始</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;=pattern)</td>
+<td style="text-align:left">反向肯定预查，与正向肯定预查类拟，只是方向相反。例如，“(?&lt;=95&#124;98&#124;NT&#124;2000)Windows”能匹配“2000Windows”中的“Windows”，但不能匹配“3.1Windows”中的“Windows”。</td>
+</tr>
+<tr>
+<td style="text-align:left">(?&lt;!pattern)</td>
+<td style="text-align:left">反向否定预查，与正向否定预查类拟，只是方向相反。例如“(?&lt;!95&#124;98&#124;NT&#124;2000)Windows”能匹配“3.1Windows”中的“Windows”，但不能匹配“2000Windows”中的“Windows”。</td>
+</tr>
+<tr>
+<td style="text-align:left">x&#124;y</td>
+<td style="text-align:left">匹配x或y。例如，“z&#124;food”能匹配“z”或“food”。“(z&#124;f)ood”则匹配“zood”或“food”。</td>
+</tr>
+<tr>
+<td style="text-align:left">[xyz]</td>
+<td style="text-align:left">字符集合。匹配所包含的任意一个字符。例如，“[abc]”可以匹配“plain”中的“a”。</td>
+</tr>
+<tr>
+<td style="text-align:left">[^xyz]</td>
+<td style="text-align:left">负值字符集合。匹配未包含的任意字符。例如，“[^abc]”可以匹配“plain”中的“p”。</td>
+</tr>
+<tr>
+<td style="text-align:left">[a-z]</td>
+<td style="text-align:left">字符范围。匹配指定范围内的任意字符。例如，“[a-z]”可以匹配“a”到“z”范围内的任意小写字母字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">[^a-z]</td>
+<td style="text-align:left">负值字符范围。匹配任何不在指定范围内的任意字符。例如，“[^a-z]”可以匹配任何不在“a”到“z”范围内的任意字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\b</td>
+<td style="text-align:left">匹配一个单词边界，也就是指单词和空格间的位置。例如，“er\b”可以匹配“never”中的“er”，但不能匹配“verb”中的“er”。</td>
+</tr>
+<tr>
+<td style="text-align:left">\B</td>
+<td style="text-align:left">匹配非单词边界。“er\B”能匹配“verb”中的“er”，但不能匹配“never”中的“er”。</td>
+</tr>
+<tr>
+<td style="text-align:left">\cx</td>
+<td style="text-align:left">匹配由x指明的控制字符。例如，\cM匹配一个Control-M或回车符。x的值必须为A-Z或a-z之一。否则，将c视为一个原义的“c”字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\d</td>
+<td style="text-align:left">匹配一个数字字符。等价于[0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\D</td>
+<td style="text-align:left">匹配一个非数字字符。等价于[^0-9]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\f</td>
+<td style="text-align:left">匹配一个换页符。等价于\x0c和\cL。</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">匹配一个换行符。等价于\x0a和\cJ。</td>
+</tr>
+<tr>
+<td style="text-align:left">\r</td>
+<td style="text-align:left">匹配一个回车符。等价于\x0d和\cM。</td>
+</tr>
+<tr>
+<td style="text-align:left">\s</td>
+<td style="text-align:left">匹配任何空白字符，包括空格、制表符、换页符等等。等价于[ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\S</td>
+<td style="text-align:left">匹配任何非空白字符。等价于[^ \f\n\r\t\v]。</td>
+</tr>
+<tr>
+<td style="text-align:left">\t</td>
+<td style="text-align:left">匹配一个制表符。等价于\x09和\cI。</td>
+</tr>
+<tr>
+<td style="text-align:left">\v</td>
+<td style="text-align:left">匹配一个垂直制表符。等价于\x0b和\cK。</td>
+</tr>
+<tr>
+<td style="text-align:left">\w</td>
+<td style="text-align:left">匹配包括下划线的任何单词字符。等价于“[A-Za-z0-9_]”。</td>
+</tr>
+<tr>
+<td style="text-align:left">\W</td>
+<td style="text-align:left">匹配任何非单词字符。等价于“[^A-Za-z0-9_]”。</td>
+</tr>
+<tr>
+<td style="text-align:left">\xn</td>
+<td style="text-align:left">匹配n，其中n为十六进制转义值。十六进制转义值必须为确定的两个数字长。例如，“\x41”匹配“A”。“\x041”则等价于“\x04&amp;1”。正则表达式中可以使用ASCII编码。.</td>
+</tr>
+<tr>
+<td style="text-align:left">\num</td>
+<td style="text-align:left">匹配num，其中num是一个正整数。对所获取的匹配的引用。例如，“(.)\1”匹配两个连续的相同字符。</td>
+</tr>
+<tr>
+<td style="text-align:left">\n</td>
+<td style="text-align:left">标识一个八进制转义值或一个向后引用。如果\n之前至少n个获取的子表达式，则n为向后引用。否则，如果n为八进制数字（0-7），则n为一个八进制转义值。</td>
+</tr>
+<tr>
+<td style="text-align:left">\nm</td>
+<td style="text-align:left">标识一个八进制转义值或一个向后引用。如果\nm之前至少有nm个获得子表达式，则nm为向后引用。如果\nm之前至少有n个获取，则n为一个后跟文字m的向后引用。如果前面的条件都不满足，若n和m均为八进制数字（0-7），则\nm将匹配八进制转义值nm。</td>
+</tr>
+<tr>
+<td style="text-align:left">\nml</td>
+<td style="text-align:left">如果n为八进制数字（0-3），且m和l均为八进制数字（0-7），则匹配八进制转义值nml。</td>
+</tr>
+<tr>
+<td style="text-align:left">\un</td>
+<td style="text-align:left">匹配n，其中n是一个用四个十六进制数字表示的Unicode字符。例如，\u00A9匹配版权符号（©）。</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-15T03:09:05.000Z"><a href="/2015/01/15/css-triangle-tips/">Jan 15 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/15/css-triangle-tips/">纯CSS代码实现小三角效果</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>实现方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-all&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 30px;&#10;  border-style: solid;&#10;  border-color: #c03 #fc0 #69c #6c6;/* &#32418; &#40644; &#34013; &#32511; */&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效 果 图<br><img src="/imgs/css_triangle.png" alt=""></p>
+</li>
+<li>实现原理<ul>
+<li>利用元素的四个border会彼此叠加的性质来制作三角形，只要让其他三条边隐藏起来就可达到效果。</li>
+</ul>
+</li>
+</ul>
+<h2 id="通过上面的原理，我们来制作一个指向下的三角形：">通过上面的原理，我们来制作一个指向下的三角形：</h2><ul>
+<li><p>实现方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-all&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle_down&#123;&#10;  width:0;&#10;  height:0;&#10;  border-width:30px 30px 0;&#10;  border-style:solid;&#10;  border-color:#c03 transparent transparent ;/* &#32418; &#36879;&#26126; &#36879;&#26126; */&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>效 果 图<br><img src="/imgs/css_triangle_down.png" alt=""></p>
+</li>
+<li>原理分析<ul>
+<li>border-color:#c03 transparent transparent ;是将需要隐藏的边的颜色设置成透明；</li>
+<li>border-width:30px 30px 0; 是将三角形对边的宽度设置为0(这里对边是border-bottom)这么做的原因是减小三角形有效作用区域。</li>
+</ul>
+</li>
+</ul>
+<h2 id="通过上面的原理，我们来制作类似下面的tip效果：">通过上面的原理，我们来制作类似下面的tip效果：</h2><p><img src="/imgs/css_triangle_tip.png" alt=""></p>
+<ul>
+<li><p>实现方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-tip-up&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-tip-up&#123;&#10;  width: 200px;&#10;  height: 30px;&#10;  background:#3FB58E;&#10;  border-radius: 4px;&#10;  position: relative;&#10;&#125;&#10;.triangle-tip-up:before&#123;&#10;  content:&#39;&#39;;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 10px 10px;&#10;  border-style: solid;&#10;  border-color: transparent transparent #3FB58E;&#10;  position: absolute;&#10;  left: 80px;&#10;  top: -10px;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现原理</p>
+<ul>
+<li>利用一个div来做tip的主体框，设置其position为relative(为了控制三角形的位置)</li>
+<li>利用css的:before属性来做三角形的主体元素，设置其position为absolute(这样可以通过设置left和top的值来随意控制小三角的位置)</li>
+</ul>
+</li>
+</ul>
+<h2 id="实现类似下面的不规则三角形">实现类似下面的不规则三角形</h2><p><img src="/imgs/css_triangle_scalene.png" alt=""></p>
+<ul>
+<li><p>实现方法</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#60;div class=&#34;triangle-scalene&#34;&#62;&#60;/div&#62;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">.triangle-scalene&#123;&#10;  width: 0;&#10;  height: 0;&#10;  border-width: 0 0 60px 20px;/* &#35774;&#32622;&#23545;&#35282;&#21644;&#30456;&#37051;&#30340;border&#37117;&#20026;0&#26469;&#23454;&#29616;&#19981;&#35268;&#21017;&#25928;&#26524; */&#10;  border-style: solid;&#10;  border-color: transparent transparent #69c;&#10;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>实现原理</p>
+<ul>
+<li>设置对角和相邻一边的border都为0,然后通过改变其余两边border的宽度来实现不规则效果</li>
+</ul>
+</li>
+</ul>
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/01/15/css-triangle-tips/#more" class="more-link">阅读全文</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-13T05:15:57.000Z"><a href="/2015/01/13/tool-online-editors/">Jan 13 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/13/tool-online-editors/">推荐三个在线前端代码编辑器</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li>前端开发者的利器：<ul>
+<li><a href="http://jsfiddle.net/" target="_blank" rel="external">jsfiddle</a></li>
+<li><a href="http://plnkr.co/" target="_blank" rel="external">plnkr</a></li>
+<li><a href="http://codepen.io/" target="_blank" rel="external">codepen</a></li>
+</ul>
+</li>
+<li>主要功能<ul>
+<li>提供四个窗口：HTML、CSS、JS、Result</li>
+<li>代码可以实时编译，立即看到运行效果</li>
+<li>可以很方便的引入一些很流行的第三方库，比如：jQuery、Angular等等。</li>
+<li>写完代码之后可以很方便地生成可以嵌套在网页中的代码，直接复制生成的代码放进网页中就可以看到效果。<ul>
+<li>此功能在写博文的时候非常实用，再也不用担心没法看到运行效果了。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>使用前需要先注册，不过这三个网站都支持用github账号直接登录，省去了繁琐的注册流程。</p>
+</blockquote>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-01-07T06:54:05.000Z"><a href="/2015/01/07/node-grunt/">Jan 7 2015</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/01/07/node-grunt/">Grunt介绍</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ul>
+<li><p>Grunt是什么？</p>
+<ul>
+<li>官方解释：JavaScript 任务运行器</li>
+<li>Grunt是nodeJS的一个插件。</li>
+</ul>
+</li>
+<li><p>Grunt能干什么?</p>
+<ul>
+<li>Grunt可以让你解放双手，做一些自动化的任务处理来简化你的工作。</li>
+</ul>
+</li>
+<li><p>那Grunt到底能干什么？</p>
+<ul>
+<li>前端你能想到的基本上grunt都能帮你解决，因为它有非常多的plugin供你选择，总有一个是你想要的。</li>
+<li>以下是我在项目中常用的一些plugin：<ul>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-cssmin" target="_blank" rel="external">grunt-contrib-cssmin</a><ul>
+<li>合并压缩CSS文件</li>
+</ul>
+</li>
+<li><a href="https://github.com/gruntjs/grunt-contrib-uglify" target="_blank" rel="external">grunt-contrib-uglify</a><ul>
+<li>混淆、合并、压缩JS文件</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-clean" target="_blank" rel="external">grunt-contrib-clean</a><ul>
+<li>删除文件用的</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-connect" target="_blank" rel="external">grunt-contrib-connect</a><ul>
+<li>提供一个Webserver来方便浏览</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-watch" target="_blank" rel="external">grunt-contrib-watch</a><ul>
+<li>用来监听文件的变化来实时做出响应执行响应的任务，</li>
+<li>可以和<code>grunt-contrib-connect</code>结合来实现文件改变后自动刷新页面</li>
+</ul>
+</li>
+<li><a href="https://npmjs.org/package/grunt-este-watch" target="_blank" rel="external">grunt-este-watch</a><ul>
+<li>同样是用来监听文件变化的，性能比<code>grunt-contrib-watch</code>好，但功能相对弱点</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-sass" target="_blank" rel="external">grunt-contrib-sass</a><ul>
+<li>将SASS文件编译成CSS文件</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-less" target="_blank" rel="external">grunt-contrib-less</a><ul>
+<li>将LESS文件编译成CSS文件</li>
+</ul>
+</li>
+<li><a href="https://npmjs.org/package/grunt-contrib-concat" target="_blank" rel="external">grunt-contrib-concat</a><ul>
+<li>将多个文件合并成一个文件</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-contrib-copy" target="_blank" rel="external">grunt-contrib-copy</a><ul>
+<li>复制文件到对应的目录</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-processhtml" target="_blank" rel="external">grunt-processhtml</a><ul>
+<li>处理html模板</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-html2js" target="_blank" rel="external">grunt-html2js</a><ul>
+<li>编译Angular的template到JS文件</li>
+</ul>
+</li>
+<li><a href="https://www.npmjs.com/package/grunt-notify" target="_blank" rel="external">grunt-notify</a><ul>
+<li>用来做桌面任务通知用的</li>
+<li>比如：在任务处理成功/失败后再桌面右下角弹出信息提示框来提示任务的处理情况</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>具体使用：</p>
+<ul>
+<li><a href="http://gruntjs.cn/getting-started/" target="_blank" rel="external">中文版官方文档</a></li>
+<li><a href="http://gruntjs.com/getting-started" target="_blank" rel="external">英文版官方文档</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+    <a href="/page/10/" class="alignleft prev">上一页</a>
+  
+  
+    <a href="/page/12/" class="alignright next">下一页</a>
+  
+  <div class="clearfix"></div>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>

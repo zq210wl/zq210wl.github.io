@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>position属性对overflow的影响, 深入理解position和overflow的关系 | 张齐的博客</title>
+  <meta name="author" content="张齐">
+  
+  <meta name="description" content="FRONT-END | Web前端开发">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="position属性对overflow的影响, 深入理解position和overflow的关系"/>
+  <meta property="og:site_name" content="张齐的博客"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="张齐的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">张齐的博客</a></h1>
+  <h2><a href="/">Focus on front-end development</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2014-04-14T10:29:23.000Z"><a href="/2014/04/14/css-position-overflow/">Apr 14 2014</a></time>
+      
+      
+  
+    <h1 class="title">position属性对overflow的影响, 深入理解position和overflow的关系</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <blockquote>
+<p>项目中遇到了一个问题，就是明明父节点设置overflow:scroll,但是不管滚动条如果滚动，但是子节点一直都不动，因此就小研究了一下position对overflow的影响，跟大家分享一下。</p>
+</blockquote>
+<h2 id="当父节点不设置position情况下，子节点position的四种值的分析：">当父节点不设置position情况下，子节点position的四种值的分析：</h2><p>示例1.1:<br>body{<br>A {overflow: scroll;}<br>A-1 {}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：A-1的默认position设置为static，当position为static时，A-1元素还是遵循正常的文档流，因此A-1会受它父节点属性的影响</p>
+<p>示例1.2:<br>body{<br>A {overflow: scroll;}<br>A-1 {position: relative;}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：当A-1的position设置为relative时，A-1元素还是遵循正常的文档流，因此A-1会受它父节点属性的影响</p>
+<p>示例1.3:(重点)<br>body{<br>A {overflow: scroll;}<br>A-1 {position: absolute;}<br>}<br>效果：A-1不会根据A滚动条的滚动而滚动<br>分析：当A-1的position设置为absolute时，A-1元素脱离了文档流，所以A-1不再受父节点属性的影响<br>注意：这时在父节点没有设置position的时，只会受到body节点的影响</p>
+<p>示例1.4:<br>body{<br>A {overflow: scroll;}<br>A-1 {position: fixed;}<br>}<br>效果：A-1不会根据A滚动条的滚动而滚动<br>分析：当A-1的position设置为fixed时，A-1元素脱离了文档流，这时A-1只受body元素的影响</p>
+<h2 id="当父节点设置position值为非static情况下，子节点position的四种值的分析：">当父节点设置position值为非static情况下，子节点position的四种值的分析：</h2><p>示例2.1:<br>body{<br>A {position：relative; overflow: scroll;}<br>A-1 {}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：跟示例1.1一样，当父节点A设置了position之后，子节点A-1还是遵循正常的文档流，因此A-1会受它父节点属性的影响</p>
+<p>示例2.2:<br>body{<br>A {position：relative; overflow: scroll;}<br>A-1 {position: relative;}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：跟示例1.2一样，当父节点A设置了position之后，子节点A-1还是遵循正常的文档流，因此A-1会受它父节点属性的影响</p>
+<p>示例2.3:(重点, 注意跟1.3示例对比)<br>body{<br>A {position：relative; overflow: scroll;}<br>A-1 {position: absolute;}<br>}<br>效果：A-1会根据A滚动条的滚动而滚动<br>分析：当父节点A设置了position之后，效果就跟示例1.3不一样了，这时A-1会受到离它自己最近的一个设置了position属性的父节点的影响，再看下面一个示例：<br>body{<br>A {position：relative; overflow: hidden;}<br>A-1 {overflow: scroll;}<br>A-1-1 {position: absolute;}<br>}<br>注意：这时A-1-1不会收A-1的影响，但是会受到A的影响</p>
+<p>示例2.4:<br>body{<br>A {position:relative; overflow: scroll;}<br>A-1 {position: fixed;}<br>}<br>效果：A-1不会根据A滚动条的滚动而滚动<br>分析：跟1.4示例一样，当子节点的position属性设置为fixed之后，不管的父节点是否设置了position值，都只会受到body节点的影响，其他任何节点都不会影响它</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/CSS/">CSS</a>
+  </div>
+
+        
+        <div class="bdsharebuttonbox"><a href="#" class="bds_more" data-cmd="more"></a><a href="#" class="bds_qzone" data-cmd="qzone"></a><a href="#" class="bds_tsina" data-cmd="tsina"></a><a href="#" class="bds_tqq" data-cmd="tqq"></a><a href="#" class="bds_renren" data-cmd="renren"></a><a href="#" class="bds_weixin" data-cmd="weixin"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdPic":"","bdStyle":"0","bdSize":"16"},"share":{},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+<section id="comment">
+
+<!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="2014/04/14/css-position-overflow/" data-title="position属性对overflow的影响, 深入理解position和overflow的关系" data-url="http://zq210wl.github.io/2014/04/14/css-position-overflow/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"zq210wl"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="hidden" name="site" value="site:zq210wl.github.io">
+    <input type="search" name="search" results="0" placeholder="搜索">
+  </form>
+</div>
+
+<script>
+  window.onload = function(){
+    jQuery('input[type="search"]').keydown(function(e){
+      if(e.keyCode == 13){
+        window.location = "//google.com/search?q="+jQuery('input[name="site"]').val()+"+"+jQuery('input[name="search"]').val();
+        return false;
+      }
+    });
+  }
+</script>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/Angular/">Angular</a><small>7</small></li>
+  
+    <li><a href="/categories/CSS/">CSS</a><small>12</small></li>
+  
+    <li><a href="/categories/Computer/">Computer</a><small>1</small></li>
+  
+    <li><a href="/categories/HTML/">HTML</a><small>3</small></li>
+  
+    <li><a href="/categories/Javascript/">Javascript</a><small>7</small></li>
+  
+    <li><a href="/categories/Link/">Link</a><small>6</small></li>
+  
+    <li><a href="/categories/Mobile/">Mobile</a><small>3</small></li>
+  
+    <li><a href="/categories/NodeJS/">NodeJS</a><small>2</small></li>
+  
+    <li><a href="/categories/RegExp/">RegExp</a><small>1</small></li>
+  
+    <li><a href="/categories/Tool/">Tool</a><small>7</small></li>
+  
+    <li><a href="/categories/other/">other</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>姓名：张齐</li>
+<li>专注：前端开发</li>
+<li>QQ：409260614</li>
+<li>Email：zq_210_wl@163.com</li>
+</ul>
+</div>
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  
+  &copy; 2015 张齐
+  
+</div>
+<div class="clearfix"></div></footer>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+</body>
+</html>
