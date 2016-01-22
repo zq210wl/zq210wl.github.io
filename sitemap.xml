@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zq210wl.github.io/demo/clearfix.html</loc>
+    <lastmod>2016-01-22T02:51:36.510Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://zq210wl.github.io/2015/06/26/mobile-dev-experiences/</loc>
     <lastmod>2015-11-30T06:28:19.818Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://zq210wl.github.io/demo/floatFeaturesSummary.html</loc>
     <lastmod>2015-11-05T10:05:39.464Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://zq210wl.github.io/demo/clearfix.html</loc>
-    <lastmod>2015-11-05T10:05:39.459Z</lastmod>
   </url>
   
   <url>
