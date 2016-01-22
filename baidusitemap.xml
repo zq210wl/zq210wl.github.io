@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+  <url>
+    <loc>http://zq210wl.github.io/2015/06/26/mobile-dev-experiences/</loc>
+    <lastmod>2015-11-30T06:28:19.818Z</lastmod>
+    <data>
+        <display>
+        <title>移动web开发技巧收集</title>
+        <pubTime>2015-06-26T02:08:39.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="Mobile" url="http://zq210wl.github.io/categories/Mobile/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
     
@@ -243,24 +261,6 @@
         <display>
         <title>viewport到底是什么东西?</title>
         <pubTime>2015-02-06T09:09:53.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="Mobile" url="http://zq210wl.github.io/categories/Mobile/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://zq210wl.github.io/2015/06/26/mobile-dev-experiences/</loc>
-    <lastmod>2015-11-05T10:05:39.428Z</lastmod>
-    <data>
-        <display>
-        <title>移动web开发技巧收集</title>
-        <pubTime>2015-06-26T02:08:39.000Z</pubTime>
         
          
            

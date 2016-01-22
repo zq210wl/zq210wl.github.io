@@ -138,7 +138,33 @@ otherElement { font-size: <span class="number">1</span>.<span class="number">4</
 <li>让元素border包含在的指定的宽高范围内<pre><code><span class="attribute">border-size</span>: <span class="string">border-box;</span>
 </code></pre></li>
 </ul>
-<p><em>此文章未完，将会不断更新总结</em></p>
+<h2 id="根据不同的设备宽度来改变根元素的字体大小">根据不同的设备宽度来改变根元素的字体大小</h2><pre><code>(<span class="function"><span class="keyword">function</span> (<span class="params">doc, win</span>) </span>{
+    <span class="keyword">var</span> docEl = doc.documentElement,
+        resizeEvt = <span class="string">'orientationchange'</span> <span class="keyword">in</span> <span class="built_in">window</span> ? <span class="string">'orientationchange'</span> : <span class="string">'resize'</span>,
+        recalc = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{
+            <span class="keyword">var</span> clientWidth = docEl.clientWidth;
+            <span class="keyword">if</span> (!clientWidth) <span class="keyword">return</span>;
+            docEl.style.fontSize = <span class="number">100</span> * (clientWidth / <span class="number">320</span>) + <span class="string">'px'</span>;
+        };
+
+    <span class="comment">// Abort if browser does not support addEventListener</span>
+    <span class="keyword">if</span> (!doc.addEventListener) <span class="keyword">return</span>;
+    win.addEventListener(resizeEvt, recalc, <span class="literal">false</span>);
+    doc.addEventListener(<span class="string">'DOMContentLoaded'</span>, recalc, <span class="literal">false</span>);
+})(<span class="built_in">document</span>, <span class="built_in">window</span>);
+</code></pre><h2 id="Retina屏幕一像素问题完美解决方案(用这种方法的话，所有的长度单位都必须用rem)">Retina屏幕一像素问题完美解决方案(用这种方法的话，所有的长度单位都必须用rem)</h2><pre><code><span class="comment">//根据屏幕大小及dpi调整缩放和大小, 由于dpr=3时候，经过缩放处理界面会变得非常模糊，所以dpr&gt;=2时做相同处理</span>
+(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{
+    <span class="keyword">var</span> scale = <span class="number">1.0</span>;
+    <span class="keyword">var</span> ratio = <span class="number">1</span>;
+    <span class="keyword">if</span> (<span class="built_in">window</span>.devicePixelRatio &gt;= <span class="number">2</span>) {
+        scale *= <span class="number">0.5</span>;
+        ratio *= <span class="number">2</span>;
+    }
+    <span class="keyword">var</span> text = <span class="string">'&lt;meta name="viewport" content="initial-scale='</span> + scale + <span class="string">', maximum-scale='</span> + scale +<span class="string">', minimum-scale='</span> + scale + <span class="string">', width=device-width, user-scalable=no" /&gt;'</span>;
+    <span class="built_in">document</span>.write(text);
+    <span class="built_in">document</span>.documentElement.style.fontSize = <span class="number">50</span>*ratio + <span class="string">"px"</span>;
+})();
+</code></pre><p><em>此文章未完，将会不断更新总结</em></p>
 
       
     </div>
@@ -246,7 +272,7 @@ var duoshuoQuery = {short_name:"zq210wl"};
   </div>
   <footer id="footer" class="inner"><div class="alignleft">
   
-  &copy; 2015 张齐
+  &copy; 2016 张齐
   
 </div>
 <div class="clearfix"></div></footer>
